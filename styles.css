@@ -7,12 +7,133 @@
 
 body,
 html {
-  background: #f5f5f5;
+  background: #ececec;
   margin: 0;
   padding: 0;
   height: 100%;
 
   font-family: "Another Typewriter", monospace;
+}
+
+.section-title {
+  font-size: 60px;
+  font-weight: bold;
+  color: black;
+}
+
+.section-title span {
+  background-color: #ffdd00;
+}
+
+.top-right-element {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+}
+.crash-section {
+  font-weight: 700;
+
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+}
+.crash-title {
+  font-size: 200px;
+  margin: 0;
+  line-height: 1;
+}
+.crash-subtitle {
+  font-size: 24px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+header.msat-header {
+  text-align: center;
+  margin: 50px 20px;
+  color: #121cd8;
+}
+
+header.msat-header .msat-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+header.msat-header .msat-subtitle {
+  font-size: 18px;
+  color: #7d7d7d;
+  margin-bottom: 20px;
+}
+
+header.msat-header .msat-description {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+header.msat-header .msat-description em {
+  font-style: italic;
+  font-weight: bold;
+  color: #121cd8;
+}
+
+.herd-is {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Results Box */
+.herd-is-box {
+  border: 2px solid #121cd8;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  width: 26%;
+  max-width: 600px;
+}
+
+.view-results-button {
+  display: block;
+  background-color: #121cd8;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.view-results-button:hover {
+  background-color: #0f19b0;
+}
+
+.results-details {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.results-item {
+  flex: 1;
+}
+
+.results-item .label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #7d7d7d;
+}
+
+.results-item .value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #121cd8;
+  margin-top: 5px;
 }
 
 #container {
@@ -21,25 +142,33 @@ html {
 }
 
 #left-section {
-  width: 60%;
+  color: #121cd8;
+  width: 83%;
   padding: 20px;
   display: inline-flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+#logo-and-title {
+  display: flex;
 }
 
 #herd {
+  margin: 0px;
   font-size: 72px;
   font-weight: bold;
+  overflow-wrap: break-word;
+  text-align: right;
 }
 
 #logo-container {
   position: relative;
   width: 25%;
   height: 25%;
-  min-width: 150px;
-  min-height: 150px;
+  min-width: 200px;
+  min-height: 200px;
   align-self: start;
 }
 
@@ -81,13 +210,22 @@ html {
 }
 
 #right-section {
-  background-color: black;
-
-  width: 40%;
-  color: #f5f5f5;
+  background-color: #121cd8;
+  width: 17%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  padding: 20px; /* Add some spacing */
+}
+
+#logo-container {
+  align-self: flex-end; /* Align the logo to the top left */
+  margin-bottom: 20px; /* Add space below the logo */
+}
+
+#nav-container {
+  padding-top: 20px; /* Add space above the navigation */
+  align-self: flex-end;
 }
 
 #navigation ul {
@@ -98,9 +236,9 @@ html {
 }
 
 #navigation ul li a {
-  color: #fff;
+  color: #ececec;
   text-decoration: none;
-  font-size: 72px;
+  font-size: 60px;
   font-weight: bold;
   position: relative;
   display: inline-block;
@@ -143,4 +281,28 @@ html {
   to {
     transform: rotate(360deg);
   }
+}
+
+#social-container {
+  display: flex;
+  justify-content: flex-end; /* Align icons to the right */
+  gap: 10px; /* Add spacing between icons */
+  margin-top: 20px; /* Add spacing above the social icons */
+}
+
+.social-link {
+  display: inline-block;
+  width: 40px; /* Set the size of the icons */
+  height: 40px;
+}
+
+.social-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure icons maintain their aspect ratio */
+  transition: transform 0.3s ease; /* Add hover effect for icons */
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.2); /* Enlarge icon on hover */
 }
