@@ -67,47 +67,6 @@ html {
   max-width: 600px;
 }
 
-.view-results-button {
-  display: block;
-  background-color: #e89eb8;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  padding: 15px 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  transition: background-color 0.3s;
-}
-
-.view-results-button:hover {
-  background-color: #e89eb8;
-}
-
-.results-details {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-}
-
-.results-item {
-  flex: 1;
-}
-
-.results-item .label {
-  font-size: 16px;
-  font-weight: bold;
-  color: #7d7d7d;
-}
-
-.results-item .value {
-  font-size: 24px;
-  font-weight: bold;
-  color: #e89eb8;
-  margin-top: 5px;
-}
-
 #container {
   display: flex;
   height: 100%;
@@ -125,14 +84,6 @@ html {
 
 #logo-and-title {
   display: flex;
-}
-
-#herd {
-  margin: 0px;
-  font-size: 72px;
-  font-weight: bold;
-  overflow-wrap: break-word;
-  text-align: right;
 }
 
 #logo-container {
@@ -164,22 +115,6 @@ html {
   height: 50%;
   transform-origin: center;
   z-index: 2; /* Ensure inner logo stays on top */
-}
-
-#signup-container {
-  align-self: start;
-  text-align: left;
-  margin-top: 20px;
-}
-
-#signup-container h2 {
-  margin-bottom: 10px;
-}
-
-#signup-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
 }
 
 #right-section {
