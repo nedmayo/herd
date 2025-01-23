@@ -7,7 +7,7 @@
 
 body,
 html {
-  background: #ececec;
+  background: #ecececff;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -15,6 +15,9 @@ html {
   font-family: "Another Typewriter", monospace;
 }
 
+.section {
+  padding-top: 100px;
+}
 .section-title {
   font-size: 60px;
   font-weight: bold;
@@ -22,21 +25,16 @@ html {
 }
 
 .section-title span {
-  background-color: #ffdd00;
+  background-color: #eabc68;
 }
 
-.top-right-element {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 16px;
-}
 .crash-section {
   font-weight: 700;
-
   text-align: left;
   max-width: 600px;
   margin: auto;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 .crash-title {
   font-size: 200px;
@@ -49,36 +47,6 @@ html {
   line-height: 1.5;
 }
 
-header.msat-header {
-  text-align: center;
-  margin: 50px 20px;
-  color: #121cd8;
-}
-
-header.msat-header .msat-title {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-header.msat-header .msat-subtitle {
-  font-size: 18px;
-  color: #7d7d7d;
-  margin-bottom: 20px;
-}
-
-header.msat-header .msat-description {
-  font-size: 24px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
-
-header.msat-header .msat-description em {
-  font-style: italic;
-  font-weight: bold;
-  color: #121cd8;
-}
-
 .herd-is {
   display: flex;
   justify-content: center;
@@ -86,18 +54,22 @@ header.msat-header .msat-description em {
 }
 /* Results Box */
 .herd-is-box {
-  border: 2px solid #121cd8;
+  font-family: "MFred", sans-serif;
+  background-color: #eabc6880;
+  border: 2px solid #eabc68;
   border-radius: 10px;
   display: inline-block;
+  font-size: 24px;
   padding: 20px;
   margin: 20px;
   width: 26%;
+  height: 100%;
   max-width: 600px;
 }
 
 .view-results-button {
   display: block;
-  background-color: #121cd8;
+  background-color: #e89eb8;
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
@@ -110,7 +82,7 @@ header.msat-header .msat-description em {
 }
 
 .view-results-button:hover {
-  background-color: #0f19b0;
+  background-color: #e89eb8;
 }
 
 .results-details {
@@ -132,7 +104,7 @@ header.msat-header .msat-description em {
 .results-item .value {
   font-size: 24px;
   font-weight: bold;
-  color: #121cd8;
+  color: #e89eb8;
   margin-top: 5px;
 }
 
@@ -142,7 +114,7 @@ header.msat-header .msat-description em {
 }
 
 #left-section {
-  color: #121cd8;
+  color: black;
   width: 83%;
   padding: 20px;
   display: inline-flex;
@@ -169,7 +141,8 @@ header.msat-header .msat-description em {
   height: 25%;
   min-width: 200px;
   min-height: 200px;
-  align-self: start;
+  align-self: center; Align the logo to the top left
+  margin-bottom: 20px; /* Add space below the logo */
 }
 
 #outer-logo img {
@@ -210,22 +183,19 @@ header.msat-header .msat-description em {
 }
 
 #right-section {
-  background-color: #121cd8;
+  margin: 20px;
+  background-color: rgb(13, 88, 194);
+  border-radius: 100px;
   width: 17%;
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: flex-start; /* Align items to the left */
   padding: 20px; /* Add some spacing */
 }
-
-#logo-container {
-  align-self: flex-end; /* Align the logo to the top left */
-  margin-bottom: 20px; /* Add space below the logo */
-}
-
 #nav-container {
   padding-top: 20px; /* Add space above the navigation */
   align-self: flex-end;
+  margin-right: 25px;
 }
 
 #navigation ul {
@@ -236,7 +206,7 @@ header.msat-header .msat-description em {
 }
 
 #navigation ul li a {
-  color: #ececec;
+  color: #eabc68;
   text-decoration: none;
   font-size: 60px;
   font-weight: bold;
@@ -285,9 +255,12 @@ header.msat-header .msat-description em {
 
 #social-container {
   display: flex;
-  justify-content: flex-end; /* Align icons to the right */
-  gap: 10px; /* Add spacing between icons */
-  margin-top: 20px; /* Add spacing above the social icons */
+  width: 100%;
+  justify-content: center; /* Align icons to the right */
+  gap: 10px;
+  margin-top: 20px;
+  margin-top: auto;
+  padding-bottom: 20px;
 }
 
 .social-link {
