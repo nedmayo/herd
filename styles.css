@@ -11,101 +11,248 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-
-  font-family: "Another Typewriter", monospace;
-}
-
-.section {
-  padding-top: 100px;
-}
-.section-title {
-  font-size: 60px;
-  font-weight: bold;
-  color: black;
-}
-
-.section-title span {
-  background-color: rgb(164, 160, 228);
-}
-
-.crash-section {
-  font-weight: 700;
-  text-align: left;
-  max-width: 600px;
-  margin: auto;
-  margin-bottom: 200px;
-  margin-top: 100px;
-}
-.crash-title {
-  font-size: 200px;
-  margin: 0;
-  line-height: 1;
-}
-.crash-subtitle {
-  font-size: 24px;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.crash-bottom {
+  font-family: "Futura", sans-serif;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
-  margin-top: auto;
-  padding-bottom: 20px;
-  outline: none;
-}
-
-.crash-button {
-  background-color: rgb(164, 160, 228);
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 20px;
-  border-radius: 10px;
-  font-family: "Another Typewriter", monospace;
-  border: none;
-}
-
-.herd-is {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* Results Box */
-.herd-is-box {
-  border: 2px solid rgb(52, 32, 77);
-  /* border-radius: 10px; */
-  display: inline-block;
-  font-size: 24px;
-  padding: 20px;
-  margin: 20px;
-  width: 26%;
-  height: 100%;
-  max-width: 600px;
-}
-
-#container {
-  display: flex;
-  height: 100%;
 }
 
 #left-section {
   color: black;
   width: 83%;
-  padding: 20px;
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-#logo-and-title {
+.herd-section {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding-top:25vh;
+  padding-bottom-20vh;
+  height: 100vh;
+  padding-right: 10vw;
+  padding-left: 10vw;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  object-fit: cover;  /* This ensures the video covers the entire section */
+  z-index: -1;
+}
+
+
+
+.herd-logo  {
+  display: block;
   width: 100%;
-  height: 150px;
+  max-width: 40vw;
+  margin: 0 auto; /* Centers horizontally */
+}
+
+/* Left-align subtitle but keep it centered in the section */
+.herd-subtitle {
+  font-size: 24px;
+  margin: 10px 0 0 0;
+  line-height: 1.5;
+  text-align: left; /* Ensures text remains left-aligned */
+  max-width: 40vw;
+}
+
+.section {
+  height: 98vh;
+  padding: 2vh;
+  font-size: 24px;
+}
+
+.section-title {
+  width: fit-content;
+  max-height: 100px;
+  font-size: 48px;
+  font-family: "Another Typewriter", monospace;
+  font-size: 60px;
+  font-weight: bold;
+  color: black;
+  /* background-color: #c3c0ed; */
+  margin-bottom: 20px;
+  margin: 0 auto 20px auto; 
+  text-align: center;
+}
+
+.section-text {
+  margin-right: 5%; 
+  margin-left: 5%; 
+  text-align: justify;"
+}
+
+.section-images {
+  margin: 20px auto;
+  padding: 20px;
+  border: 5px solid #34204d;
+  background: white;
+  display: flex;
+  justify-content: space-between; /* Spread columns evenly */
+  align-items: center; /* Center items vertically */
+  margin-top: 20px;
+    max-width: 900px;
+}
+
+.image-over-text {
+  color: black;
+  width: 30%; /* Ensure each column takes up an equal amount of space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+
+#image-container {
+  position: relative;
+  width: 25%;
+  height: 25%;
+  min-width: 150px;
+  min-height: 150px;
+  align-self: center; Align the logo to the top left
+  margin-bottom: 20px; /* Add space below the logo */
+}
+
+#outer-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  animation: spin 45s linear infinite;
+}
+
+/* Make sure the inner logo stays static */
+#inner-image img {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  transform-origin: center;
+  z-index: 2; /* Ensure inner logo stays on top */
+}
+
+
+.event-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  max-width: 900px;
+  border: 5px solid #34204d;
+  margin: 20px auto;
+
+}
+
+.event-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+
+.event-info {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 10px;
+}
+
+.event-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.detail-box {
+  background: #c3c0ed;
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+
+
+.event-description {
+  padding-top: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+.inline-image {
+  width: 30%; /* Adjust size as needed */
+  border: 4px solid #34204d;
+  margin: 10px 0;
+  display: block;
+}
+
+
+
+.inline-image.right {
+  float: right;
+  margin-left: 20px;
+}
+
+.inline-image.left {
+  float: left;
+  margin-right: 20px;
+}
+
+/* Ensure images adjust properly on small screens */
+@media screen and (max-width: 768px) {
+  .inline-image {
+      width: 40%;
+      float: none;
+      margin: 10px auto;
+  }
+}
+
+
+
+
+
+
+
+#right-section {
+  font-family: "Another Typewriter", monospace;
+  /* border-top-left-radius: 50px; */
+  background-color: #34204d;
+  width: 17%;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  padding: 20px; /* Add some spacing */
+}
+
+@media (max-width: 768px) { /* Adjust the width as needed */
+  #right-section {
+    display: none;
+  }
 }
 
 #logo-container {
@@ -139,31 +286,39 @@ html {
   z-index: 2; /* Ensure inner logo stays on top */
 }
 
-#right-section {
-  background-color: rgb(52, 32, 77);
-  width: 17%;
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align items to the left */
-  padding: 20px; /* Add some spacing */
+#register-button {
+  background: #ececec;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-top: 50px;   
+  font-family: "Futura", sans-serif;
+
+  
+  width: fit-content; /* Makes the button size fit the content */
+  text-align: center;
+  display: block; /* Ensures it behaves like a block element */
+  margin-left: auto; /* Centering trick */
+  margin-right: auto; /* Centering trick */
 }
+
+
+
 #nav-container {
-  padding-top: 50px; /* Add space above the navigation */
-  align-self: flex-end;
-  margin-right: 25px;
+  margin-top: 25px; /* Add space above the navigation */
+  align-self: center;
 }
 
 #navigation ul {
   list-style-type: none; /* This removes the bullet points */
   padding: 0;
   margin: 0;
-  text-align: right;
+  text-align: center;
 }
 
 #navigation ul li a {
-  color: rgb(164, 160, 228);
+  color: #c3c0ed;
   text-decoration: none;
-  font-size: 60px;
+  font-size: 48px;
   font-weight: bold;
   position: relative;
   display: inline-block;
