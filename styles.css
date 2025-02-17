@@ -228,6 +228,10 @@ html {
   box-sizing: border-box;
 }
 
+.event-image {
+  align-content: center;
+}
+
 .event-image img {
   width: 100%;
   height: auto;
@@ -242,7 +246,6 @@ html {
 .event-title {
   font-size: 24px;
   font-weight: bold;
-  padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
   color: #34204d;
 }
@@ -264,7 +267,7 @@ html {
 }
 
 .event-description {
-  padding-top: 10px;
+  /* padding-top: 10px; */
   font-size: 18px;
   line-height: 1.5;
   color: #34204d;
