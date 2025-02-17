@@ -13,65 +13,108 @@ html {
   height: 100%;
   font-family: "Futura", sans-serif;
   display: flex;
+  flex-direction: column; /* Change to column layout */
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 #left-section {
-  color: black;
-  width: 83%;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  overflow-y: scroll;
+  color: #34204d;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 80px; /* Add space for fixed nav */
+  max-width: 100vw;
+  box-sizing: border-box;
   overflow-x: hidden;
+  padding: 0;
 }
 
 .herd-section {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: left;
-  padding-top:25vh;
-  padding-bottom-20vh;
-  height: 100vh;
-  padding-right: 10vw;
-  padding-left: 10vw;
+  padding: 20vh 5vw 10vh 5vw; /* Reduce side padding */
+  border-bottom: none !important;
+  margin-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #background-video {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
+  width: 100vw;
   object-fit: cover;  /* This ensures the video covers the entire section */
   z-index: -1;
 }
 
-
-
-.herd-logo  {
+.herd-logo {
   display: block;
   width: 100%;
-  max-width: 40vw;
-  margin: 0 auto; /* Centers horizontally */
+  max-width: 600px; /* Set a max-width instead of using vw */
+  margin: 0 auto;
 }
 
-/* Left-align subtitle but keep it centered in the section */
 .herd-subtitle {
   font-size: 24px;
   margin: 10px 0 0 0;
   line-height: 1.5;
-  text-align: left; /* Ensures text remains left-aligned */
-  max-width: 40vw;
+  text-align: left;
+  max-width: 600px; /* Match logo max-width */
+  color: #34204d;
+  width: 100%;
 }
 
 .section {
-  height: 98vh;
-  padding: 2vh;
-  font-size: 24px;
+  padding: 4vh 5vw;
+  font-size: 18px;
+  position: relative;
+  margin-top: 100px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Adjust first section after herd-section */
+.herd-section + .section {
+  margin-top: 0; /* Remove top margin for first section after herd-section */
+}
+
+/* Add bottom margin to last section */
+.section:last-of-type {
+  margin-bottom: 100px;
+}
+
+/* Adjust separator line style */
+.section:not(:last-child) {
+  border-bottom: 2px solid #34204d; /* Make line thicker and match purple color */
+  padding-bottom: 100px;
+  position: relative;
+}
+
+/* Create centered line that's 90% width */
+.section:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%; /* Start 5% from left */
+  width: 90%; /* Take up 90% of width */
+  height: 2px; /* Match border thickness */
+  background-color: #34204d; /* Match purple color */
+}
+
+/* Remove the full-width border since we're using pseudo-element */
+.section:not(:last-child) {
+  border-bottom: none;
+  padding-bottom: 100px;
 }
 
 .section-title {
@@ -81,39 +124,66 @@ html {
   font-family: "Another Typewriter", monospace;
   font-size: 60px;
   font-weight: bold;
-  color: black;
+  color: #34204d;
   /* background-color: #c3c0ed; */
   margin-bottom: 20px;
-  margin: 0 auto 20px auto; 
+  margin: 0px auto 20px auto; 
   text-align: center;
+  padding-left: 10px;
 }
 
 .section-text {
-  margin-right: 5%; 
-  margin-left: 5%; 
-  text-align: justify;"
+  margin-right: 5%;
+  margin-left: 5%;
+  text-align: justify;
+  column-gap: 40px;
+  line-height: 1.6;
 }
 
-.section-images {
-  margin: 20px auto;
-  padding: 20px;
-  border: 5px solid #34204d;
-  background: white;
-  display: flex;
-  justify-content: space-between; /* Spread columns evenly */
-  align-items: center; /* Center items vertically */
-  margin-top: 20px;
-    max-width: 900px;
-}
-
+/* Update image-over-text styling */
 .image-over-text {
-  color: black;
-  width: 30%; /* Ensure each column takes up an equal amount of space */
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
+}
+
+/* Update image container styling */
+.image-over-text #image-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Create a wrapper for all image-over-text elements */
+.section-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Ensure text alignment and spacing */
+.image-over-text p {
+  margin: 0;
+  padding: 0 10px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .image-over-text #image-container {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 #image-container {
@@ -147,24 +217,20 @@ html {
   z-index: 2; /* Ensure inner logo stays on top */
 }
 
-
 .event-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(200px, 1fr) 2fr;
   gap: 20px;
-  background: white;
   padding: 20px;
+  width: 100%;
   max-width: 900px;
-  border: 5px solid #34204d;
   margin: 20px auto;
-
+  box-sizing: border-box;
 }
 
 .event-image img {
   width: 100%;
   height: auto;
-  border-radius: 30px;
-  border: 1px solid #ccc;
 }
 
 .event-info {
@@ -178,6 +244,7 @@ html {
   font-weight: bold;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
+  color: #34204d;
 }
 
 .event-details {
@@ -196,13 +263,12 @@ html {
   border: 1px solid #ccc;
 }
 
-
 .event-description {
   padding-top: 10px;
   font-size: 18px;
   line-height: 1.5;
+  color: #34204d;
 }
-
 
 .inline-image {
   width: 30%; /* Adjust size as needed */
@@ -210,8 +276,6 @@ html {
   margin: 10px 0;
   display: block;
 }
-
-
 
 .inline-image.right {
   float: right;
@@ -232,37 +296,32 @@ html {
   }
 }
 
-
-
-
-
-
-
-#right-section {
+/* Convert side-nav to top-nav */
+#side-nav {
   font-family: "Another Typewriter", monospace;
-  /* border-top-left-radius: 50px; */
   background-color: #34204d;
-  width: 17%;
+  width: 100vw;
+  max-width: 100%;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align items to the left */
-  padding: 20px; /* Add some spacing */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  box-sizing: border-box;
+  z-index: 100;
+  left: 0;
+  right: 0;
 }
 
-@media (max-width: 768px) { /* Adjust the width as needed */
-  #right-section {
-    display: none;
-  }
-}
-
+/* Adjust logo size */
 #logo-container {
   position: relative;
-  width: 25%;
-  height: 25%;
-  min-width: 200px;
-  min-height: 200px;
-  align-self: center; Align the logo to the top left
-  margin-bottom: 20px; /* Add space below the logo */
+  width: 8.5vh; /* Make logo smaller */
+  height: 8.5vh;
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 #outer-logo img {
@@ -286,71 +345,46 @@ html {
   z-index: 2; /* Ensure inner logo stays on top */
 }
 
+/* Update register button styles to work with anchor tag */
 #register-button {
   background: #ececec;
   border-radius: 30px;
-  padding: 10px 20px;
-  margin-top: 50px;   
-  font-family: "Futura", sans-serif;
-
-  
-  width: fit-content; /* Makes the button size fit the content */
-  text-align: center;
-  display: block; /* Ensures it behaves like a block element */
-  margin-left: auto; /* Centering trick */
-  margin-right: auto; /* Centering trick */
+  padding: 6px 15px;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
 }
 
-
-
-#nav-container {
-  margin-top: 25px; /* Add space above the navigation */
-  align-self: center;
+/* Add styles for register link in event details */
+.detail-box a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* Adjust navigation styling */
 #navigation ul {
-  list-style-type: none; /* This removes the bullet points */
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none; 
   padding: 0;
   margin: 0;
-  text-align: center;
 }
 
 #navigation ul li a {
-  color: #c3c0ed;
-  text-decoration: none;
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 24px; /* Slightly smaller font */
+  color: #c3c0ed; /* Light purple color */
+  text-decoration: none; /* Remove underline */
   position: relative;
-  display: inline-block;
 }
 
-/* Underline effect for hover */
-#navigation ul li a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  transform: scaleX(0);
-}
-
-/* Show light underline on hover */
-#navigation ul li a:hover::after {
-  transform: scaleX(1);
-}
-
-/* Active page styling */
-#navigation ul li a.active {
-  text-decoration: underline;
-  text-underline-offset: 8px; /* Adjust this value to control distance of underline from text */
-  text-decoration-thickness: 2px; /* Adjust thickness of the underline */
-}
-
-/* Remove hover effect on active link */
-#navigation ul li a.active::after {
-  display: none;
+/* Keep the hover and active states */
+#navigation ul li a:hover {
+  color: #ffffff;
 }
 
 /* Add this to your existing styles.css */
@@ -363,29 +397,393 @@ html {
   }
 }
 
+/* Adjust social container layout */
 #social-container {
   display: flex;
-  width: 100%;
-  justify-content: center; /* Align icons to the right */
-  gap: 10px;
-  margin-top: 20px;
-  margin-top: auto;
-  padding-bottom: 20px;
+  align-items: center;
+  gap: 15px; /* Reduce gap between social items */
+  margin: 0;
+  padding: 0;
 }
 
+/* Update social link styles */
 .social-link {
-  display: inline-block;
-  width: 40px; /* Set the size of the icons */
-  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Update social link hover effect */
+.social-link:hover .social-icon {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(19%) saturate(775%) hue-rotate(203deg) brightness(100%) contrast(87%);
 }
 
 .social-icon {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ensure icons maintain their aspect ratio */
-  transition: transform 0.3s ease; /* Add hover effect for icons */
+  object-fit: contain;
+  transition: filter 0.3s ease;
 }
 
+/* Remove the scale transform hover effect */
 .social-link:hover .social-icon {
-  transform: scale(1.2); /* Enlarge icon on hover */
+  transform: none;
+}
+
+/* Remove the transition from social-icon */
+.social-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Remove right title variant and simplify section styles */
+.section-horizontal {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+  gap: 40px;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-horizontal .section-title {
+  margin: 0;
+  text-align: left;
+  position: sticky;
+  top: calc(10vh + 20px);
+  z-index: 1;
+  color: #34204d;
+  display: inline-block;
+}
+
+.section-horizontal .section-content {
+  padding-right: 2vw;
+  padding-left: 0;
+}
+
+/* Adjust section-images for horizontal layout */
+.section-horizontal .section-images {
+  width: 100%;
+}
+
+/* Adjust event-container for horizontal layout */
+.section-horizontal .event-container {
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* Adjust the separator for horizontal sections */
+.section-horizontal:not(:last-child)::after {
+  left: 5%;
+  width: 90%;
+}
+
+p {
+  color: #34204d;
+}
+
+/* Add footer styles */
+.footer {
+  background-color: #34204d;
+  color: #c3c0ed;
+  padding: 40px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-logo-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.footer-logo-outer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  animation: spin 45s linear infinite;
+}
+
+.footer-logo-inner img {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  transform-origin: center;
+  z-index: 2;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-title {
+  font-family: "Another Typewriter", monospace;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.footer-text {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-contact {
+  color: #c3c0ed;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact:hover {
+  color: #ffffff;
+}
+
+/* Add media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .section-horizontal {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .section-horizontal .section-title {
+    position: relative; /* Remove sticky positioning on mobile */
+    top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px; /* Slightly smaller font size for mobile */
+  }
+
+  .section-horizontal .section-content {
+    padding: 0 20px; /* Add some padding on the sides */
+  }
+
+  /* Adjust section spacing for mobile */
+  .section {
+    width: 100%;
+    margin-top: 60px;
+    padding: 4vh 0;
+  }
+
+  /* Adjust footer for mobile */
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .event-container {
+    grid-template-columns: 1fr;
+  }
+
+  .circle-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    float: none;
+    display: block;
+  }
+
+  .circle-image.left,
+  .circle-image.right {
+    margin: 20px auto;
+    float: none;
+  }
+
+  .section-title {
+    font-size: 36px;
+    word-wrap: break-word;
+  }
+
+  #navigation ul {
+    gap: 15px;
+  }
+
+  #navigation ul li a {
+    font-size: 20px;
+  }
+
+  #side-nav {
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  /* Hide navigation on mobile */
+  #nav-container {
+    display: none;
+  }
+
+  /* Keep logo and social container visible */
+  #logo-container, #social-container {
+    display: flex;
+  }
+
+  .herd-section {
+    padding: 15vh 20px 10vh 20px;
+  }
+
+  .herd-logo {
+    width: 90%;
+  }
+
+  .herd-subtitle {
+    width: 90%;
+    font-size: 20px;
+  }
+}
+
+/* Add media query for smaller screens */
+@media screen and (max-width: 1024px) {
+  #social-container {
+    gap: 10px; /* Reduce gap on smaller screens */
+  }
+  
+  .social-link {
+    width: 25px; /* Even smaller icons */
+    height: 25px;
+  }
+  
+  #register-button {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+
+  #side-nav {
+    flex-wrap: nowrap; /* Change from wrap to nowrap */
+    height: 10vh;
+  }
+
+  /* Remove these since we're hiding nav on mobile */
+  #nav-container {
+    order: unset;
+    width: unset;
+    margin-top: unset;
+  }
+
+  #social-container {
+    order: unset;
+  }
+}
+
+/* Update circular images to squares */
+.circle-image {
+  width: min(300px, 100%);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 3px solid #34204d;
+  margin: 20px;
+}
+
+/* Right-aligned image */
+.circle-image.right {
+  float: right;
+  margin-left: 30px;
+  margin-right: 0;
+}
+
+/* Left-aligned image */
+.circle-image.left {
+  float: left;
+  margin-right: 30px;
+  margin-left: 0;
+}
+
+/* Adjust spacing around images */
+.circle-image + p,
+p + .circle-image {
+  margin-top: 0;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .circle-image {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin: 20px 0;
+  }
+}
+
+/* Clear floats after paragraphs */
+.section-text::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Styles for What section */
+.what-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.what-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(195, 192, 237, 0.2);
+    border-radius: 10px;
+}
+
+.what-item #image-container {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.what-item p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #34204d;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .what-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .what-item {
+        padding: 15px;
+    }
+
+    .what-item #image-container {
+        width: 80px;
+        height: 80px;
+    }
 }
