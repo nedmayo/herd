@@ -43,16 +43,7 @@ html {
   margin-bottom: 0;
   width: 100%;
   box-sizing: border-box;
-  min-height: 100vh;
-}
-
-/* Add mobile adjustments for Safari */
-@media screen and (max-width: 768px) {
-  .herd-section {
-    min-height: -webkit-fill-available; /* For iOS Safari */
-    min-height: 100dvh; /* Dynamic viewport height - modern browsers */
-    padding: 15vh 20px 5vh 20px; /* Reduce padding on mobile */
-  }
+  min-height: 100vh; /* Ensure it takes at least full viewport height */
 }
 
 #background-video {
