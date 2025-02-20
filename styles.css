@@ -132,6 +132,7 @@ html {
   text-align: justify;
   column-gap: 40px;
   line-height: 1.6;
+  margin: 0px auto 0px auto;
 }
 
 /* Update image-over-text styling */
@@ -218,7 +219,7 @@ html {
   /* padding: 20px; */
   width: 100%;
   max-width: 900px;
-  margin: 20px auto;
+  margin: 0px auto 0px auto;
   box-sizing: border-box;
 }
 
@@ -279,12 +280,35 @@ html {
   margin-right: 20px;
 }
 
-/* Ensure images adjust properly on small screens */
+.highlight-words {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center the words */
+}
+
+.highlight-word {
+  background-color: #ffc700;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0.5rem 0; /* Add vertical spacing between wrapped lines */
+}
+
+/* Mobile adjustments */
 @media screen and (max-width: 768px) {
   .inline-image {
       width: 40%;
       float: none;
       margin: 10px auto;
+  }
+
+  .highlight-words {
+    gap: 1rem; /* Reduce gap on mobile */
+  }
+  
+  .highlight-word {
+    font-size: 1.2rem; /* Slightly smaller text on mobile */
   }
 }
 
@@ -681,51 +705,52 @@ p {
   }
 }
 
-/* Update circular images to squares */
+/* Update circle image styles */
 .circle-image {
-  width: min(300px, 100%);
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border: 3px solid #34204d;
-  margin: 20px;
+    width: min(300px, 100%);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 3px solid #34204d;
+    margin: 20px;
 }
 
 /* Right-aligned image */
 .circle-image.right {
-  float: right;
-  margin-left: 30px;
-  margin-right: 0;
+    float: right;
+    margin-left: 30px;
+    margin-right: 0;
 }
 
 /* Left-aligned image */
 .circle-image.left {
-  float: left;
-  margin-right: 30px;
-  margin-left: 0;
-}
-
-/* Adjust spacing around images */
-.circle-image + p,
-p + .circle-image {
-  margin-top: 0;
+    float: left;
+    margin-right: 30px;
+    margin-left: 0;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-  .circle-image {
-    width: 100%;
-    height: auto;
-    float: none;
-    margin: 20px 0;
-  }
+    .circle-image {
+        float: none !important; /* Override any float */
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        display: block;
+    }
+    
+    /* Clear any text wrapping around the image on mobile */
+    .section-text {
+        clear: both;
+        display: block;
+    }
 }
 
 /* Clear floats after paragraphs */
 .section-text::after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Styles for What section */
@@ -776,5 +801,91 @@ p + .circle-image {
     .what-item #image-container {
         width: 80px;
         height: 80px;
+    }
+}
+
+.how-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.how-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.how-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.mini-logo-container {
+    width: 78px;  /* Increased from 65px (20% larger) */
+    height: 78px; /* Increased from 65px (20% larger) */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mini-horns {
+    width: 100%;
+    height: 100%;
+    animation: spin 45s linear infinite;
+}
+
+.horns-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    color: #34204d;
+    font-size: 0.96rem; /* Increased from 0.8rem (20% larger) */
+    font-weight: bold;
+    pointer-events: none;
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .mini-logo-container {
+        width: 60px;  /* Increased from 50px (20% larger) */
+        height: 60px; /* Increased from 50px (20% larger) */
+    }
+    
+    .horns-text {
+        font-size: 0.84rem; /* Increased from 0.7rem (20% larger) */
+    }
+}
+
+.text-highlight {
+    background-color: #ffc700;
+}
+
+.end-horns {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.end-horns .mini-horns {
+    width: 100%;
+    height: 100%;
+    animation: spin 45s linear infinite;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .end-horns {
+        width: 30px;
+        height: 30px;
+        margin-left: 6px;
     }
 }
