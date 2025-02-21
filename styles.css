@@ -850,7 +850,7 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-30deg);
     color: #34204d;
     font-size: 0.96rem; /* Increased from 0.8rem (20% larger) */
     font-weight: bold;
