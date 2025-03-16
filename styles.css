@@ -73,6 +73,21 @@ html {
   width: 100%;
 }
 
+.newsletter-section {
+  font-family: "Another Typewriter", monospace;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #34204d;
+  background-color: #ffc700;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .section {
   padding: 4vh 5vw;
   font-size: 18px;
