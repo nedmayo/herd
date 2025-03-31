@@ -26,51 +26,15 @@
 </head>
 
 <body>
-    <div id="side-nav">
-        <div id="logo-container">
-            <div id="outer-logo">
-                <img src="content/Herd Horns.svg" alt="Herd Horns">
-            </div>
-            <div id="inner-logo">
-                <img src="content/Herd H.svg" alt="Herd H">
-            </div>
-        </div>
+    <!-- Replace the navbar include with direct navigation -->
+    <nav class="top-nav">
+        <a href="#what">what</a>
+        <a href="#how">how</a>
+        <a href="#when">when</a>
+    </nav>
 
-        <div id="nav-container">
-            <nav id="navigation">
-                <ul>
-                    <li><a href="#what">what?</a></li>
-                    <li><a href="#how">how?</a></li>
-                    <li><a href="#when">when?</a></li>
-                    <li><a href="#why">why?</a></li>
-                    <li><a href="#who">who?</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div id="social-container">
-            <a href="https://www.instagram.com/herd.storytelling" target="_blank" class="social-link">
-                <img src="content/instagram-icon.svg" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61573595049618" target="_blank" class="social-link">
-                <img src="content/facebook-icon.svg" alt="Facebook" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/company/youareherd/" target="_blank" class="social-link">
-                <img src="content/linkedin-icon.svg" alt="Facebook" class="social-icon">
-            </a>
-            <a href="mailto:info@youareherd.org" class="social-link">
-                <img src="content/email-icon.svg" alt="Email" class="social-icon">
-            </a>
-            <a href="https://www.eventbrite.com/e/herd-storytelling-event-at-the-urban-growler-tickets-1226859693369?aff=oddtdtcreator"
-                id="register-button" target="_blank" style="background-color: #ffc700;">
-                Register
-            </a>
-        </div>
-
-
-
-
-    </div>
+    <!-- Keep the existing bottom navbar -->
+    <div w3-include-html="navbar.html"></div>
 
     <div id="left-section">
         <div class="herd-section" id="home">
@@ -99,7 +63,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUWXf6VWonCT4Zvnoe80TiGM3T9jy9-9vQpV4T13Nl9E9NAg/viewform?usp=dialog"
                 target="_blank">
                 <button
-                    style="background-color: #34204d; color: #ffc700; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">→</button>
+                    style="background-color: #34204d; color: #66b4ab; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">→</button>
             </a>
         </div>
 
@@ -192,7 +156,7 @@
                             <div class="detail-box">7:00-8:30pm</div>
                             <a href="https://www.eventbrite.com/e/herd-storytelling-event-at-the-urban-growler-tickets-1226859693369?aff=oddtdtcreator"
                                 target="_blank">
-                                <div class="detail-box" style="background-color: #ffc700;">
+                                <div class="detail-box" style="background-color: #66b4ab; color:#34204d">
 
                                     Register
                                 </div>
@@ -201,7 +165,7 @@
                         <div class="event-description">
                             <div class="event-title" style="border: none;">SOLD OUT!</div>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScvSG-45YLpZMhyvVOBI_OZC3WO9NgdR_cTnfhp_K9Sz9vD0g/viewform"
-                                target="_blank" style="color: text-decoration: underline;">
+                                target="_blank" style="color: #66b4ab; text-decoration: underline;">
                                 Join our newsletter to hear about upcoming events →
                             </a>
                             <br /><br />
@@ -305,7 +269,17 @@
             </div>
         </div>
 
-
+        <!-- Add this before closing left-section div -->
+        <div class="page-ending">
+            <div class="page-ending-logo">
+                <div class="page-ending-outer">
+                    <img src="content/Herd Horns.svg" alt="Herd Horns">
+                </div>
+                <div class="page-ending-inner">
+                    <img src="content/Herd H purple.svg" alt="Herd H">
+                </div>
+            </div>
+        </div>
     </div>
     <!-- 
     <div class="footer">
@@ -342,6 +316,31 @@
             </p>
         </div>
     </div> -->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                }
+            }
+        }
+        includeHTML();
+    </script>
 </body>
 
 </html>

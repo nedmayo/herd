@@ -79,7 +79,7 @@ html {
   line-height: 1.5;
   text-align: justify;
   color: #34204d;
-  background-color: #ffc700;
+  background-color: #66b4ab;
   padding: 10px 20px;
   align-items: center;
   justify-content: center;
@@ -131,7 +131,6 @@ html {
 
 .section-title {
   width: fit-content;
-  max-height: 100px;
   font-size: 48px;
   font-family: "Another Typewriter", monospace;
   font-size: 48px;
@@ -304,7 +303,7 @@ html {
 }
 
 .highlight-word {
-  background-color: #ffc700;
+  background-color: #66b4ab;
   font-weight: bold;
   font-size: 1.5rem;
   margin: 0.5rem 0; /* Add vertical spacing between wrapped lines */
@@ -327,23 +326,109 @@ html {
   }
 }
 
+/* Desktop navbar layout */
 #side-nav {
-  font-family: "Another Typewriter", monospace;
-  background-color: #34204d;
-  width: 100vw;
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  height: 10vh;
-  box-sizing: border-box;
-  z-index: 100;
-  left: 0;
-  right: 0;
+    font-family: "Another Typewriter", monospace;
+    background-color: #34204d;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    height: 10vh;
+    box-sizing: border-box;
+    z-index: 100;
+    left: 0;
+    right: 0;
+}
+
+/* Logo container */
+#logo-container {
+    position: relative;
+    width: 8.5vh;
+    height: 8.5vh;
+    flex-shrink: 0;
+}
+
+#nav-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#social-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.hamburger {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    z-index: 102;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: #66b4ab;
+    transition: all 0.3s ease;
+}
+
+/* Mobile navbar styles */
+@media screen and (max-width: 768px) {
+    #side-nav {
+        padding: 10px 15px;
+        justify-content: space-between;
+    }
+
+    /* Remove hamburger-related styles */
+    .hamburger {
+        display: none;
+    }
+
+    #nav-container {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        padding-top: 0;
+        display: flex !important;
+    }
+
+    #navigation ul {
+        flex-direction: row;
+        gap: 15px;
+        padding: 0;
+    }
+
+    #navigation ul li a {
+        font-size: 18px;
+    }
+
+    #social-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #34204d;
+        padding: 1rem;
+        box-sizing: border-box;
+        justify-content: center;
+        display: flex !important;
+    }
 }
 
 /* Adjust logo size */
@@ -377,16 +462,23 @@ html {
 
 /* Update register button styles to work with anchor tag */
 #register-button {
-  background: #ececec;
+  background-color: #66b4ab !important;
+  color: #34204d !important;
   border-radius: 30px;
-  padding: 6px 15px;
+  padding: 8px 20px;
   margin: 0;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
-  color: inherit;
+  border: none;
+  font-family: "Another Typewriter", monospace;
+}
+
+#register-button:hover {
+  background-color: #ffffff !important;
+  transform: translateY(-2px);
 }
 
 /* Add styles for register link in event details */
@@ -417,6 +509,12 @@ html {
   color: #ffffff;
 }
 
+/* Navigation active state */
+#navigation ul li a.active {
+    color: #66b4ab;
+    font-weight: bold;
+}
+
 /* Add this to your existing styles.css */
 @keyframes spin {
   from {
@@ -427,34 +525,37 @@ html {
   }
 }
 
-/* Adjust social container layout */
-#social-container {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Reduce gap between social items */
-  margin: 0;
-  padding: 0;
-}
-
 /* Update social link styles */
 .social-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
-  transition: all 0.3s ease;
-}
-
-/* Update social link hover effect */
-.social-link:hover .social-icon {
-  filter: brightness(0) saturate(100%) invert(79%) sepia(19%) saturate(775%) hue-rotate(203deg) brightness(100%) contrast(87%);
 }
 
 .social-icon {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: filter 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  #social-container {
+    gap: 10px;
+  }
+
+  .social-link {
+    width: 25px;
+    height: 25px;
+  }
+
+  #register-button {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
 }
 
 /* Remove the scale transform hover effect */
@@ -891,7 +992,7 @@ p {
 }
 
 .text-highlight {
-    background-color: #ffc700;
+    background-color: #66b4ab; /* Changed from solid #66b4ab to transparent */
 }
 
 .end-horns {
@@ -914,5 +1015,469 @@ p {
         width: 30px;
         height: 30px;
         margin-left: 6px;
+    }
+}
+
+/* Support page styles */
+.support-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.support-tier {
+    background-color: rgba(52, 32, 77, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.support-tier:hover {
+    transform: translateY(-5px);
+}
+
+.support-tier h2 {
+    color: #34204d;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.tier-amount {
+    color: #34204d;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.support-tier ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.support-tier li {
+    margin: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.support-tier li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+}
+
+/* Support page specific styles */
+.support-page {
+    padding-top: 10vh;
+    background-color: #ecececff;
+}
+
+.support-hero {
+    position: relative;
+    
+    min-height: 25vh; /* Reduced from 50vh */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.support-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.support-hero h1 {
+    color: #34204d;
+    font-size: 4rem;
+    font-family: "Another Typewriter", monospace;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: .5rem;
+
+}
+
+.support-intro {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    text-align: justify;
+    color: #34204d;
+    line-height: 1.6;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Reduced from 2rem */
+    padding: 0 2rem 2rem 2rem; /* Added consistent padding */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.support-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1.5rem; /* Reduced from 2rem */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.support-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.support-card h2 {
+    color: #34204d;
+    font-size: 1.8rem;
+    margin: 0;
+    font-family: "Another Typewriter", monospace;
+}
+
+.support-card .amount {
+    font-size: 2.5rem;
+    color: #66b4ab;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.support-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.support-card li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.support-card li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #66b4ab;
+}
+
+/* Card variations */
+.support-card.matriarch {
+    background-color: #34204d;
+}
+
+.support-card.matriarch h2,
+.support-card.matriarch li {
+    color: white;
+}
+
+.support-card.shero {
+    border: 3px solid #34204d;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .support-hero {
+        min-height: 0px; /* Even smaller on mobile */
+    }
+
+    .support-hero h1 {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+
+    .support-intro {
+        padding: 0 1.5rem;
+        margin: 1.5rem auto;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .support-card {
+        padding: 1.25rem;
+    }
+
+    .founder-cta {
+        margin: 1.5rem auto;
+    }
+
+    .levels-title {
+        margin: 1.5rem auto;
+    }
+}
+
+/* Add these new generalized styles to your existing styles.css */
+
+/* Generic page content styles */
+.page-content {
+    padding-top: 10vh;
+    background-color: #ecececff;
+}
+
+/* Generic hero section styles */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    min-height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    color: #34204d;
+    font-size: 4rem;
+    font-family: "Another Typewriter", monospace;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+}
+
+/* Generic content intro styles */
+.content-intro {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    text-align: justify;
+    color: #34204d;
+    line-height: 1.6;
+}
+
+/* Generic content grid styles */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem 2rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Generic content card styles */
+.content-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-card h2 {
+    color: #34204d;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+    font-family: "Another Typewriter", monospace;
+}
+
+/* Highlight link styles */
+.highlight-link {
+    display: inline-block;
+    color: #34204d;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #66b4ab;
+    border-radius: 30px;
+    margin: 0.5rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.highlight-link:hover {
+    background-color: #34204d;
+    color: #66b4ab;
+}
+
+/* Social links container */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Event info styles */
+.event-info {
+    margin-top: 1rem;
+}
+
+.event-info p {
+    margin: 0.5rem 0;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+        padding: 1.5rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .content-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Update levels title to include button */
+.levels-title {
+    text-align: center;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.levels-title h2 {
+    color: #34204d;
+    font-size: 2.5rem;
+    font-family: "Another Typewriter", monospace;
+    margin: 0;
+}
+
+/* Remove the old founder-cta styles since we're moving the button */
+.founder-cta {
+    display: none;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .levels-title {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .levels-title h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Button styling */
+.founder-button {
+    display: inline-block;
+    background-color: #66b4ab;
+    color: #34204d;
+    font-family: "Another Typewriter", monospace;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.founder-button:hover {
+    background-color: #34204d;
+    color: #66b4ab;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .founder-button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.6rem;
+    }
+}
+
+/* Page ending styles */
+.page-ending {
+    width: 100%;
+    padding: 2rem 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-ending-logo {
+    position: relative;
+    width: 8.5vh;
+    height: 8.5vh;
+}
+
+.page-ending-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    animation: spin 45s linear infinite;
+}
+
+.page-ending-inner {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    transform-origin: center;
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .page-ending {
+        display: none; /* Hide the entire ending section on mobile */
+    }
+}
+
+/* Add padding to bottom of content on mobile */
+@media screen and (max-width: 768px) {
+    .support-page,
+    #left-section {
+        padding-bottom: calc(1rem + 65px); /* Account for bottom bar height + padding */
+    }
+
+    /* Adjust social container positioning */
+    #social-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #34204d;
+        padding: 1rem;
+        box-sizing: border-box;
+        justify-content: center;
+        display: flex !important;
+        height: auto; /* Let height be determined by content */
+        z-index: 100; /* Ensure it stays on top */
     }
 }
