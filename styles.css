@@ -1114,6 +1114,7 @@ p {
     text-align: justify;
     color: #34204d;
     line-height: 1.6;
+    font-size: 18px;
 }
 
 .support-grid {
@@ -1172,18 +1173,23 @@ p {
     color: #66b4ab;
 }
 
-/* Card variations */
-.support-card.matriarch {
+/* Update card variations */
+.support-card.friend {
     background-color: #34204d;
 }
 
-.support-card.matriarch h2,
-.support-card.matriarch li {
+.support-card.friend h2,
+.support-card.friend li {
     color: white;
 }
 
-.support-card.shero {
+.support-card.badass {
     border: 3px solid #34204d;
+}
+
+/* Remove the border from matriarch */
+.support-card.matriarch {
+    border: none;
 }
 
 /* Mobile adjustments */
