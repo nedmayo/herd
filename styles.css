@@ -1487,3 +1487,164 @@ p {
         z-index: 100; /* Ensure it stays on top */
     }
 }
+
+/* Mobile social container behavior */
+@media screen and (max-width: 768px) {
+    #social-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #34204d;
+        padding: 1rem;
+        box-sizing: border-box;
+        justify-content: center;
+        display: flex !important;
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
+        transform: translateY(0); /* Explicitly set initial position */
+    }
+
+    /* Update hiding transform to ensure it moves completely off screen */
+    #social-container.hidden {
+        transform: translateY(150%);
+    }
+}
+
+/* Simplified founding members styles */
+.founding-members-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.members-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.founding-members-section h2 {
+    text-align: center;
+    font-family: "Another Typewriter", monospace;
+    color: #34204d;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.members-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.members-list span {
+    color: #34204d;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .founding-members-section {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .members-container {
+        padding: 2rem 1rem;
+    }
+
+    .founding-members-section h2 {
+        font-size: 2rem;
+    }
+
+    .members-list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+/* Remove old styles */
+.horns-border,
+.horns-circle,
+.member-category,
+.member-names,
+.matriarch-names {
+    display: none;
+}
+
+/* Update founding members styles */
+.member-tier {
+    margin-bottom: 3rem;
+}
+
+.member-tier h3 {
+    color: #66b4ab;
+    font-family: "Another Typewriter", monospace;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.members-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.members-list span {
+    color: #34204d;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+/* Remove matriarch-specific styling */
+.members-list.matriarch span {
+    font-weight: normal;  /* Reset to normal weight */
+    font-size: 1.1rem;   /* Match other names */
+    color: #34204d;      /* Match other names */
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .member-tier {
+        margin-bottom: 2rem;
+    }
+
+    .member-tier h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .members-list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+/* Add special layout for top tiers */
+.top-tiers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Adjust spacing for remaining tiers */
+.top-tiers + .member-tier {
+    margin-top: 3rem;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .top-tiers {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

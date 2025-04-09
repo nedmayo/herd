@@ -35,3 +35,30 @@ function initializeNavbar() {
 
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", initializeNavbar);
+
+// Add scroll behavior for mobile footer
+let lastScroll = 0;
+const socialContainer = document.getElementById("social-container");
+
+// Add console log to check if element is found
+console.log("Social container:", socialContainer);
+
+window.addEventListener("scroll", () => {
+  if (window.innerWidth <= 768) {
+    const currentScroll = window.pageYOffset;
+
+    // Add console logs to debug scroll behavior
+    console.log("Current scroll:", currentScroll);
+    console.log("Last scroll:", lastScroll);
+
+    if (currentScroll > lastScroll) {
+      console.log("Scrolling down - hiding footer");
+      socialContainer?.classList.add("hidden");
+    } else {
+      console.log("Scrolling up - showing footer");
+      socialContainer?.classList.remove("hidden");
+    }
+
+    lastScroll = currentScroll;
+  }
+});
