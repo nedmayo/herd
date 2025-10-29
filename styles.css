@@ -58,6 +58,9 @@ html {
   width: 100%; /* Change from 100vw to 100% */
   object-fit: cover;
   z-index: 0;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .herd-logo {

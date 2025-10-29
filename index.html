@@ -42,7 +42,7 @@
 
     <div id="left-section">
         <div class="herd-section" id="home">
-            <video autoplay muted loop playsinline id="background-video">
+            <video autoplay muted loop playsinline preload="auto" id="background-video">
                 <source src="content/Herd Crowd.mp4" type="video/mp4">
             </video>
 
@@ -372,6 +372,21 @@
             }
         }
         includeHTML();
+
+        // Ensure video plays on desktop browsers
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('background-video');
+            if (video) {
+                video.muted = true;
+                video.play().catch(function (error) {
+                    // If autoplay fails, try to play on user interaction
+                    document.addEventListener('click', function playVideo() {
+                        video.play().catch(function () { });
+                        document.removeEventListener('click', playVideo);
+                    }, { once: true });
+                });
+            }
+        });
     </script>
 </body>
 
