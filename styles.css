@@ -32,7 +32,6 @@ html {
 
 .herd-section {
   position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +45,11 @@ html {
   min-height: 100vh; /* Ensure it takes at least full viewport height */
 }
 
+.herd-section > *:not(#background-video) {
+  position: relative;
+  z-index: 1;
+}
+
 #background-video {
   position: absolute;
   top: 0;
@@ -53,7 +57,7 @@ html {
   height: 100%; /* Change from 100vh to 100% */
   width: 100%; /* Change from 100vw to 100% */
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
 }
 
 .herd-logo {
