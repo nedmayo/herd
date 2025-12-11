@@ -108,15 +108,17 @@ html {
 .section:not(:last-child) {
   position: relative;
   border-bottom: none;
+  margin-bottom: 6vh; /* Space between sections */
 }
 
-/* Create centered line that's 90% width */
-.section:not(:last-child)::after {
+/* Create line under section title - full width, consistent positioning */
+.section-horizontal .section-title::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 5%;
-  width: 90%;
+  left: 0;
+  right: 0;
+  width: 100%;
   height: 2px;
   background-color: #34204d;
 }
@@ -415,28 +417,38 @@ html {
 /* Remove right title variant and simplify section styles */
 .section-horizontal {
   display: grid;
-  grid-template-columns: minmax(200px, 300px) 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   align-items: start;
+  padding: 4vh 5vw;
   width: 100%;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0;
   box-sizing: border-box;
+  position: relative;
 }
 
 .section-horizontal .section-title {
-  margin: 0;
+  position: absolute;
+  top: 4vh;
+  left: 5vw;
+  right: 5vw;
+  width: calc(100% - 10vw);
   text-align: left;
-  position: sticky;
-  top: calc(10vh + 20px);
+  font-size: 48px;
+  margin: 0;
+  padding-bottom: 20px;
   z-index: 1;
   color: #34204d;
-  display: inline-block;
+  display: block;
 }
 
 .section-horizontal .section-content {
-  padding-right: 2vw;
-  padding-left: 0;
+  padding-top: calc(
+    4vh + 48px + 20px + 15px
+  ); /* title top + title height + title padding + line spacing */
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Adjust section-images for horizontal layout */
@@ -542,11 +554,20 @@ p {
 
 #footer-navigation ul {
   display: flex;
-  gap: 30px;
+  gap: 0;
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-direction: row;
+  flex-direction: column;
+  text-align: left;
+}
+
+#footer-navigation ul li {
+  margin-bottom: 10px;
+}
+
+#footer-navigation ul li:last-child {
+  margin-bottom: 0;
 }
 
 #footer-navigation ul li a {
@@ -555,6 +576,8 @@ p {
   font-family: "Another Typewriter", monospace;
   font-size: 18px;
   transition: color 0.3s ease;
+  display: block;
+  text-align: left;
 }
 
 #footer-navigation ul li a:hover {
@@ -591,8 +614,8 @@ p {
 
   #footer-navigation ul {
     flex-direction: column;
-    gap: 15px;
-    text-align: center;
+    gap: 10px;
+    text-align: left;
   }
 }
 
@@ -600,20 +623,29 @@ p {
 @media screen and (max-width: 768px) {
   .section-horizontal {
     grid-template-columns: 1fr;
-    padding: 0 15px;
+    padding: 4vh 5vw;
+    width: 100%;
   }
 
   .section-horizontal .section-title {
-    position: relative;
-    top: 0;
-    margin-bottom: 20px;
-    width: 100%;
-    text-align: center;
+    position: absolute;
+    top: 4vh;
+    left: 5vw;
+    right: 5vw;
+    width: calc(100% - 10vw);
+    text-align: left;
     font-size: 36px;
+    padding-bottom: 15px;
+  }
+
+  .section-horizontal .section-title::after {
+    bottom: 0;
   }
 
   .section-horizontal .section-content {
-    padding: 0 20px;
+    padding-top: calc(
+      4vh + 36px + 15px + 12px
+    ); /* title top + title height + title padding + line spacing */
   }
 
   /* Adjust section spacing for mobile */
