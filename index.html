@@ -30,287 +30,271 @@
 </head>
 
 <body>
-    <!-- Replace the navbar include with direct navigation -->
-    <nav class="top-nav">
-        <a href="#what">what</a>
-        <a href="#how">how</a>
-        <a href="#when">when</a>
-    </nav>
-
-    <!-- Keep the existing bottom navbar -->
+    <!-- Include navbar -->
     <div w3-include-html="navbar.html"></div>
 
-    <div id="left-section">
-        <div class="herd-section" id="home">
-            <video autoplay muted loop playsinline id="background-video">
-                <source src="content/HerdCrowd.mp4" type="video/mp4">
-            </video>
+    <div class="herd-section" id="home">
+        <video autoplay muted loop playsinline preload="metadata" id="background-video" poster="content/herd_circle.png"
+            style="background: transparent url('content/herd_circle.png') 50% 50% / cover no-repeat;">
+            <source src="content/HerdCrowd.mp4" type="video/mp4">
+        </video>
 
-            <div class="herd-logo">
+        <!-- <div class="herd-logo">
                 <img class="herd-logo" src="content/Herd Logo.svg" alt="Herd Horns">
-            </div>
+            </div> -->
 
-            <div class="herd-subtitle">
-                <br />
-                a women-centered storytelling platform where we connect and
-                empower each other by authentically and boldly sharing our well-earned life stories
-            </div>
-
-            <p style="margin-top:100px; font-weight: bold;">CONTINUE</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24">
-                <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
-            </svg>
-        </div>
-        <div class="newsletter-section">
-            Join our newsletter
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUWXf6VWonCT4Zvnoe80TiGM3T9jy9-9vQpV4T13Nl9E9NAg/viewform?usp=dialog"
-                target="_blank">
-                <button
-                    style="background-color: #34204d; color: #66b4ab; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">→</button>
-            </a>
+        <div class="herd-subtitle">
+            <br />
+            a women-centered storytelling platform where we connect and
+            empower each other by authentically and boldly sharing our well-earned life stories
         </div>
 
-        <div class="section section-horizontal" id="what">
-            <div class="section-title">
-                <span>what is herd?</span>
-            </div>
-            <div class="section-content">
-                <div class="highlight-words">
-                    <span class="highlight-word">STORYTELLING.</span>
-                    <span class="highlight-word">COMMUNITY.</span>
-                    <span class="highlight-word">JOY.</span>
-                </div>
-                <p class="section-text">HERD is an innovative storytelling platform that empowers women to share their
-                    stories with
-                    an enthusiastic and supportive audience.
-                    Through the art of storytelling and active
-                    listening, HERD fosters a sense of community, providing women with a space to connect, find
-                    common ground, and discover their voice.</p>
+        <p style="margin-top:100px; font-weight: bold;">CONTINUE</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24">
+            <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+        </svg>
+    </div>
+    <div class="newsletter-section">
+        Join our newsletter
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUWXf6VWonCT4Zvnoe80TiGM3T9jy9-9vQpV4T13Nl9E9NAg/viewform?usp=dialog"
+            target="_blank">
+            <button
+                style="background-color: #34204d; color: #fffaec; border: none; padding: 10px 20px; border-radius: 0; cursor: pointer;">→</button>
+        </a>
+    </div>
 
-                <!-- 3-photo layout -->
-                <div class="three-photo-grid">
-                    <img src="content/aug3.jpeg" alt="Women connecting through stories" class="grid-photo">
-                    <img src="content/aug4.jpeg" alt="Community building moments" class="grid-photo">
-                    <img src="content/aug2.jpeg" alt="Joyful storytelling" class="grid-photo">
-                </div>
-
-            </div>
+    <div class="section section-horizontal" id="what">
+        <div class="section-title">
+            <span>what is herd?</span>
         </div>
-
-        <div class="section section-horizontal" id="how">
-            <div class="section-title">
-                how does it work?
+        <div class="section-content">
+            <div class="highlight-words">
+                <span class="highlight-word">STORYTELLING.</span>
+                <span class="highlight-word">COMMUNITY.</span>
+                <span class="highlight-word">JOY.</span>
             </div>
-            <div class="section-content">
-                <div class="how-grid">
-                    <div class="how-item">
-                        <div class="how-content">
-                            <div class="mini-logo-container">
-                                <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                                <span class="horns-text">ATTEND</span>
-                            </div>
-                            <p class="section-text">
-                                HERD hosts regular events featuring amateur storytelling performances by women, for
-                                women.
-                                Join us to listen, share, laugh, weep, bond, and connect!
-                            </p>
+            <p class="section-text">HERD is an innovative storytelling platform that empowers women to share their
+                stories with
+                an enthusiastic and supportive audience.
+                Through the art of storytelling and active
+                listening, HERD fosters a sense of community, providing women with a space to connect, find
+                common ground, and discover their voice.</p>
+
+            <!-- 3-photo layout -->
+            <div class="three-photo-grid">
+                <img src="content/aug3.jpeg" alt="Women connecting through stories" class="grid-photo">
+                <img src="content/aug4.jpeg" alt="Community building moments" class="grid-photo">
+                <img src="content/aug2.jpeg" alt="Joyful storytelling" class="grid-photo">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section section-horizontal" id="how">
+        <div class="section-title">
+            how does it work?
+        </div>
+        <div class="section-content">
+            <div class="how-grid">
+                <div class="how-item">
+                    <div class="how-content">
+                        <div class="mini-logo-container">
+                            <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
+                            <span class="horns-text">ATTEND</span>
                         </div>
-                    </div>
-                    <div class="how-item">
-                        <div class="how-content">
-                            <div class="mini-logo-container">
-                                <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                                <span class="horns-text">SHARE</span>
-                            </div>
-                            <p class="section-text">
-                                You can simply be part of the audience and support the storytellers or throw your name
-                                into
-                                the hat to be one of the featured "Yaks."
-                            </p>
-                        </div>
-                    </div>
-                    <div class="how-item">
-                        <div class="how-content">
-                            <div class="mini-logo-container">
-                                <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                                <span class="horns-text">REVEL</span>
-                            </div>
-                            <p class="section-text">
-                                HERD provides a safe and empowering space for women to share their stories— there will
-                                be
-                                no judging or winners. We draw inspiration from other storyslams like NPR's The Moth,
-                                but with a
-                                women-centered, joy-forward focus.
-                            </p>
-                        </div>
+                        <p class="section-text">
+                            HERD hosts regular events featuring amateur storytelling performances by women, for
+                            women.
+                            Join us to listen, share, laugh, weep, bond, and connect!
+                        </p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="section section-horizontal" id="when">
-            <div class="section-title">
-                <span>when and where?</span>
-            </div>
-            <div class="section-content">
-                <div class="event-container">
-                    <div class="event-image">
-                        <div
-                            style="background:  #34204d; border-radius: 20px; padding: 2rem; color: white; text-align: center; font-family: 'Another Typewriter', monospace; font-size: 2.5rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-                            TBA
+                <div class="how-item">
+                    <div class="how-content">
+                        <div class="mini-logo-container">
+                            <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
+                            <span class="horns-text">SHARE</span>
                         </div>
-                    </div>
-                    <div class="event-info">
-                        <div class="event-title">
-                            Upcoming Event: TBA
-                        </div>
-                        <div class="event-details">
-                            <div class="detail-box">2/11/26</div>
-                            <div class="detail-box">7:00-8:30pm</div>
-                        </div>
-                        <div class="event-description">
-                            Location: CHS Field <br />
-                            Saint Paul, Minnesota <br />
-                            <br />
-                            Theme to be announced. More details coming soon!
-                        </div>
+                        <p class="section-text">
+                            You can simply be part of the audience and support the storytellers or throw your name
+                            into
+                            the hat to be one of the featured "Yaks."
+                        </p>
                     </div>
                 </div>
-
-                <!-- Add coming soon section -->
-            </div>
-        </div>
-
-        <div class="section section-horizontal" id="why">
-            <div class="section-title">
-                <span>why herd?</span>
-            </div>
-            <div class="section-content">
-                <p class="section-text">
-                    <img src="content/aug5.png" alt="" class="circle-image right">
-                    We chose HERD because it encompasses HER— we want to be a space for anyone who
-                    has walked through this male-dominated/focused world and not felt entirely welcomed, who has found
-                    themselves <span class="text-highlight">'outside' the norm</span>, who has looked for a 'room of
-                    their own.' HERD also reminds us that
-                    what happens to one of us impacts all of us.
-                    <br /><br />
-                    We chose the word HERD because it's a homophone of HEARD. And that's
-                    our number one objective— <span class="text-highlight">to
-                        help you be heard</span>. Your stories matter. They will change the world.
-                    <br /><br />
-                    We chose the word HERD because it embodies the collective identity- the
-                    belonging to a group, the feeling of a sisterhood that is <span class="text-highlight">expansive and
-                        limitless</span>,
-                    but also right here, in the room.
-
-                    <br /><br />
-                    We know there are negative connotations to herds. Herd mentality isn't always a good thing.
-                    And being called a sheep- that most common of herd animals, can be synonymous for following blindly.
-                    And then there's cows. You old cow. But we aim to turn that all on its
-                    head. <span class="text-highlight">There is power in a herd</span>. And in the animal kingdom- herds
-                    are primarily female.
-                    <br /><br />
-
-                    Did you know that a herd of musk ox, when feeling threatened, rush together to form a protective
-                    circle, facing outward, forming a phalanx of heads and horns? It kind of feels like that
-                    is what might be needed right now. <span class="text-highlight">A phalanx of heads and horns.</span>
-
-                    <br /><br />
-                    So let's build our herd! We believe that by sharing your story with other women, by being vulnerable
-                    and sharing your mistakes as well as your triumphs, <span class="text-highlight">you will inspire
-                        others to get out there and
-                        give it a go</span>. You will make this world stronger, and safer, and frankly more delightful.
-                    Get ready
-                    to join the herd. Be HERD. You Are Herd.
-                </p>
-            </div>
-        </div>
-
-        <div class="section section-horizontal" id="who">
-            <div class="section-title">
-                <span>who are your herd matriarchs?</span>
-            </div>
-            <div class="section-content">
-
-                <p class="section-text">
-                    Amy and Gretchen met working as summer staff at YMCA Camp St.
-                    Croix in the late 1980s and have been
-                    lifelong friends. At a time when big hair and even bigger glasses were in style and girls were often
-                    taught that "no" meant "yes," they found camp to be a refuge. It was a place where young women could
-                    create their own path, rather than conform to societal expectations.
-                    They were free to be themselves—
-                    loud, funny, strong, brash, and daring. They led rowdy songs in the dining hall, made no apologies
-                    for
-                    winning a challenge, pushed their cabin groups to set high goals and expectations for themselves,
-                    and
-                    regularly challenged the notion of a "four-man tent." It just felt fun at the time, but it turns out
-                    they were also mentoring and empowering scores of girls; encouraging them to embrace their authentic
-                    selves.
-
-                    <br /><br />
-
-                    As Gretchen and Amy entered their fifties, they got the itch. What if there was a way to continue to
-                    help women find their voice? Was it time to take a role as an elder and bring the herd
-                    together for
-                    safety, strength, and community? We think so! Let's do this.
-                    <!-- <span class="end-horns">
-                        <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                    </span> -->
-                </p>
-                <img src="content/oct_photo.jpeg" alt="Women sharing stories" class="circle-image">
-                <img src="content/old1.png" alt="Women sharing stories" class="circle-image">
-
-
-            </div>
-        </div>
-
-        <!-- Add this before closing left-section div -->
-        <div class="page-ending">
-            <div class="page-ending-logo">
-                <div class="page-ending-outer">
-                    <img src="content/Herd Horns.svg" alt="Herd Horns">
-                </div>
-                <div class="page-ending-inner">
-                    <img src="content/Herd H purple.svg" alt="Herd H">
+                <div class="how-item">
+                    <div class="how-content">
+                        <div class="mini-logo-container">
+                            <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
+                            <span class="horns-text">REVEL</span>
+                        </div>
+                        <p class="section-text">
+                            HERD provides a safe and empowering space for women to share their stories— there will
+                            be
+                            no judging or winners. We draw inspiration from other storyslams like NPR's The Moth,
+                            but with a
+                            women-centered, joy-forward focus.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 
-    <div class="footer">
-        <div class="footer-section">
-            <div class="footer-logo-container">
-                <div class="footer-logo-outer">
-                    <img src="content/Herd Horns.svg" alt="Herd Horns">
+
+    <div class="section section-horizontal" id="when">
+        <div class="section-title">
+            <span>when and where?</span>
+        </div>
+        <div class="section-content">
+            <div class="event-container">
+                <div class="event-image">
+                    <div
+                        style="background:  #34204d; border-radius: 0; padding: 2rem; color: white; text-align: center; font-family: 'Another Typewriter', monospace; font-size: 2.5rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                        TBA
+                    </div>
                 </div>
-                <div class="footer-logo-inner">
-                    <img src="content/Herd H.svg" alt="Herd H">
+                <div class="event-info">
+                    <div class="event-title">
+                        Upcoming Event: TBA
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-box">2/11/26</div>
+                        <div class="detail-box">7:00-8:30pm</div>
+                    </div>
+                    <div class="event-description">
+                        Location: CHS Field <br />
+                        Saint Paul, Minnesota <br />
+                        <br />
+                        Theme to be announced. More details coming soon!
+                    </div>
                 </div>
             </div>
+
+            <!-- Add coming soon section -->
+        </div>
+    </div>
+
+    <div class="section section-horizontal" id="why">
+        <div class="section-title">
+            <span>why herd?</span>
+        </div>
+        <div class="section-content">
+            <p class="section-text">
+                <img src="content/aug5.png" alt="" class="circle-image right">
+                We chose HERD because it encompasses HER— we want to be a space for anyone who
+                has walked through this male-dominated/focused world and not felt entirely welcomed, who has found
+                themselves <span class="text-highlight">'outside' the norm</span>, who has looked for a 'room of
+                their own.' HERD also reminds us that
+                what happens to one of us impacts all of us.
+                <br /><br />
+                We chose the word HERD because it's a homophone of HEARD. And that's
+                our number one objective— <span class="text-highlight">to
+                    help you be heard</span>. Your stories matter. They will change the world.
+                <br /><br />
+                We chose the word HERD because it embodies the collective identity- the
+                belonging to a group, the feeling of a sisterhood that is <span class="text-highlight">expansive and
+                    limitless</span>,
+                but also right here, in the room.
+
+                <br /><br />
+                We know there are negative connotations to herds. Herd mentality isn't always a good thing.
+                And being called a sheep- that most common of herd animals, can be synonymous for following blindly.
+                And then there's cows. You old cow. But we aim to turn that all on its
+                head. <span class="text-highlight">There is power in a herd</span>. And in the animal kingdom- herds
+                are primarily female.
+                <br /><br />
+
+                Did you know that a herd of musk ox, when feeling threatened, rush together to form a protective
+                circle, facing outward, forming a phalanx of heads and horns? It kind of feels like that
+                is what might be needed right now. <span class="text-highlight">A phalanx of heads and horns.</span>
+
+                <br /><br />
+                So let's build our herd! We believe that by sharing your story with other women, by being vulnerable
+                and sharing your mistakes as well as your triumphs, <span class="text-highlight">you will inspire
+                    others to get out there and
+                    give it a go</span>. You will make this world stronger, and safer, and frankly more delightful.
+                Get ready
+                to join the herd. Be HERD. You Are Herd.
+            </p>
+        </div>
+    </div>
+
+    <div class="section section-horizontal" id="who">
+        <div class="section-title">
+            <span>who are your herd matriarchs?</span>
+        </div>
+        <div class="section-content">
+
+            <p class="section-text">
+                Amy and Gretchen met working as summer staff at YMCA Camp St.
+                Croix in the late 1980s and have been
+                lifelong friends. At a time when big hair and even bigger glasses were in style and girls were often
+                taught that "no" meant "yes," they found camp to be a refuge. It was a place where young women could
+                create their own path, rather than conform to societal expectations.
+                They were free to be themselves—
+                loud, funny, strong, brash, and daring. They led rowdy songs in the dining hall, made no apologies
+                for
+                winning a challenge, pushed their cabin groups to set high goals and expectations for themselves,
+                and
+                regularly challenged the notion of a "four-man tent." It just felt fun at the time, but it turns out
+                they were also mentoring and empowering scores of girls; encouraging them to embrace their authentic
+                selves.
+
+                <br /><br />
+
+                As Gretchen and Amy entered their fifties, they got the itch. What if there was a way to continue to
+                help women find their voice? Was it time to take a role as an elder and bring the herd
+                together for
+                safety, strength, and community? We think so! Let's do this.
+                <!-- <span class="end-horns">
+                        <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
+                    </span> -->
+            </p>
+            <img src="content/oct_photo.jpeg" alt="Women sharing stories" class="circle-image">
+            <img src="content/old1.png" alt="Women sharing stories" class="circle-image">
+
+
+        </div>
+    </div>
+
+    <div class="page-ending">
+        <div class="page-ending-logo">
+            <div class="page-ending-outer">
+                <img src="content/Herd Horns.svg" alt="Herd Horns">
+            </div>
+            <div class="page-ending-inner">
+                <img src="content/Herd H purple.svg" alt="Herd H">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-section">
+            <h3 class="footer-title">Contact Us</h3>
+            <a href="mailto:info@youareherd.org" class="footer-contact">info@youareherd.org</a>
         </div>
 
         <div class="footer-section">
-            <p class="footer-text">
-                a women-centered storytelling platform where we connect and empower each other our well-earned life
-                stories.
-            </p>
+            <h3 class="footer-title">Join Our Newsletter</h3>
+            <iframe src="https://herdstorytelling.substack.com/embed" width="480" height="320"
+                style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
         </div>
 
         <div class="footer-section">
             <h3 class="footer-title">Connect With Us</h3>
             <div class="footer-social">
-                <a href="https://www.instagram.com" target="_blank" class="social-link">
+                <a href="https://www.instagram.com/herd.storytelling" target="_blank" class="social-link">
                     <img src="content/instagram-icon.svg" alt="Instagram" class="social-icon">
                 </a>
-                <a href="https://www.facebook.com" target="_blank" class="social-link">
+                <a href="https://www.facebook.com/profile.php?id=61573595049618" target="_blank" class="social-link">
                     <img src="content/facebook-icon.svg" alt="Facebook" class="social-icon">
                 </a>
+                <a href="https://www.linkedin.com/company/youareherd/" target="_blank" class="social-link">
+                    <img src="content/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+                </a>
             </div>
-            <p class="footer-text" style="margin-top: 20px;">
-                <a href="mailto:hello@herdstories.com" class="footer-contact">hello@herdstories.com</a>
-            </p>
         </div>
-    </div> -->
+    </div>
     <script>
         function includeHTML() {
             var z, i, elmnt, file, xhttp;

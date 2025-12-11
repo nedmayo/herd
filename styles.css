@@ -7,27 +7,15 @@
 
 body,
 html {
-  background: #ecececff;
+  background: #fffaec;
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: "Futura", sans-serif;
-  display: flex;
-  flex-direction: column; /* Change to column layout */
   overflow-x: hidden;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   box-sizing: border-box;
-}
-
-#left-section {
-  color: #34204d;
-  width: 100%;
-  margin-left: 0;
-  max-width: 100vw;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  padding: 0;
 }
 
 .herd-section {
@@ -40,9 +28,10 @@ html {
   padding: 20vh 5vw 10vh 5vw;
   border-bottom: none !important;
   margin-bottom: 0;
+  margin-top: 60px; /* Start immediately below navbar */
   width: 100%;
   box-sizing: border-box;
-  min-height: 100vh; /* Ensure it takes at least full viewport height */
+  min-height: calc(100vh - 60px); /* Account for navbar height */
 }
 
 .herd-section > *:not(#background-video) {
@@ -53,9 +42,10 @@ html {
 #background-video {
   position: absolute;
   top: 0;
-  left: 0;
-  height: 100%; /* Change from 100vh to 100% */
-  width: 100%; /* Change from 100vw to 100% */
+  left: 10px;
+  right: 10px;
+  height: 100%; /* Match parent height */
+  width: calc(100% - 20px); /* 30px padding on each side */
   object-fit: cover;
   z-index: 0;
   display: block;
@@ -86,7 +76,7 @@ html {
   line-height: 1.5;
   text-align: justify;
   color: #34204d;
-  background-color: #66b4ab;
+  background-color: #fffaec;
   padding: 10px 20px;
   align-items: center;
   justify-content: center;
@@ -116,36 +106,28 @@ html {
 
 /* Adjust separator line style */
 .section:not(:last-child) {
-  border-bottom: 2px solid #34204d; /* Make line thicker and match purple color */
   position: relative;
+  border-bottom: none;
 }
 
 /* Create centered line that's 90% width */
 .section:not(:last-child)::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
-  left: 5%; /* Start 5% from left */
-  width: 90%; /* Take up 90% of width */
-  height: 2px; /* Match border thickness */
-  background-color: #34204d; /* Match purple color */
-}
-
-/* Remove the full-width border since we're using pseudo-element */
-.section:not(:last-child) {
-  border-bottom: none;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background-color: #34204d;
 }
 
 .section-title {
   width: fit-content;
   font-size: 48px;
   font-family: "Another Typewriter", monospace;
-  font-size: 48px;
   font-weight: bold;
   color: #34204d;
-  /* background-color: #c3c0ed; */
-  /* margin-bottom: 20px; */
-  margin: 0px auto 0px auto; 
+  margin: 0px auto 0px auto;
   text-align: center;
 }
 
@@ -154,83 +136,6 @@ html {
   column-gap: 40px;
   line-height: 1.6;
   margin: 0px auto 0px auto;
-}
-
-/* Update image-over-text styling */
-.image-over-text {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Update image container styling */
-.image-over-text #image-container {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-/* Create a wrapper for all image-over-text elements */
-.section-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto;
-  align-items: flex-start; /* Align items to the top */
-}
-
-/* Ensure text alignment and spacing */
-.image-over-text p {
-  margin: 0;
-  padding: 0 10px;
-}
-
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-  .image-over-text #image-container {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-#image-container {
-  position: relative;
-  width: 25%;
-  height: 25%;
-  min-width: 150px;
-  min-height: 150px;
-  align-self: center; Align the logo to the top left
-  margin-bottom: 20px; /* Add space below the logo */
-}
-
-#outer-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  animation: spin 45s linear infinite;
-}
-
-/* Make sure the inner logo stays static */
-#inner-image img {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  transform-origin: center;
-  z-index: 2; /* Ensure inner logo stays on top */
 }
 
 .event-container {
@@ -272,7 +177,7 @@ html {
 .detail-box {
   background: #c3c0ed;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 0;
   border: 1px solid #ccc;
 }
 
@@ -284,24 +189,6 @@ html {
   text-align: justify;
 }
 
-.inline-image {
-  width: 30%; /* Adjust size as needed */
-  border: 4px solid #34204d;
-  border-radius: 20px;
-  margin: 10px 0;
-  display: block;
-}
-
-.inline-image.right {
-  float: right;
-  margin-left: 20px;
-}
-
-.inline-image.left {
-  float: left;
-  margin-right: 20px;
-}
-
 .highlight-words {
   display: flex;
   gap: 2rem;
@@ -311,168 +198,118 @@ html {
 }
 
 .highlight-word {
-  background-color: #66b4ab;
+  background-color: #f9a11b;
+  color: #34204d;
   font-weight: bold;
   font-size: 1.5rem;
-  margin: 0.5rem 0; /* Add vertical spacing between wrapped lines */
+  margin: 0.5rem 0;
+  padding: 4px 8px;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-  .inline-image {
-      width: 40%;
-      float: none;
-      margin: 10px auto;
+  .highlight-words {
+    gap: 1rem;
   }
 
-  .highlight-words {
-    gap: 1rem; /* Reduce gap on mobile */
-  }
-  
   .highlight-word {
-    font-size: 1.2rem; /* Slightly smaller text on mobile */
+    font-size: 1.2rem;
   }
 }
 
 /* Desktop navbar layout */
 #side-nav {
-    font-family: "Another Typewriter", monospace;
-    background-color: #34204d;
-    width: 100vw;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    height: 10vh;
-    box-sizing: border-box;
-    z-index: 100;
-    left: 0;
-    right: 0;
+  font-family: "Another Typewriter", monospace;
+  background-color: #fffaec;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  height: auto;
+  min-height: 60px;
+  box-sizing: border-box;
+  z-index: 1000;
+  left: 0;
+  right: 0;
 }
 
 /* Logo container */
 #logo-container {
-    position: relative;
-    width: 8.5vh;
-    height: 8.5vh;
-    flex-shrink: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#logo-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#logo-container img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 #nav-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 #social-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-left: auto;
-}
-
-.hamburger {
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 10px;
-    z-index: 102;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background: #66b4ab;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
 }
 
 /* Mobile navbar styles */
 @media screen and (max-width: 768px) {
-    #side-nav {
-        padding: 10px 15px;
-        justify-content: space-between;
-    }
+  #side-nav {
+    padding: 8px 15px;
+    min-height: 50px;
+    justify-content: space-between;
+  }
 
-    /* Remove hamburger-related styles */
-    .hamburger {
-        display: none;
-    }
+  #nav-container {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    flex-direction: row;
+    padding-top: 0;
+    display: flex !important;
+  }
 
-    #nav-container {
-        position: static;
-        width: auto;
-        height: auto;
-        background: transparent;
-        flex-direction: row;
-        padding-top: 0;
-        display: flex !important;
-    }
+  #navigation ul {
+    flex-direction: row;
+    gap: 15px;
+    padding: 0;
+  }
 
-    #navigation ul {
-        flex-direction: row;
-        gap: 15px;
-        padding: 0;
-    }
-
-    #navigation ul li a {
-        font-size: 18px;
-    }
-
-    #social-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #34204d;
-        padding: 1rem;
-        box-sizing: border-box;
-        justify-content: center;
-        display: flex !important;
-    }
+  #navigation ul li a {
+    font-size: 18px;
+  }
 }
 
-/* Adjust logo size */
-#logo-container {
-  position: relative;
-  width: 8.5vh; /* Make logo smaller */
-  height: 8.5vh;
-  flex-shrink: 0; /* Prevent logo from shrinking */
-}
-
-#outer-logo img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  animation: spin 45s linear infinite;
-}
-
-/* Make sure the inner logo stays static */
-#inner-logo img {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  transform-origin: center;
-  z-index: 2; /* Ensure inner logo stays on top */
-}
+/* Adjust logo size - removed old nested logo styles */
 
 /* Update register button styles to work with anchor tag */
 #register-button {
-  background-color: #66b4ab !important;
-  color: #34204d !important;
-  border-radius: 20px;
+  background-color: #34204d;
+  color: #fffaec;
+  border-radius: 0;
   padding: 8px 20px;
   margin: 0;
   cursor: pointer;
@@ -480,12 +317,14 @@ html {
   white-space: nowrap;
   font-size: 16px;
   text-decoration: none;
-  border: none;
+  border: 2px solid #34204d;
   font-family: "Another Typewriter", monospace;
+  font-weight: bold;
 }
 
 #register-button:hover {
-  background-color: #ffffff !important;
+  background-color: #b53b00;
+  color: #fffaec;
   transform: translateY(-2px);
 }
 
@@ -500,27 +339,28 @@ html {
   display: flex;
   justify-content: center;
   gap: 50px;
-  list-style: none; 
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 #navigation ul li a {
   font-size: 24px; /* Slightly smaller font */
-  color: #c3c0ed; /* Light purple color */
+  color: #34204d; /* Dark purple color */
   text-decoration: none; /* Remove underline */
   position: relative;
 }
 
 /* Keep the hover and active states */
 #navigation ul li a:hover {
-  color: #ffffff;
+  color: #b53b00;
 }
 
 /* Navigation active state */
 #navigation ul li a.active {
-    color: #66b4ab;
-    font-weight: bold;
+  color: #34204d;
+  font-weight: bold;
+  opacity: 0.8;
 }
 
 /* Add this to your existing styles.css */
@@ -546,7 +386,8 @@ html {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(100%);
+  filter: brightness(0) saturate(100%) invert(15%) sepia(30%) saturate(2000%)
+    hue-rotate(250deg) brightness(0.8);
 }
 
 /* Mobile adjustments */
@@ -569,13 +410,6 @@ html {
 /* Remove the scale transform hover effect */
 .social-link:hover .social-icon {
   transform: none;
-}
-
-/* Remove the transition from social-icon */
-.social-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 /* Remove right title variant and simplify section styles */
@@ -626,11 +460,11 @@ p {
   color: #34204d;
 }
 
-/* Add footer styles */
+/* Footer styles */
 .footer {
   background-color: #34204d;
-  color: #c3c0ed;
-  padding: 40px 40px;
+  color: #fffaec;
+  padding: 60px 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -640,66 +474,60 @@ p {
   box-sizing: border-box;
 }
 
-.footer-logo-container {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-}
-
-.footer-logo-outer img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  animation: spin 45s linear infinite;
-}
-
-.footer-logo-inner img {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  transform-origin: center;
-  z-index: 2;
-}
-
 .footer-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .footer-title {
   font-family: "Another Typewriter", monospace;
   font-size: 24px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #fffaec;
 }
 
 .footer-text {
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  color: #fffaec;
 }
 
 .footer-social {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
 }
 
 .footer-contact {
-  color: #c3c0ed;
+  color: #f9a11b;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .footer-contact:hover {
-  color: #ffffff;
+  color: #fffaec;
+}
+
+.footer-section iframe {
+  max-width: 100%;
+  margin-top: 10px;
+  border: 1px solid #eee;
+  background: white;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-section iframe {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 320px;
+  }
 }
 
 /* Add media query for mobile devices */
@@ -719,7 +547,7 @@ p {
   }
 
   .section-horizontal .section-content {
-    padding: 0 20px; 
+    padding: 0 20px;
   }
 
   /* Adjust section spacing for mobile */
@@ -732,8 +560,18 @@ p {
   /* Adjust footer for mobile */
   .footer {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
     gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .footer-section {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
   }
 
   .event-container {
@@ -778,12 +616,21 @@ p {
   }
 
   /* Keep logo and social container visible */
-  #logo-container, #social-container {
+  #logo-container,
+  #social-container {
     display: flex;
   }
 
   .herd-section {
     padding: 15vh 20px 10vh 20px;
+    margin-top: 50px; /* Start immediately below navbar on mobile */
+    min-height: calc(100vh - 50px); /* Account for navbar height on mobile */
+  }
+
+  #background-video {
+    left: 15px;
+    right: 15px;
+    width: calc(100% - 30px); /* Reduced padding on mobile */
   }
 
   .herd-logo {
@@ -801,12 +648,12 @@ p {
   #social-container {
     gap: 10px; /* Reduce gap on smaller screens */
   }
-  
+
   .social-link {
     width: 25px; /* Even smaller icons */
     height: 25px;
   }
-  
+
   #register-button {
     padding: 6px 15px;
     font-size: 14px;
@@ -831,879 +678,537 @@ p {
 
 /* Update circle image styles */
 .circle-image {
-    width: min(300px, 100%);
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border: 3px solid #34204d;
-    border-radius: 20px;
-    margin: 20px;
+  width: min(300px, 100%);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 3px solid #34204d;
+  border-radius: 0;
+  margin: 20px;
 }
 
 /* Right-aligned image */
 .circle-image.right {
-    float: right;
-    margin-left: 30px;
-    margin-right: 0;
+  float: right;
+  margin-left: 30px;
+  margin-right: 0;
 }
 
 /* Left-aligned image */
 .circle-image.left {
-    float: left;
-    margin-right: 30px;
-    margin-left: 0;
+  float: left;
+  margin-right: 30px;
+  margin-left: 0;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-    .circle-image {
-        float: none !important; /* Override any float */
-        width: 100%;
-        max-width: 300px;
-        margin: 20px auto;
-        display: block;
-    }
-    
-    /* Clear any text wrapping around the image on mobile */
-    .section-text {
-        clear: both;
-        display: block;
-    }
+  .circle-image {
+    float: none !important; /* Override any float */
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  /* Clear any text wrapping around the image on mobile */
+  .section-text {
+    clear: both;
+    display: block;
+  }
 }
 
 /* Clear floats after paragraphs */
 .section-text::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Styles for What section */
-.what-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.what-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    background: rgba(195, 192, 237, 0.2);
-    border-radius: 20px;
-}
-
-.what-item #image-container {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-}
-
-.what-item p {
-    margin: 0;
-    line-height: 1.6;
-    font-size: 18px;
-    color: #34204d;
-}
-
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-    .what-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 10px;
-    }
-
-    .what-item {
-        padding: 15px;
-    }
-
-    .what-item #image-container {
-        width: 80px;
-        height: 80px;
-    }
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .how-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 .how-item {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 .how-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
 }
 
 .mini-logo-container {
-    width: 78px;
-    height: 78px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+  width: 78px;
+  height: 78px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .mini-horns {
-    width: 78px !important;
-    height: 78px !important;
-    max-width: 78px !important;
-    max-height: 78px !important;
-    min-width: 78px !important;
-    min-height: 78px !important;
-    animation: spin 45s linear infinite;
-    object-fit: contain;
+  width: 78px !important;
+  height: 78px !important;
+  max-width: 78px !important;
+  max-height: 78px !important;
+  min-width: 78px !important;
+  min-height: 78px !important;
+  animation: spin 45s linear infinite;
+  object-fit: contain;
 }
 
 .horns-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-30deg);
-    color: #34204d;
-    font-size: 0.96rem; /* Increased from 0.8rem (20% larger) */
-    font-weight: bold;
-    pointer-events: none;
-    text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  color: #34204d;
+  font-size: 0.96rem; /* Increased from 0.8rem (20% larger) */
+  font-weight: bold;
+  pointer-events: none;
+  text-align: center;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-    .mini-logo-container {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .mini-horns {
-        width: 60px !important;
-        height: 60px !important;
-        max-width: 60px !important;
-        max-height: 60px !important;
-        min-width: 60px !important;
-        min-height: 60px !important;
-    }
+  .mini-logo-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .mini-horns {
+    width: 60px !important;
+    height: 60px !important;
+    max-width: 60px !important;
+    max-height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+  }
 }
 
 .text-highlight {
-    background-color: #66b4ab; /* Changed from solid #66b4ab to transparent */
-}
-
-.end-horns {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    margin-left: 8px;
-    vertical-align: middle;
-}
-
-.end-horns .mini-horns {
-    width: 100%;
-    height: 100%;
-    animation: spin 45s linear infinite;
-}
-
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-    .end-horns {
-        width: 30px;
-        height: 30px;
-        margin-left: 6px;
-    }
-}
-
-/* Support page styles */
-.support-tiers {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.support-tier {
-    background-color: rgba(52, 32, 77, 0.1);
-    padding: 2rem;
-    border-radius: 20px;
-    transition: transform 0.2s ease;
-}
-
-.support-tier:hover {
-    transform: translateY(-5px);
-}
-
-.support-tier h2 {
-    color: #34204d;
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.tier-amount {
-    color: #34204d;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 1rem 0;
-}
-
-.support-tier ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.support-tier li {
-    margin: 0.5rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.support-tier li:before {
-    content: "→";
-    position: absolute;
-    left: 0;
+  background-color: #fffaec; /* Changed from solid #fffaec to transparent */
 }
 
 /* Support page specific styles */
 .support-page {
-    padding-top: 10vh;
-    background-color: #ecececff;
+  padding-top: 80px;
+  background-color: #fffaec;
 }
 
 .support-hero {
-    position: relative;
-    
-    min-height: 25vh; /* Reduced from 50vh */
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+
+  min-height: 25vh; /* Reduced from 50vh */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .support-hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+  width: calc(100% - 60px); /* 30px padding on each side */
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  z-index: 1;
 }
 
 .support-hero h1 {
-    color: #34204d;
-    font-size: 4rem;
-    font-family: "Another Typewriter", monospace;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    padding: .5rem;
-
+  color: #34204d;
+  font-size: 4rem;
+  font-family: "Another Typewriter", monospace;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0.5rem;
 }
 
 .support-intro {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-    text-align: justify;
-    color: #34204d;
-    line-height: 1.6;
-    font-size: 18px;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  text-align: justify;
+  color: #34204d;
+  line-height: 1.6;
+  font-size: 18px;
 }
 
 .support-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem; /* Reduced from 2rem */
-    padding: 0 2rem 2rem 2rem; /* Added consistent padding */
-    max-width: 1000px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem; /* Reduced from 2rem */
+  padding: 0 2rem 2rem 2rem; /* Added consistent padding */
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .support-card {
-    background-color: white;
-    border-radius: 20px;
-    padding: 1.5rem; /* Reduced from 2rem */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  border-radius: 0;
+  padding: 1.5rem; /* Reduced from 2rem */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .support-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .support-card h2 {
-    color: #34204d;
-    font-size: 1.8rem;
-    margin: 0;
-    font-family: "Another Typewriter", monospace;
+  color: #34204d;
+  font-size: 1.8rem;
+  margin: 0;
+  font-family: "Another Typewriter", monospace;
 }
 
 .support-card .amount {
-    font-size: 2.5rem;
-    color: #66b4ab;
-    font-weight: bold;
-    margin: 1rem 0;
+  font-size: 2.5rem;
+  color: #fffaec;
+  font-weight: bold;
+  margin: 1rem 0;
 }
 
 .support-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .support-card li {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    line-height: 1.4;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.4;
 }
 
 .support-card li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #66b4ab;
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #f9a11b;
 }
 
 /* Update card variations */
 .support-card.friend {
-    background-color: #34204d;
+  background-color: #34204d;
 }
 
 .support-card.friend h2,
 .support-card.friend li {
-    color: white;
+  color: white;
 }
 
 .support-card.badass {
-    border: 3px solid #34204d;
+  border: 3px solid #34204d;
 }
 
 /* Remove the border from matriarch */
 .support-card.matriarch {
-    border: none;
+  border: none;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-    .support-hero {
-        min-height: 0px; /* Even smaller on mobile */
-    }
+  .support-hero {
+    min-height: 0px; /* Even smaller on mobile */
+  }
 
-    .support-hero h1 {
-        font-size: 2.5rem;
-        padding: 1rem;
-    }
+  .support-hero h1 {
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
 
-    .support-intro {
-        padding: 0 1.5rem;
-        margin: 1.5rem auto;
-    }
+  .support-hero-video {
+    left: 15px;
+    right: 15px;
+    width: calc(100% - 30px); /* Reduced padding on mobile */
+  }
 
-    .support-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 1.5rem 1.5rem 1.5rem;
-    }
+  .support-intro {
+    padding: 0 1.5rem;
+    margin: 1.5rem auto;
+  }
 
-    .support-card {
-        padding: 1.25rem;
-    }
+  .support-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
 
-    .founder-cta {
-        margin: 1.5rem auto;
-    }
-
-    .levels-title {
-        margin: 1.5rem auto;
-    }
+  .support-card {
+    padding: 1.25rem;
+  }
 }
 
 /* Add these new generalized styles to your existing styles.css */
 
-/* Generic page content styles */
-.page-content {
-    padding-top: 10vh;
-    background-color: #ecececff;
-}
-
-/* Generic hero section styles */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    min-height: 400px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.hero-section h1 {
-    color: #34204d;
-    font-size: 4rem;
-    font-family: "Another Typewriter", monospace;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-}
-
-/* Generic content intro styles */
-.content-intro {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-    text-align: justify;
-    color: #34204d;
-    line-height: 1.6;
-}
-
 /* Generic content grid styles */
 .content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 0 2rem 2rem 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem 2rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Generic content card styles */
 .content-card {
-    background-color: white;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  border-radius: 0;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .content-card h2 {
-    color: #34204d;
-    font-size: 1.8rem;
-    margin: 0 0 1rem 0;
-    font-family: "Another Typewriter", monospace;
+  color: #34204d;
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  font-family: "Another Typewriter", monospace;
 }
 
 /* Highlight link styles */
 .highlight-link {
-    display: inline-block;
-    color: #34204d;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    background-color: #66b4ab;
-    border-radius: 20px;
-    margin: 0.5rem 0;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  color: #3d4c9c;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #f9a11b;
+  border: 2px solid #3d4c9c;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .highlight-link:hover {
-    background-color: #34204d;
-    color: #66b4ab;
-}
-
-/* Social links container */
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* Event info styles */
-.event-info {
-    margin-top: 1rem;
-}
-
-.event-info p {
-    margin: 0.5rem 0;
+  background-color: #3d4c9c;
+  color: #fffaec;
+  transform: translateY(-2px);
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-        padding: 1.5rem;
-    }
+  .content-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 
-    .content-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .content-card {
-        padding: 1.5rem;
-    }
-}
-
-/* Update levels title to include button */
-.levels-title {
-    text-align: center;
-    margin: 2rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.levels-title h2 {
-    color: #34204d;
-    font-size: 2.5rem;
-    font-family: "Another Typewriter", monospace;
-    margin: 0;
-}
-
-/* Remove the old founder-cta styles since we're moving the button */
-.founder-cta {
-    display: none;
-}
-
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-    .levels-title {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .levels-title h2 {
-        font-size: 2rem;
-    }
-}
-
-/* Button styling */
-.founder-button {
-    display: inline-block;
-    background-color: #66b4ab;
-    color: #34204d;
-    font-family: "Another Typewriter", monospace;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.founder-button:hover {
-    background-color: #34204d;
-    color: #66b4ab;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-    .founder-button {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.6rem;
-    }
+  .content-card {
+    padding: 1.5rem;
+  }
 }
 
 /* Page ending styles */
 .page-ending {
-    width: 100%;
-    padding: 2rem 0 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  padding: 2rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-ending-logo {
-    position: relative;
-    width: 8.5vh;
-    height: 8.5vh;
+  position: relative;
+  width: 8.5vh;
+  height: 8.5vh;
 }
 
 .page-ending-outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-origin: center;
-    animation: spin 45s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  animation: spin 45s linear infinite;
 }
 
 .page-ending-inner {
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    transform-origin: center;
-    z-index: 2;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  transform-origin: center;
+  z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
-    .page-ending {
-        display: none; /* Hide the entire ending section on mobile */
-    }
-}
-
-/* Add padding to bottom of content on mobile */
-@media screen and (max-width: 768px) {
-    .support-page,
-    #left-section {
-        padding-bottom: calc(1rem + 65px); /* Account for bottom bar height + padding */
-    }
-
-    /* Adjust social container positioning */
-    #social-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #34204d;
-        padding: 1rem;
-        box-sizing: border-box;
-        justify-content: center;
-        display: flex !important;
-        height: auto; /* Let height be determined by content */
-        z-index: 100; /* Ensure it stays on top */
-    }
-}
-
-/* Mobile social container behavior */
-@media screen and (max-width: 768px) {
-    #social-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #34204d;
-        padding: 1rem;
-        box-sizing: border-box;
-        justify-content: center;
-        display: flex !important;
-        transition: transform 0.3s ease-in-out;
-        z-index: 100;
-        transform: translateY(0); /* Explicitly set initial position */
-    }
-
-    /* Update hiding transform to ensure it moves completely off screen */
-    #social-container.hidden {
-        transform: translateY(150%);
-    }
+  .page-ending {
+    display: none; /* Hide the entire ending section on mobile */
+  }
 }
 
 /* Simplified founding members styles */
 .founding-members-section {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
 }
 
 .members-container {
-    background-color: white;
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 0;
+  padding: 3rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .founding-members-section h2 {
-    text-align: center;
-    font-family: "Another Typewriter", monospace;
-    color: #34204d;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  text-align: center;
+  font-family: "Another Typewriter", monospace;
+  color: #34204d;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .members-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 .members-list span {
-    color: #34204d;
-    font-size: 1.1rem;
-    padding: 0.5rem;
+  color: #34204d;
+  font-size: 1.1rem;
+  padding: 0.5rem;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-    .founding-members-section {
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
+  .founding-members-section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
 
-    .members-container {
-        padding: 2rem 1rem;
-    }
+  .members-container {
+    padding: 2rem 1rem;
+  }
 
-    .founding-members-section h2 {
-        font-size: 2rem;
-    }
+  .founding-members-section h2 {
+    font-size: 2rem;
+  }
 
-    .members-list {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-}
-
-/* Remove old styles */
-.horns-border,
-.horns-circle,
-.member-category,
-.member-names,
-.matriarch-names {
-    display: none;
+  .members-list {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
 }
 
 /* Update founding members styles */
 .member-tier {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .member-tier h3 {
-    color: #66b4ab;
-    font-family: "Another Typewriter", monospace;
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.members-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    text-align: center;
-}
-
-.members-list span {
-    color: #34204d;
-    font-size: 1.1rem;
-    padding: 0.5rem;
+  color: #3d4c9c;
+  font-family: "Another Typewriter", monospace;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 /* Remove matriarch-specific styling */
 .members-list.matriarch span {
-    font-weight: normal;  /* Reset to normal weight */
-    font-size: 1.1rem;   /* Match other names */
-    color: #34204d;      /* Match other names */
+  font-weight: normal; /* Reset to normal weight */
+  font-size: 1.1rem; /* Match other names */
+  color: #34204d; /* Match other names */
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-    .member-tier {
-        margin-bottom: 2rem;
-    }
+  .member-tier {
+    margin-bottom: 2rem;
+  }
 
-    .member-tier h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
+  .member-tier h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 
-    .members-list {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
+  .members-list {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
 }
 
 /* Add special layout for top tiers */
 .top-tiers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Adjust spacing for remaining tiers */
 .top-tiers + .member-tier {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
-    .top-tiers {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+  .top-tiers {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 /* New photo grid styles */
 .three-photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 40px 0;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+  width: 100%;
 }
 
 .grid-photo {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border: 3px solid #34204d;
-    border-radius: 20px;
-}
-
-/* Section photo styles */
-.how-photo,
-.when-photo {
-    margin: 40px 0;
-    text-align: center;
-}
-
-.section-photo {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border: 3px solid #34204d;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(52, 32, 77, 0.2);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid #34204d;
+  border-radius: 0;
 }
 
 /* Mobile adjustments for photo grid */
 @media screen and (max-width: 768px) {
-    .three-photo-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin: 30px 0;
-    }
-    
-    .grid-photo {
-        height: 250px;
-    }
-    
-    .section-photo {
-        max-width: 100%;
-    }
+  .three-photo-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 30px 0;
+  }
+
+  .grid-photo {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #logo-container img {
+    height: 35px;
+  }
 }
