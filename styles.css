@@ -1847,6 +1847,166 @@ p {
     }
 }
 
+/* Connect Section Styles */
+.connect-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.connect-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #34204d;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    padding: 0 3rem;
+}
+
+.connect-title::before,
+.connect-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 2px;
+    background: #34204d;
+}
+
+.connect-title::before {
+    right: 100%;
+    margin-right: 2rem;
+}
+
+.connect-title::after {
+    left: 100%;
+    margin-left: 2rem;
+}
+
+.connect-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.connect-card {
+    background: white;
+    border: 1px solid rgba(52, 32, 77, 0.3);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.connect-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(52, 32, 77, 0.15);
+}
+
+.connect-card-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: left;
+    flex: 1;
+}
+
+.connect-card-newsletter .connect-card-text {
+    color: #e74c3c;
+}
+
+.connect-card-podcast .connect-card-text {
+    color: #f0a52a;
+}
+
+.connect-card-blog .connect-card-text {
+    color: #9b59b6;
+}
+
+.connect-card-contact .connect-card-text {
+    color: #1abc9c;
+}
+
+.connect-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.connect-card-newsletter .connect-card-icon {
+    background: #e74c3c;
+}
+
+.connect-card-podcast .connect-card-icon {
+    background: #f0a52a;
+}
+
+.connect-card-blog .connect-card-icon {
+    background: #9b59b6;
+}
+
+.connect-card-contact .connect-card-icon {
+    background: #1abc9c;
+}
+
+.connect-card-icon svg {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-90deg);
+}
+
+/* Responsive Connect Section */
+@media screen and (max-width: 1024px) {
+    .connect-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .connect-section {
+        padding: 3rem 1rem;
+    }
+
+    .connect-title {
+        font-size: 2rem;
+        padding: 0 2rem;
+    }
+
+    .connect-title::before,
+    .connect-title::after {
+        width: 50px;
+    }
+
+    .connect-title::before {
+        margin-right: 1rem;
+    }
+
+    .connect-title::after {
+        margin-left: 1rem;
+    }
+
+    .connect-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .connect-card {
+        padding: 1.5rem;
+    }
+}
+
 /* New photo grid styles */
 .three-photo-grid {
     display: grid;

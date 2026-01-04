@@ -587,6 +587,16 @@ body::before {
   .js-sticky-area__itemBody {
     padding: 60px 40px 80px;
   }
+
+  .experience-cards-container {
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 100%;
+  }
+
+  .experience-section-title {
+    font-size: 36px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -693,31 +703,118 @@ body::before {
 
 /* Section 2: The Experience */
 .experience-cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
-  max-width: 960px;
+  max-width: 1400px;
   margin: 0 auto;
+}
+
+.experience-title-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  background: white;
+  border-radius: 19px;
+  padding: var(--space-xl);
+}
+
+.experience-section-title {
+  margin-bottom: 0;
+}
+
+.experience-items {
+  position: relative;
+  flex: 1;
+  min-height: 400px;
 }
 
 .experience-card-new {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: var(--space-lg);
   background: transparent;
   border: none;
-  box-shadow: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   opacity: 0;
-  transform: translateY(30px);
+  transition: opacity 1s ease;
+  pointer-events: none;
 }
 
-.experience-card-new.visible {
+.experience-card-new.active {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: auto;
+  z-index: 1;
 }
+
+.experience-card-new[data-card="1"] {
+  z-index: 3;
+}
+
+.experience-card-new[data-card="2"] {
+  z-index: 2;
+}
+
+.experience-card-new[data-card="3"] {
+  z-index: 1;
+}
+
+.experience-section-title {
+  font-family: "Another Typewriter", monospace;
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--brand-color);
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: var(--space-md);
+}
+
+.experience-card-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--brand-color);
+  margin-bottom: var(--space-lg);
+  flex: 1;
+}
+
+.experience-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--brand-color);
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  align-self: flex-start;
+}
+
+.experience-cta-button svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--brand-color);
+  transition: stroke 0.3s ease;
+  border: 1px solid #000;
+  background: white;
+  border-radius: 50%;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-cta-button:hover svg {
+  background: var(--brand-color);
+  stroke: white;
+}
+
 
 .experience-card-image {
-  width: 100%;
+  width: 200px;
+  flex-shrink: 0;
   aspect-ratio: 1;
   overflow: hidden;
   background: var(--brand-color);
@@ -735,11 +832,12 @@ body::before {
 }
 
 .experience-card-body {
-  padding: var(--space-md) 0 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   flex: 1;
   background: transparent;
+  justify-content: center;
 }
 
 .experience-number-new {
@@ -1375,12 +1473,12 @@ body::before {
     padding: var(--space-3xl) var(--space-sm);
     max-width: 100%;
   }
-
+  
   .hero-section {
     padding: 100px 20px 60px;
     max-width: 100%;
   }
-
+  
   .loopSlider {
     margin: var(--space-lg) 0;
     padding: var(--space-lg) 0;
@@ -1403,15 +1501,15 @@ body::before {
     width: 240px;
     height: 200px;
   }
-
+  
   .hero-section {
     padding: 120px 40px 80px;
   }
-
+  
   .hero-content {
     padding: 0 20px;
   }
-
+  
   .section-title,
   .section-highlight {
     font-size: 42px;
@@ -1428,12 +1526,25 @@ body::before {
     gap: var(--space-lg);
   }
 
+  .experience-title-card {
+    flex-direction: column;
+  }
+
+  .experience-section-title {
+    font-size: 36px;
+  }
+
+  .experience-card-new {
+    flex-direction: column;
+  }
+
   .experience-card-image {
+    width: 100%;
     height: 250px;
   }
 
   .experience-card-body {
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-md) 0 0 0;
   }
 
   .experience-number-new {
@@ -1605,7 +1716,7 @@ body::before {
 
 .sidebar-title {
   font-family: "Another Typewriter", monospace;
-  font-size: 24px;
+    font-size: 24px;
   font-weight: bold;
   color: var(--brand-color);
   margin-bottom: 30px;
@@ -1638,7 +1749,7 @@ body::before {
 }
 
 .category-item span:first-child {
-  font-size: 16px;
+    font-size: 16px;
   color: var(--brand-color);
   font-weight: 400;
 }
@@ -1680,7 +1791,7 @@ body::before {
 
 .event-card-large {
   display: flex;
-  flex-direction: column;
+    flex-direction: column;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -1691,7 +1802,7 @@ body::before {
 }
 
 .event-card-image {
-  width: 100%;
+    width: 100%;
   aspect-ratio: 1;
   overflow: visible;
   background: var(--brand-color);
@@ -1917,7 +2028,7 @@ body::before {
 
 .contact-button {
   display: inline-flex;
-  align-items: center;
+    align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
@@ -1973,7 +2084,7 @@ body::before {
 }
 
 .founder-name {
-  font-size: 18px;
+    font-size: 18px;
   color: var(--brand-color);
   font-weight: 400;
   padding: var(--space-sm) 0;
@@ -2048,5 +2159,186 @@ body::before {
 
   .founders-intro p {
     font-size: 17px;
+  }
+}
+
+/* Connect Section Styles */
+.connect-section-wrapper {
+  padding: var(--space-4xl) var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.connect-section {
+  max-width: 1200px;
+  margin: 0 auto;
+    text-align: center;
+  }
+
+.connect-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--brand-color);
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-family: "Another Typewriter", monospace;
+}
+
+.connect-title::before,
+.connect-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: var(--brand-color);
+}
+
+.connect-title::before {
+  order: -1;
+}
+
+.connect-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.connect-card {
+  background: white;
+  border: 1px solid rgba(52, 32, 77, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.connect-card:hover {
+  box-shadow: 0 2px 8px rgba(52, 32, 77, 0.1);
+}
+
+.connect-card-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  flex: 1;
+  color: var(--brand-color);
+}
+
+.connect-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  background: var(--brand-color);
+  border: 1px solid #000;
+  transition: background 0.3s ease, stroke 0.3s ease;
+}
+
+.connect-card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+  transition: stroke 0.3s ease;
+}
+
+.connect-card:hover .connect-card-icon {
+  background: white;
+  border-color: var(--brand-color);
+}
+
+.connect-card:hover .connect-card-icon svg {
+  stroke: var(--brand-color);
+}
+
+.connect-card-social {
+  cursor: default;
+}
+
+.connect-card-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 1rem;
+}
+
+.connect-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand-color);
+  border: 1px solid #000;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.connect-social-icon img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.connect-social-icon:hover {
+  background: white;
+  border-color: var(--brand-color);
+}
+
+.connect-social-icon:hover img {
+  filter: brightness(0);
+}
+
+/* Responsive Connect Section */
+@media screen and (max-width: 1024px) {
+  .connect-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .connect-section-wrapper {
+    padding: var(--space-3xl) var(--space-sm);
+  }
+
+  .connect-title {
+    font-size: 2rem;
+    padding: 0 2rem;
+  }
+
+  .connect-title::before,
+  .connect-title::after {
+    width: 50px;
+  }
+
+  .connect-title::before {
+    margin-right: 1rem;
+  }
+
+  .connect-title::after {
+    margin-left: 1rem;
+  }
+
+  .connect-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .connect-card {
+    padding: 1.5rem;
   }
 }

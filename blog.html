@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HERD Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <meta property="og:image" content="https://youareherd.org/content/herd_circle.png">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg">
+    <meta property="og:title" content="HERD Blog">
+    <meta property="og:description" content="HERD Blog - Coming Soon">
+    <meta property="og:url" content="https://youareherd.org/blog">
+    <meta name="theme-color" content="#34204d">
+
+    <link rel="icon" type="image/svg+xml" href="content/Herd H purple.svg?v=1.1">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg?v=1.1">
+</head>
+
+<body>
+    <div w3-include-html="navbar.html"></div>
+
+    <div class="page-content">
+        <div class="section section-horizontal">
+            <div class="section-title">
+                <span>blog</span>
+            </div>
+            <div class="section-content">
+                <p class="section-text" style="text-align: center; font-size: 1.5rem; padding: 4rem 2rem;">
+                    Coming Soon
+                </p>
+            </div>
+        </div>
+
+        <div class="page-ending">
+            <div class="page-ending-logo">
+                <div class="page-ending-outer">
+                    <img src="content/Herd Horns.svg" alt="Herd Horns">
+                </div>
+                <div class="page-ending-inner">
+                    <img src="content/Herd H purple.svg" alt="Herd H">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                }
+            }
+        }
+        includeHTML();
+    </script>
+</body>
+
+</html>
+
