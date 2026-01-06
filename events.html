@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events | HERD</title>
-    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon/Logo metadata -->
     <meta property="og:image" content="https://youareherd.org/content/herd_circle.png">
@@ -32,12 +32,12 @@
     <!-- Navigation -->
     <nav class="top-nav">
         <div class="nav-logo">
-            <a href="index1.html"><img src="content/Herd H purple.svg" alt="HERD" class="logo-img"></a>
+            <a href="index.html"><img src="content/Herd H purple.svg" alt="HERD" class="logo-img"></a>
         </div>
         <div class="nav-links">
             <a href="about.html">About</a>
             <a href="contact1.html">Contact</a>
-            <a href="blog.html">Blog</a>
+            <a href="https://herdstorytelling.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
             <a href="podcast.html">Podcast</a>
             <a href="events.html" class="nav-ticket-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -101,9 +101,12 @@
                                 <span class="event-time-small">7:00-8:30pm</span>
                             </div>
                             <div class="event-card-details-small">
-                                <p><strong>Location:</strong> O'Shaughnessy Auditorium at St. Catherine University in St. Paul (600 seats)</p>
+                                <p><strong>Location:</strong> O'Shaughnessy Auditorium at St. Catherine University in
+                                    St. Paul (600 seats)</p>
                                 <p><strong>Workshop:</strong> Feb. 4th and 8th. 5-6pm at Urban Growler</p>
-                                <p>This night is about desire and obsession — for people, dreams, and futures we couldn't stop wanting. Stories of longing, heartbreak, ambition, and the moments that changed everything.</p>
+                                <p>This night is about desire and obsession — for people, dreams, and futures we
+                                    couldn't stop wanting. Stories of longing, heartbreak, ambition, and the moments
+                                    that changed everything.</p>
                             </div>
                             <a href="#" class="event-buy-tickets">
                                 <span>buy tickets</span>
@@ -177,41 +180,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="content/Herd Horns.svg" alt="HERD" class="footer-logo-img">
-            </div>
-            <div class="footer-text">
-                <p>a women-centered storytelling platform where we connect and empower each other by authentically and boldly sharing our well-earned life stories</p>
-            </div>
-            <div class="footer-links">
-                <a href="about.html">About</a>
-                <a href="contact1.html">Contact</a>
-                <a href="blog.html">Blog</a>
-                <a href="podcast.html">Podcast</a>
-                <a href="events.html">Tickets</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://www.instagram.com/herd.storytelling" target="_blank" class="social-link">
-                    <img src="content/instagram-icon.svg" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61573595049618" target="_blank" class="social-link">
-                    <img src="content/facebook-icon.svg" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/company/youareherd/" target="_blank" class="social-link">
-                    <img src="content/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
-                </a>
-                <a href="mailto:info@youareherd.org" class="social-link">
-                    <img src="content/email-icon.svg" alt="Email" class="social-icon">
-                </a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
     <script>
         // Navigation scroll effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const nav = document.querySelector('.top-nav');
             if (window.scrollY > 100) {
                 nav.classList.add('scrolled');
@@ -219,6 +192,14 @@
                 nav.classList.remove('scrolled');
             }
         });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 

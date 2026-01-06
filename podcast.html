@@ -4,73 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HERD Podcast</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Podcast | HERD</title>
+    <link rel="stylesheet" href="styles.css">
 
+    <!-- Favicon/Logo metadata -->
     <meta property="og:image" content="https://youareherd.org/content/herd_circle.png">
     <link rel="apple-touch-icon" href="content/Herd H purple.svg">
-    <meta property="og:title" content="HERD Podcast">
-    <meta property="og:description" content="HERD Podcast - Coming Soon">
-    <meta property="og:url" content="https://youareherd.org/podcast">
+
+    <!-- Open Graph metadata for social sharing -->
+    <meta property="og:title" content="Podcast | HERD">
+    <meta property="og:description"
+        content="HERD Podcast - Stories from our women-centered storytelling platform">
+    <meta property="og:image" content="content/Herd Horns.svg">
+    <meta property="og:url" content="https://youareherd.org/podcast.html">
+
+    <!-- Additional metadata -->
+    <meta name="description"
+        content="HERD Podcast - Stories from our women-centered storytelling platform">
     <meta name="theme-color" content="#34204d">
 
-    <link rel="icon" type="image/svg+xml" href="content/Herd H purple.svg?v=1.1">
-    <link rel="apple-touch-icon" href="content/Herd H purple.svg?v=1.1">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="content/Herd H purple.svg">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg">
 </head>
 
 <body>
-    <div w3-include-html="navbar.html"></div>
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="nav-logo">
+            <a href="index.html"><img src="content/Herd H purple.svg" alt="HERD" class="logo-img"></a>
+        </div>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="contact1.html">Contact</a>
+            <a href="https://herdstorytelling.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
+            <a href="podcast.html">Podcast</a>
+            <a href="events.html" class="nav-ticket-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-ticket-icon lucide-ticket">
+                    <path
+                        d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+                    <path d="M13 5v2" />
+                    <path d="M13 17v2" />
+                    <path d="M13 11v2" />
+                </svg>
+            </a>
+        </div>
+    </nav>
 
-    <div class="page-content">
-        <div class="section section-horizontal">
-            <div class="section-title">
-                <span>podcast</span>
-            </div>
-            <div class="section-content">
-                <p class="section-text" style="text-align: center; font-size: 1.5rem; padding: 4rem 2rem;">
-                    Coming Soon
-                </p>
+    <!-- Podcast Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title">Podcast</h1>
+        </div>
+    </section>
+
+    <!-- Podcast Content -->
+    <section class="events-page-section">
+        <div class="events-page-content">
+            <!-- Sidebar: Podcast Categories -->
+            <aside class="events-sidebar">
+                <h2 class="sidebar-title">Explore</h2>
+                <ul class="category-list">
+                    <li class="category-item">
+                        <span>Latest Episodes</span>
+                        <span class="category-arrow">→</span>
+                    </li>
+                    <li class="category-item">
+                        <span>Past Episodes</span>
+                        <span class="category-arrow">→</span>
+                    </li>
+                    <li class="category-item">
+                        <span>Featured Stories</span>
+                        <span class="category-arrow">→</span>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content: Podcast Episodes -->
+            <div class="events-main">
+                <h2 class="events-main-title">Coming Soon</h2>
+                <div class="events-cards-grid">
+                    <!-- Placeholder Card -->
+                    <div class="event-card-large">
+                        <div class="event-card-image">
+                            <img src="content/herd_circle.png" alt="HERD Podcast">
+                            <div class="event-category-label-small">Coming Soon</div>
+                        </div>
+                        <div class="event-card-content">
+                            <div class="event-title-row">
+                                <h3 class="event-card-title-small">HERD Podcast</h3>
+                            </div>
+                            <div class="event-card-details-small">
+                                <p>Stay tuned for upcoming podcast episodes featuring powerful stories from our community of storytellers.</p>
+                                <p>We'll be sharing authentic voices, bold narratives, and the well-earned life stories of women who inspire us.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="page-ending">
-            <div class="page-ending-logo">
-                <div class="page-ending-outer">
-                    <img src="content/Herd Horns.svg" alt="Herd Horns">
-                </div>
-                <div class="page-ending-inner">
-                    <img src="content/Herd H purple.svg" alt="Herd H">
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Footer -->
+    <div id="footer-container"></div>
 
     <script>
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            z = document.getElementsByTagName("*");
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                            elmnt.removeAttribute("w3-include-html");
-                            includeHTML();
-                        }
-                    }
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    return;
-                }
+        // Navigation scroll effect
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('.top-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
             }
-        }
-        includeHTML();
+        });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 
 </html>
-

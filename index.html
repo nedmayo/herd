@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HERD</title>
-    <link rel="stylesheet" href="/styles.css?v=1.1">
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon/Logo metadata -->
     <meta property="og:image" content="https://youareherd.org/content/herd_circle.png">
-
     <link rel="apple-touch-icon" href="content/Herd H purple.svg">
 
     <!-- Open Graph metadata for social sharing -->
@@ -25,354 +24,522 @@
     <meta name="theme-color" content="#34204d">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="content/Herd H purple.svg?v=1.1">
-    <link rel="apple-touch-icon" href="content/Herd H purple.svg?v=1.1">
+    <link rel="icon" type="image/svg+xml" href="content/Herd H purple.svg">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg">
 </head>
 
 <body>
-    <!-- Replace the navbar include with direct navigation -->
+    <!-- Navigation -->
     <nav class="top-nav">
-        <a href="#what">what</a>
-        <a href="#how">how</a>
-        <a href="#when">when</a>
-    </nav>
-
-    <!-- Keep the existing bottom navbar -->
-    <div w3-include-html="navbar.html"></div>
-
-    <div id="left-section">
-        <div class="herd-section" id="home">
-            <video autoplay muted loop playsinline id="background-video">
-                <source src="content/HerdCrowd.mp4" type="video/mp4">
-            </video>
-
-            <div class="herd-logo">
-                <img class="herd-logo" src="content/Herd Logo.svg" alt="Herd Horns">
-            </div>
-
-            <div class="herd-subtitle">
-                <br />
-                a women-centered storytelling platform where we connect and
-                empower each other by authentically and boldly sharing our well-earned life stories
-            </div>
-
-            <p style="margin-top:100px; font-weight: bold;">CONTINUE</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24">
-                <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
-            </svg>
+        <div class="nav-logo">
+            <a href="index.html"><img src="content/Herd H purple.svg" alt="HERD" class="logo-img"></a>
         </div>
-        <div class="newsletter-section">
-            Join our newsletter
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUWXf6VWonCT4Zvnoe80TiGM3T9jy9-9vQpV4T13Nl9E9NAg/viewform?usp=dialog"
-                target="_blank">
-                <button
-                    style="background-color: #34204d; color: #66b4ab; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">→</button>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="contact1.html">Contact</a>
+            <a href="https://herdstorytelling.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
+            <a href="podcast.html">Podcast</a>
+            <a href="events.html" class="nav-ticket-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-ticket-icon lucide-ticket">
+                    <path
+                        d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+                    <path d="M13 5v2" />
+                    <path d="M13 17v2" />
+                    <path d="M13 11v2" />
+                </svg>
             </a>
         </div>
+    </nav>
 
-        <div class="section section-horizontal" id="what">
-            <div class="section-title">
-                <span>what is herd?</span>
-            </div>
-            <div class="section-content">
-                <div class="highlight-words">
-                    <span class="highlight-word">STORYTELLING.</span>
-                    <span class="highlight-word">COMMUNITY.</span>
-                    <span class="highlight-word">JOY.</span>
-                </div>
-                <p class="section-text">HERD is an innovative storytelling platform that empowers women to share their
-                    stories with
-                    an enthusiastic and supportive audience.
-                    Through the art of storytelling and active
-                    listening, HERD fosters a sense of community, providing women with a space to connect, find
-                    common ground, and discover their voice.</p>
-
-                <!-- 3-photo layout -->
-                <div class="three-photo-grid">
-                    <img src="content/group3.JPG" alt="Women connecting through stories" class="grid-photo">
-                    <img src="content/group2.JPG" alt="Community building moments" class="grid-photo">
-                    <img src="content/group1.JPG" alt="Joyful storytelling" class="grid-photo">
-                </div>
-
-            </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="spotlight-overlay" id="spotlightOverlay"></div>
+        <div class="hero-content" id="heroContent">
+            <img src="content/Herd Logo.svg" alt="HERD" class="hero-logo">
+            <h1 class="hero-title">a women-centered storytelling platform where we connect and empower each other by
+                authentically and boldly sharing our well-earned life stories</h1>
         </div>
+    </section>
 
-        <div class="section section-horizontal" id="how">
-            <div class="section-title">
-                how does it work?
-            </div>
-            <div class="section-content">
-                <div class="how-grid">
-                    <div class="how-item">
-                        <div class="how-content">
-                            <div class="mini-logo-container">
-                                <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                                <span class="horns-text">ATTEND</span>
-                            </div>
-                            <p class="section-text">
-                                HERD hosts regular events featuring amateur storytelling performances by women, for
-                                women.
-                                Join us to listen, share, laugh, weep, bond, and connect!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="how-item">
-                        <div class="how-content">
-                            <div class="mini-logo-container">
-                                <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                                <span class="horns-text">SHARE</span>
-                            </div>
-                            <p class="section-text">
-                                You can simply be part of the audience and support the storytellers or throw your name
-                                into
-                                the hat to be one of the featured "Yaks."
-                            </p>
-                        </div>
-                    </div>
-                    <div class="how-item">
-                        <div class="how-content">
-                            <div class="mini-logo-container">
-                                <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                                <span class="horns-text">REVEL</span>
-                            </div>
-                            <p class="section-text">
-                                HERD provides a safe and empowering space for women to share their stories— there will
-                                be
-                                no judging or winners. We draw inspiration from other storyslams like NPR's The Moth,
-                                but with a
-                                women-centered, joy-forward focus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Loop Slider -->
+    <div class="loopSlider">
+        <div class="loopslider_wrap">
+            <ul>
+                <li>
+                    <span class="pht"><img src="content/aug1.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug2.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug3.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug4.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug6.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug7.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/oct_photo.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/herd_event.jpg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug1.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug2.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug3.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug4.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug6.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug7.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/oct_photo.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/herd_event.jpg" alt=""></span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <span class="pht"><img src="content/aug1.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug2.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug3.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug4.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug6.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug7.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/oct_photo.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/herd_event.jpg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug1.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug2.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug3.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug4.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/aug6.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/aug7.jpeg" alt=""></span>
+                </li>
+                <li>
+                    <span class="pht"><img src="content/oct_photo.jpeg" alt=""></span>
+                    <span class="pht"><img src="content/herd_event.jpg" alt=""></span>
+                </li>
+            </ul>
         </div>
+    </div>
 
-        <div class="section section-horizontal" id="when">
-            <div class="section-title">
-                <span>when and where?</span>
-            </div>
-            <div class="section-content">
-                <div class="event-container">
-                    <div class="event-image">
-                        <img src="content/OShaughnessy.jpg" alt="O'Shaughnessy Auditorium"
-                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-                    </div>
-                    <div class="event-info">
-                        <div class="event-title">
-                            Upcoming Event: CRUSH
-                        </div>
-                        <div class="event-details">
-                            <div class="detail-box">Feb. 11, 2026</div>
-                            <div class="detail-box">7:00-8:30pm</div>
-                        </div>
-                        <div class="event-description">
-                            Location: O'Shaughnessy Auditorium at St. Catherine University in St. Paul (600 seats)
-                            <br />
-                            <br />
-                            Workshop: Feb. 4th and 8th. 5-6pm at Urban Growler <br />
-                            <br />
-                            The theme for this event is Crush. This night is about desire and obsession — for people,
-                            dreams, and futures we couldn't stop wanting. Stories of longing, heartbreak, ambition, and
-                            the moments that changed everything.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event-container" style="margin-top: 3rem;">
-                    <div class="event-image">
-                        <img src="content/theparkway.webp" alt="The Parkway"
-                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-                    </div>
-                    <div class="event-info">
-                        <div class="event-title">
-                            Upcoming Event: TBA
-                        </div>
-                        <div class="event-details">
-                            <div class="detail-box">April 22, 2026</div>
-                            <div class="detail-box">TBA</div>
-                        </div>
-                        <div class="event-description">
-                            Location: The Parkway <br />
-                            <br />
-                            Theme and workshops TBD
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add coming soon section -->
-            </div>
-        </div>
-
-        <div class="section section-horizontal" id="why">
-            <div class="section-title">
-                <span>why herd?</span>
-            </div>
-            <div class="section-content">
-                <p class="section-text">
-                    <img src="content/aug5.png" alt="" class="circle-image right">
-                    We chose HERD because it encompasses HER— we want to be a space for anyone who
-                    has walked through this male-dominated/focused world and not felt entirely welcomed, who has found
-                    themselves <span class="text-highlight">'outside' the norm</span>, who has looked for a 'room of
-                    their own.' HERD also reminds us that
-                    what happens to one of us impacts all of us.
-                    <br /><br />
-                    We chose the word HERD because it's a homophone of HEARD. And that's
-                    our number one objective— <span class="text-highlight">to
-                        help you be heard</span>. Your stories matter. They will change the world.
-                    <br /><br />
-                    We chose the word HERD because it embodies the collective identity- the
-                    belonging to a group, the feeling of a sisterhood that is <span class="text-highlight">expansive and
-                        limitless</span>,
-                    but also right here, in the room.
-
-                    <br /><br />
-                    We know there are negative connotations to herds. Herd mentality isn't always a good thing.
-                    And being called a sheep- that most common of herd animals, can be synonymous for following blindly.
-                    And then there's cows. You old cow. But we aim to turn that all on its
-                    head. <span class="text-highlight">There is power in a herd</span>. And in the animal kingdom- herds
-                    are primarily female.
-                    <br /><br />
-
-                    Did you know that a herd of musk ox, when feeling threatened, rush together to form a protective
-                    circle, facing outward, forming a phalanx of heads and horns? It kind of feels like that
-                    is what might be needed right now. <span class="text-highlight">A phalanx of heads and horns.</span>
-
-                    <br /><br />
-                    So let's build our herd! We believe that by sharing your story with other women, by being vulnerable
-                    and sharing your mistakes as well as your triumphs, <span class="text-highlight">you will inspire
-                        others to get out there and
-                        give it a go</span>. You will make this world stronger, and safer, and frankly more delightful.
-                    Get ready
-                    to join the herd. Be HERD. You Are Herd.
-                </p>
-            </div>
-        </div>
-
-        <div class="section section-horizontal" id="who">
-            <div class="section-title">
-                <span>who are your herd matriarchs?</span>
-            </div>
-            <div class="section-content">
-
-                <p class="section-text">
-                    Amy and Gretchen met working as summer staff at YMCA Camp St.
-                    Croix in the late 1980s and have been
-                    lifelong friends. At a time when big hair and even bigger glasses were in style and girls were often
-                    taught that "no" meant "yes," they found camp to be a refuge. It was a place where young women could
-                    create their own path, rather than conform to societal expectations.
-                    They were free to be themselves—
-                    loud, funny, strong, brash, and daring. They led rowdy songs in the dining hall, made no apologies
-                    for
-                    winning a challenge, pushed their cabin groups to set high goals and expectations for themselves,
-                    and
-                    regularly challenged the notion of a "four-man tent." It just felt fun at the time, but it turns out
-                    they were also mentoring and empowering scores of girls; encouraging them to embrace their authentic
-                    selves.
-
-                    <br /><br />
-
-                    As Gretchen and Amy entered their fifties, they got the itch. What if there was a way to continue to
-                    help women find their voice? Was it time to take a role as an elder and bring the herd
-                    together for
-                    safety, strength, and community? We think so! Let's do this.
-                    <!-- <span class="end-horns">
-                        <img src="content/Herd Horns teal.svg" alt="Herd Horns" class="mini-horns">
-                    </span> -->
-                </p>
-                <img src="content/oct_photo.jpeg" alt="Women sharing stories" class="circle-image">
-                <img src="content/old1.png" alt="Women sharing stories" class="circle-image">
-
-
-            </div>
-        </div>
-
-        <!-- Add this before closing left-section div -->
-        <div class="page-ending">
-            <div class="page-ending-logo">
-                <div class="page-ending-outer">
-                    <img src="content/Herd Horns.svg" alt="Herd Horns">
-                </div>
-                <div class="page-ending-inner">
-                    <img src="content/Herd H purple.svg" alt="Herd H">
-                </div>
+    <!-- Tex tt Slider -->
+    <div class="textSlider">
+        <div class="textSlider-track">
+            <div class="textSlider-content">
+                <span class="textSlider-item">STORYTELLING &nbsp;
+                </span>
+                <span class="textSlider-item">COMMUNITY &nbsp;
+                </span>
+                <span class="textSlider-item">JOY &nbsp;
+                </span>
+                <span class="textSlider-item">STORYTELLING &nbsp;
+                </span>
+                <span class="textSlider-item">COMMUNITY &nbsp;
+                </span>
+                <span class="textSlider-item">JOY &nbsp;
+                </span>
             </div>
         </div>
     </div>
-    <!-- 
-    <div class="footer">
-        <div class="footer-section">
-            <div class="footer-logo-container">
-                <div class="footer-logo-outer">
-                    <img src="content/Herd Horns.svg" alt="Herd Horns">
+
+    <!-- Sticky Stacking Sections -->
+    <div class="js-sticky-area relative" style="--total-items: 3;">
+        <!-- Section 1: Storytelling -->
+        <section id="section-1" class="js-sticky-area__itemBody" style="--item-no:1;">
+
+            <div class="section-content">
+                <div class="section-1-layout">
+                    <div class="section-1-video">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/MP-9_sD_Jbc"
+                            title="HERD Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="section-1-text">
+                        <p>HERD is an innovative storytelling platform that empowers women to share their stories with
+                            an
+                            enthusiastic and supportive audience. Through the art of storytelling and active listening,
+                            HERD
+                            fosters a sense of community, providing women with a space to connect, find common ground,
+                            and
+                            discover their voice.</p>
+                        <a href="about.html" class="section-1-learn-more">
+                            <span>Learn more</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-logo-inner">
-                    <img src="content/Herd H.svg" alt="Herd H">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Connect Section -->
+    <section class="connect-section-wrapper">
+        <div class="connect-section">
+            <h2 class="connect-title"><span>More from Herd</span></h2>
+            <div class="connect-cards">
+                <a href="https://herdstorytelling.substack.com/?utm_campaign=profile_chips" target="_blank"
+                    class="connect-card">
+                    <span class="connect-card-text">Join Our Newsletter</span>
+                    <span class="connect-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg>
+                    </span>
+                </a>
+                <a href="podcast.html" class="connect-card">
+                    <span class="connect-card-text">Listen to Our Podcast</span>
+                    <span class="connect-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="contact1.html" class="connect-card">
+                    <span class="connect-card-text">Contact Us</span>
+                    <span class="connect-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg>
+                    </span>
+                </a>
+                <div class="connect-card connect-card-social">
+                    <span class="connect-card-text">Follow Us</span>
+                    <span class="connect-card-icons">
+                        <a href="https://www.instagram.com/herd.storytelling" target="_blank"
+                            class="connect-social-icon">
+                            <img src="content/instagram-icon.svg" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61573595049618" target="_blank"
+                            class="connect-social-icon">
+                            <img src="content/facebook-icon.svg" alt="Facebook">
+                        </a>
+                        <a href="https://www.linkedin.com/company/youareherd/" target="_blank"
+                            class="connect-social-icon">
+                            <img src="content/linkedin-icon.svg" alt="LinkedIn">
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer-section">
-            <p class="footer-text">
-                a women-centered storytelling platform where we connect and empower each other our well-earned life
-                stories.
-            </p>
-        </div>
+    <!-- Sticky Stacking Sections -->
+    <div class="js-sticky-area relative" style="--total-items: 3;">
+        <!-- Section 2: The Experience -->
+        <section id="section-2" class="js-sticky-area__itemBody experience-section" style="--item-no:1;">
+            <div class="section-content">
+                <div class="experience-cards-container">
+                    <h2 class="experience-section-title">THE EXPERIENCE</h2>
+                    <div class="experience-cards-grid">
+                        <div class="experience-card-new experience-card-1">
+                            <div class="experience-card-image">
+                                <img src="content/herd_event.jpg" alt="Attend HERD events">
+                                <div class="experience-title-card">
+                                    <h3 class="experience-title-new">Attend</h3>
+                                </div>
+                            </div>
+                            <div class="experience-card-body">
+                                <p class="experience-text-new">HERD hosts regular events featuring amateur
+                                    storytelling performances by women, for women. Join us to listen, share, laugh,
+                                    weep, bond,
+                                    and connect!
+                                </p>
+                            </div>
+                        </div>
 
-        <div class="footer-section">
-            <h3 class="footer-title">Connect With Us</h3>
-            <div class="footer-social">
-                <a href="https://www.instagram.com" target="_blank" class="social-link">
-                    <img src="content/instagram-icon.svg" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.facebook.com" target="_blank" class="social-link">
-                    <img src="content/facebook-icon.svg" alt="Facebook" class="social-icon">
-                </a>
+                        <div class="experience-card-new experience-card-2">
+                            <div class="experience-card-image">
+                                <img src="content/aug1.jpeg" alt="Share your story">
+                                <div class="experience-title-card">
+                                    <h3 class="experience-title-new">Share</h3>
+                                </div>
+                            </div>
+                            <div class="experience-card-body">
+                                <p class="experience-text-new">You can simply be part of the audience and support
+                                    the storytellers or throw your name into the hat to be one of the featured "Yaks."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="experience-card-new experience-card-3">
+                            <div class="experience-card-image">
+                                <img src="content/oct_photo.jpeg" alt="Revel in community">
+                                <div class="experience-title-card">
+                                    <h3 class="experience-title-new">Revel</h3>
+                                </div>
+                            </div>
+                            <div class="experience-card-body">
+                                <p class="experience-text-new">HERD provides a safe and empowering space for women
+                                    to share their stories— there will be no judging or winners.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="footer-text" style="margin-top: 20px;">
-                <a href="mailto:hello@herdstories.com" class="footer-contact">hello@herdstories.com</a>
-            </p>
-        </div>
-    </div> -->
+        </section>
+
+        <!-- Section 3: Events -->
+        <section id="section-3" class="js-sticky-area__itemBody" style="--item-no:2;">
+            <div class="section-content">
+                <div class="events-section-layout">
+                    <div class="events-section-title">
+                        <h2 class="events-main-title">UPCOMING EVENTS</h2>
+                        <a href="events.html" class="events-all-link">
+                            <span>All Events</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="events-preview">
+                        <div class="event-card-preview">
+                            <div class="event-card-image-small">
+                                <img src="content/herd_event.jpg" alt="CRUSH event">
+                                <div class="event-category-label-small">Upcoming Event</div>
+                            </div>
+                            <div class="event-card-content-small">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">CRUSH</h3>
+                                    <a href="events.html" class="event-learn-more-small">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right">
+                                            <path d="M7 7h10v10" />
+                                            <path d="M7 17 17 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">Feb. 11, 2026</span>
+                                    <span class="event-time-small">7:00-8:30pm</span>
+                                </div>
+                                <div class="event-card-details-small">
+                                    <p><strong>Location:</strong> O'Shaughnessy Auditorium at St. Catherine University
+                                        in
+                                        St.
+                                        Paul</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-card-preview">
+                            <div class="event-card-image-small">
+                                <img src="content/oct_photo.jpeg" alt="TBA event">
+                                <div class="event-category-label-small">Upcoming Event</div>
+                            </div>
+                            <div class="event-card-content-small">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">TBA</h3>
+                                    <a href="events.html" class="event-learn-more-small">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right">
+                                            <path d="M7 7h10v10" />
+                                            <path d="M7 17 17 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">April 22, 2026</span>
+                                    <span class="event-time-small">TBA</span>
+                                </div>
+                                <div class="event-card-details-small">
+                                    <p><strong>Location:</strong> The Parkway</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
     <script>
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            z = document.getElementsByTagName("*");
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                            elmnt.removeAttribute("w3-include-html");
-                            includeHTML();
-                        }
-                    }
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    return;
-                }
-            }
-        }
-        includeHTML();
-
-        // Ensure video plays on desktop browsers
-        document.addEventListener('DOMContentLoaded', function () {
-            const video = document.getElementById('background-video');
-            if (video) {
-                video.muted = true;
-                video.play().catch(function (error) {
-                    // If autoplay fails, try to play on user interaction
-                    document.addEventListener('click', function playVideo() {
-                        video.play().catch(function () { });
-                        document.removeEventListener('click', playVideo);
-                    }, { once: true });
-                });
+        // Navigation scroll effect
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('.top-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
             }
         });
+
+        // Spotlight effect
+        function initSpotlight() {
+            const spotlight = document.getElementById('spotlightOverlay');
+            const heroContent = document.getElementById('heroContent');
+
+            if (!spotlight || !heroContent) return;
+
+            // Only show spotlight if page is loaded at the very top (scrollY === 0 or very close)
+            if (window.scrollY > 5) {
+                spotlight.style.display = 'none';
+                spotlight.style.opacity = '0';
+                return;
+            }
+
+            let animationFrame = null;
+            let isVisible = false;
+            let isHiding = false;
+
+            function updateSpotlight() {
+                if (!isVisible || isHiding) return;
+
+                const rect = heroContent.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                // Calculate spotlight size based on content dimensions - smaller
+                const contentSize = Math.max(rect.width, rect.height);
+                const spotlightSize = contentSize * 1.2;
+                const cutoutSize = spotlightSize * 0.45;
+
+                // Add natural floating wobble (position only, no scale)
+                const time = Date.now() * 0.001;
+                const wobbleX = Math.sin(time * 1.8) * 12 + Math.cos(time * 2.3) * 5;
+                const wobbleY = Math.cos(time * 1.5) * 10 + Math.sin(time * 1.9) * 4;
+
+                const finalX = centerX + wobbleX;
+                const finalY = centerY + wobbleY;
+                const finalSize = spotlightSize;
+                const finalCutout = cutoutSize;
+
+                spotlight.style.background = `radial-gradient(${finalSize}px ${finalSize}px at ${finalX}px ${finalY}px, transparent, transparent ${finalCutout}px, rgba(0, 0, 0, 0.7) ${finalCutout + 1}px, rgba(0, 0, 0, 0.7) 100%)`;
+            }
+
+            function animate() {
+                if (isVisible && !isHiding) {
+                    updateSpotlight();
+                    animationFrame = requestAnimationFrame(animate);
+                }
+            }
+
+            function hideSpotlight() {
+                if (isHiding) return; // Already hiding
+
+                isHiding = true;
+                isVisible = false;
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+
+                // Get current position
+                const rect = heroContent.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const contentSize = Math.max(rect.width, rect.height);
+                const baseSize = contentSize * 1.2;
+                const baseCutout = baseSize * 0.45;
+
+                // Expand and fade out
+                let expandProgress = 0;
+                const expandDuration = 400; // milliseconds
+                const startTime = Date.now();
+
+                const expand = () => {
+                    const elapsed = Date.now() - startTime;
+                    expandProgress = Math.min(elapsed / expandDuration, 1);
+
+                    const expandedSize = baseSize + (baseSize * 2 * expandProgress);
+                    const expandedCutout = baseCutout + (baseCutout * 2 * expandProgress);
+                    const opacity = 1 - expandProgress;
+
+                    spotlight.style.background = `radial-gradient(${expandedSize}px ${expandedSize}px at ${centerX}px ${centerY}px, transparent, transparent ${expandedCutout}px, rgba(0, 0, 0, 0.7) ${expandedCutout + 1}px, rgba(0, 0, 0, 0.7) 100%)`;
+                    spotlight.style.opacity = opacity;
+
+                    if (expandProgress < 1) {
+                        requestAnimationFrame(expand);
+                    } else {
+                        spotlight.style.display = 'none';
+                    }
+                };
+
+                expand();
+            }
+
+            // Initial setup - only if at top
+            setTimeout(() => {
+                // Check again if still at top
+                if (window.scrollY <= 5) {
+                    updateSpotlight();
+                    spotlight.style.opacity = '1';
+                    isVisible = true;
+                    animate();
+                } else {
+                    spotlight.style.display = 'none';
+                    spotlight.style.opacity = '0';
+                }
+            }, 300);
+
+            // Hide on any scroll
+            window.addEventListener('scroll', () => {
+                if (isVisible && !isHiding) {
+                    hideSpotlight();
+                }
+            }, { passive: true });
+
+            // Update on resize
+            window.addEventListener('resize', () => {
+                if (isVisible && !isHiding) {
+                    updateSpotlight();
+                }
+            });
+        }
+
+        // Initialize on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSpotlight);
+        } else {
+            initSpotlight();
+        }
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
     </script>
 </body>
 
