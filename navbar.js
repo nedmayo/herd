@@ -1,10 +1,29 @@
+// Load navbar HTML
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('nav-container').innerHTML = data;
+    initializeNavbar();
+  })
+  .catch(error => console.error('Error loading navbar:', error));
+
 function initializeNavbar() {
   // Set active nav link based on current page
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navLinks = document.querySelectorAll("#navigation a");
+  const navLinks = document.querySelectorAll(".top-nav a");
   navLinks.forEach((link) => {
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
+    }
+  });
+
+  // Navigation scroll effect
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('.top-nav');
+    if (nav && window.scrollY > 100) {
+      nav.classList.add('scrolled');
+    } else if (nav) {
+      nav.classList.remove('scrolled');
     }
   });
 
@@ -32,9 +51,6 @@ function initializeNavbar() {
     });
   }
 }
-
-// Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", initializeNavbar);
 
 // Add scroll behavior for mobile footer
 let lastScroll = 0;

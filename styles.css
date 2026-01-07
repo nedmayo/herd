@@ -655,8 +655,7 @@ body::before {
   letter-spacing: -1px;
   line-height: 1.1;
   text-align: left;
-  padding-left: 80px;
-  padding-right: 80px;
+
   margin: 0;
 }
 
@@ -1426,7 +1425,7 @@ body::before {
   padding-top: 180px;
 }
 
-.about-section > * {
+.about-section > *:not(.founders-sliders-container) {
   max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
@@ -2083,17 +2082,79 @@ body::before {
   max-width: var(--content-max-width);
 }
 
-.contact-header-grid {
+.contact-grid {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: var(--space-3xl);
   align-items: start;
 }
 
-.contact-text-column {
+.contact-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #000;
+  box-shadow: 0 4px 20px rgba(52, 32, 77, 0.15);
+  flex-shrink: 0;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-content-column {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+}
+
+.contact-content-column .page-title {
+  margin: 0;
+}
+
+.contact-email-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.contact-email-link {
+  font-family: "ComicCAT", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--brand-color);
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.contact-email-link:hover {
+  text-decoration: underline;
+}
+
+.contact-arrow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  color: var(--brand-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-arrow-button:hover {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.contact-arrow-button:hover svg {
+  color: white;
 }
 
 .contact-intro-text {
@@ -2102,13 +2163,58 @@ body::before {
   color: var(--brand-color);
   font-weight: 300;
   margin: 0;
-  max-width: 600px;
 }
 
 /* Podcast Page Styles */
+.podcast-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.podcast-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #000;
+  box-shadow: 0 4px 20px rgba(52, 32, 77, 0.15);
+  flex-shrink: 0;
+}
+
+.podcast-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.podcast-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.podcast-header-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+}
+
+.podcast-header-row .page-title {
+  margin: 0;
+}
+
+.podcast-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+}
+
 .podcast-intro {
-  margin-top: var(--space-2xl);
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .podcast-description {
@@ -2124,26 +2230,7 @@ body::before {
   line-height: 1.7;
   color: var(--brand-color);
   font-weight: 300;
-  margin: 0 0 var(--space-2xl) 0;
-}
-
-.podcast-follow-section {
-  margin-top: var(--space-xl);
-}
-
-.podcast-follow-title {
-  font-family: "ComicCAT", sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--brand-color);
-  margin: 0 0 var(--space-lg) 0;
-  text-transform: uppercase;
-}
-
-.podcast-platforms {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
+  margin: 0;
 }
 
 .podcast-platform-button {
@@ -2712,21 +2799,56 @@ body::before {
 
 /* Responsive Contact & Founders */
 @media screen and (max-width: 768px) {
-  .contact-header-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+
+  .contact-image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .contact-content-column {
+    gap: var(--space-md);
+  }
+
+  .contact-email-link {
+    font-size: 20px;
+  }
+
+  .contact-arrow-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-arrow-button svg {
+    width: 20px;
+    height: 20px;
   }
 
   .contact-intro-text {
     font-size: 17px;
   }
 
-  .contact-text-column {
-    gap: var(--space-md);
+  .podcast-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
-  .contact-card-inline {
-    max-width: 100%;
+  .podcast-image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .podcast-content-column {
+    gap: var(--space-lg);
+  }
+
+  .podcast-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
   }
 
   .podcast-description,
@@ -2734,12 +2856,10 @@ body::before {
     font-size: 17px;
   }
 
-  .podcast-follow-title {
-    font-size: 24px;
-  }
-
   .podcast-platforms {
+    width: 100%;
     flex-direction: column;
+    gap: var(--space-sm);
   }
 
   .podcast-platform-button {

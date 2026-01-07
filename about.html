@@ -30,28 +30,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="top-nav">
-        <div class="nav-logo">
-            <a href="index.html"><img src="content/Herd H purple.svg" alt="HERD" class="logo-img"></a>
-        </div>
-        <div class="nav-links">
-            <a href="about.html">About</a>
-            <a href="contact1.html">Contact</a>
-            <a href="https://herdstorytelling.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
-            <a href="podcast.html">Podcast</a>
-            <a href="events.html" class="nav-ticket-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-ticket-icon lucide-ticket">
-                    <path
-                        d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-                    <path d="M13 5v2" />
-                    <path d="M13 17v2" />
-                    <path d="M13 11v2" />
-                </svg>
-            </a>
-        </div>
-    </nav>
+    <div id="nav-container"></div>
 
     <!-- Page Header -->
     <section class="about-section about-section-first">
@@ -368,17 +347,8 @@
     <!-- Footer -->
     <div id="footer-container"></div>
 
+    <script src="navbar.js"></script>
     <script>
-        // Navigation scroll effect
-        window.addEventListener('scroll', function () {
-            const nav = document.querySelector('.top-nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
         // Load footer
         fetch('footer.html')
             .then(response => response.text())
