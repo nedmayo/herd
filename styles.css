@@ -1,34 +1,6 @@
 @font-face {
-  font-family: "Junicode";
-  src: url("./fonts/Junicode.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Junicode";
-  src: url("./fonts/Junicode-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Junicode";
-  src: url("./fonts/Junicode-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Junicode";
-  src: url("./fonts/Junicode-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "ComicCAT";
-  src: url("./fonts/Comic_CAT.otf") format("opentype");
+  font-family: "atwriter";
+  src: url("./fonts/atwriter.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -77,7 +49,7 @@ html {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "atwriter", serif;
   color: var(--brand-color);
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -90,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
 }
 
 body::before {
@@ -202,7 +174,7 @@ body::before {
 }
 
 .textSlider-item {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 24px;
   font-weight: bold;
   color: var(--brand-color);
@@ -296,7 +268,7 @@ body::before {
 }
 
 .founders-slider-item {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 20px;
   font-weight: 500;
   color: var(--brand-color);
@@ -513,7 +485,7 @@ body::before {
   align-items: center;
   gap: var(--space-lg);
   padding: var(--space-xl) 0;
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 20px;
   color: var(--brand-color);
   letter-spacing: -0.5px;
@@ -587,7 +559,7 @@ body::before {
   height: 100%;
   font-size: 18px;
   letter-spacing: -0.5px;
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
 }
 
 .js-sticky-area__item .font-bold {
@@ -649,7 +621,7 @@ body::before {
 .section-title-container .line-clamp-1 {
   font-size: 64px;
   font-weight: bold;
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   text-transform: uppercase;
   color: var(--brand-color);
   letter-spacing: -1px;
@@ -792,7 +764,7 @@ body::before {
 }
 
 .section-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 64px;
   font-weight: bold;
   color: var(--brand-color);
@@ -803,7 +775,7 @@ body::before {
 }
 
 .section-highlight {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 72px;
   font-weight: bold;
   color: var(--brand-color);
@@ -825,7 +797,7 @@ body::before {
 }
 
 .highlight-word-minimal {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 32px;
   font-weight: bold;
   color: var(--brand-color);
@@ -833,7 +805,7 @@ body::before {
 }
 
 .highlight-separator {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 32px;
   color: var(--brand-color);
   opacity: 0.4;
@@ -876,7 +848,7 @@ body::before {
 }
 
 .experience-section-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 64px;
   font-weight: bold;
   color: var(--brand-color);
@@ -888,7 +860,7 @@ body::before {
 }
 
 .events-main-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 64px;
   font-weight: bold;
   color: var(--brand-color);
@@ -1002,7 +974,7 @@ body::before {
 }
 
 .experience-title-new {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 32px;
   font-weight: bold;
   color: var(--brand-color);
@@ -1057,7 +1029,7 @@ body::before {
 }
 
 .events-main-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 64px;
   font-weight: bold;
   color: var(--brand-color);
@@ -1191,7 +1163,7 @@ body::before {
 }
 
 .event-card-title-small {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 28px;
   font-weight: bold;
   color: var(--brand-color);
@@ -1286,7 +1258,7 @@ body::before {
 }
 
 .event-theme {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 2rem;
   font-weight: bold;
   color: var(--brand-color);
@@ -1294,7 +1266,7 @@ body::before {
 }
 
 .event-date {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 2rem;
   font-weight: bold;
   color: var(--brand-color);
@@ -1439,7 +1411,7 @@ body::before {
 }
 
 .about-section-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 64px;
   font-weight: bold;
   color: var(--brand-color);
@@ -2122,7 +2094,7 @@ body::before {
 }
 
 .contact-email-link {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 24px;
   font-weight: bold;
   color: var(--brand-color);
@@ -2273,7 +2245,7 @@ body::before {
 }
 
 .podcast-episodes-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 48px;
   font-weight: bold;
   color: var(--brand-color);
@@ -2351,7 +2323,7 @@ body::before {
 }
 
 .sidebar-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 24px;
   font-weight: bold;
   color: var(--brand-color);
@@ -2409,7 +2381,7 @@ body::before {
 }
 
 .events-main-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 64px;
   font-weight: bold;
   color: var(--brand-color);
@@ -2660,7 +2632,7 @@ body::before {
 }
 
 .contact-card-title {
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
   font-size: 32px;
   font-weight: bold;
   color: var(--brand-color);
@@ -2930,7 +2902,7 @@ body::before {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  font-family: "ComicCAT", sans-serif;
+  font-family: "atwriter", serif;
 }
 
 .connect-title::before,
