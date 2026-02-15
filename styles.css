@@ -134,7 +134,7 @@ body::before {
 .loopSlider .pht {
   display: block;
   width: 298px;
-  height: 248px;
+  height: 280px;
   overflow: hidden;
   border-radius: 6px;
   flex-shrink: 0;
@@ -147,6 +147,37 @@ body::before {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Testimonial cards in slider – same dimensions as .pht */
+.loopSlider .pht.testimonial-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: var(--neutral-white);
+  color: var(--brand-color);
+  font-size: 15px;
+  line-height: 1.5;
+  font-style: normal;
+  text-align: center;
+}
+
+.loopSlider .pht.testimonial-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 84px;
+  line-height: 1;
+  color: var(--brand-color);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+}
+
+.loopSlider .pht.testimonial-card img {
+  display: none;
 }
 
 /* Text Slider */
@@ -306,6 +337,10 @@ body::before {
   width: auto;
 }
 
+.nav-overlay {
+  display: none;
+}
+
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -357,6 +392,10 @@ body::before {
   color: var(--secondary-1);
 }
 
+.nav-ticket-label {
+  display: none;
+}
+
 .nav-ticket-icon {
   display: inline-flex;
   align-items: center;
@@ -367,7 +406,9 @@ body::before {
   background: var(--brand-color);
   border-radius: 50%;
   padding: 0;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .nav-ticket-icon svg {
@@ -463,7 +504,9 @@ body::before {
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .sections-overview.hidden {
@@ -751,6 +794,11 @@ body::before {
     padding: 40px 20px 60px;
   }
 
+  .js-sticky-area__itemBody.section-white {
+    margin: var(--space-xl) var(--space-md);
+    padding: var(--space-2xl) var(--space-md) var(--space-4xl);
+  }
+
   .section-1-layout {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
@@ -832,12 +880,11 @@ body::before {
 .experience-section {
   background: white;
   padding: var(--space-4xl) var(--space-2xl);
-  margin: var(--space-5xl) var(--space-lg);
+  margin: var(--space-5xl) 0;
   border-radius: 24px;
   position: relative;
-  max-width: var(--content-max-width);
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: none;
 }
 
 .experience-cards-container {
@@ -1209,7 +1256,9 @@ body::before {
   color: white;
   text-decoration: none;
   border-radius: 50%;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
   flex-shrink: 0;
 }
 
@@ -1236,7 +1285,9 @@ body::before {
   box-shadow: 0 8px 30px rgba(52, 32, 77, 0.08);
   border: 1px solid #000;
   backdrop-filter: blur(10px);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .event-card:hover {
@@ -1711,44 +1762,119 @@ body::before {
     flex-wrap: nowrap;
   }
 
+  .top-nav {
+    z-index: 1001;
+  }
+
   .nav-hamburger {
     display: flex;
+    position: relative;
+    z-index: 1002;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(52, 32, 77, 0.3);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-overlay.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-links {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: white;
+    top: 56px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100vh - 56px);
+    background: var(--brand-color);
+    color: white;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 80px var(--space-lg) var(--space-lg);
-    gap: var(--space-lg);
-    box-shadow: -2px 0 10px rgba(52, 32, 77, 0.1);
-    transition: right 0.3s ease;
-    z-index: 1000;
+    align-items: stretch;
+    padding: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
     overflow-y: auto;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 8px 24px rgba(52, 32, 77, 0.25);
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-links a {
-    font-size: 16px;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
     width: 100%;
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid rgba(52, 32, 77, 0.1);
+    padding: 16px var(--space-md);
+    border-top: 1px solid var(--secondary-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    box-sizing: border-box;
   }
 
-  .nav-ticket-icon {
+  .nav-links a:first-child {
+    border-top: none;
+  }
+
+  .nav-links a::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E")
+      no-repeat center;
+    flex-shrink: 0;
+  }
+
+  .nav-links .nav-ticket-icon {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    padding: var(--space-sm);
-    justify-content: flex-start;
+    border-radius: 0;
+    padding: 16px var(--space-md);
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+  }
+
+  .nav-links .nav-ticket-icon .nav-ticket-label {
+    display: inline;
+  }
+
+  .nav-links .nav-ticket-icon svg {
+    display: none;
+  }
+
+  .nav-links .nav-ticket-icon::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E")
+      no-repeat center;
+    flex-shrink: 0;
   }
 
   .hero-section {
@@ -1794,7 +1920,12 @@ body::before {
 
   .loopSlider .pht {
     width: 240px;
-    height: 200px;
+    height: 224px;
+  }
+
+  .loopSlider .pht.testimonial-card {
+    font-size: 13px;
+    padding: var(--space-sm);
   }
 
   .hero-section {
@@ -1819,9 +1950,8 @@ body::before {
   .experience-section {
     margin: var(--space-4xl) 0 0 0;
     padding: var(--space-3xl) var(--space-lg);
-    border-radius: 24px 24px 0 0;
     width: 100%;
-    max-width: 100%;
+    max-width: none;
   }
 
   .experience-cards-grid {
@@ -1837,19 +1967,33 @@ body::before {
     margin: 0 auto;
   }
 
-  .experience-title-card {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin-top: var(--space-sm);
+  .events-section-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: stretch;
+  }
+
+  .events-section-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .events-preview {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .experience-section {
+    margin: var(--space-4xl) 0 0 0;
+    padding: var(--space-2xl) var(--space-md) var(--space-3xl);
+  }
+
+  .experience-cards-container {
+    padding: 0 var(--space-xs);
   }
 
   .experience-section-title {
-    font-size: 36px;
-    margin-bottom: var(--space-lg);
+    font-size: 38px;
+    margin-bottom: var(--space-2xl);
   }
 
   .events-main-title {
@@ -1859,11 +2003,6 @@ body::before {
   .experience-card-image {
     width: 100%;
     height: 250px;
-  }
-
-  .experience-section-title {
-    font-size: 48px;
-    margin-bottom: var(--space-3xl);
   }
 
   .experience-title-new {
@@ -1981,6 +2120,12 @@ body::before {
   .events-preview {
     grid-template-columns: 1fr;
     gap: 30px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .event-card-preview {
+    min-width: 0;
   }
 
   .about-preview-content {
@@ -2028,7 +2173,12 @@ body::before {
 
   .loopSlider .pht {
     width: 200px;
-    height: 165px;
+    height: 186px;
+  }
+
+  .loopSlider .pht.testimonial-card {
+    font-size: 12px;
+    padding: var(--space-xs);
   }
 
   .event-card {
@@ -2623,7 +2773,9 @@ body::before {
   border: 1px solid #000;
   backdrop-filter: blur(10px);
   text-align: center;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contact-card:hover {
@@ -2960,7 +3112,9 @@ body::before {
   margin-left: 1rem;
   background: var(--brand-color);
   border: 1px solid #000;
-  transition: background 0.3s ease, stroke 0.3s ease;
+  transition:
+    background 0.3s ease,
+    stroke 0.3s ease;
 }
 
 .connect-card-icon svg {

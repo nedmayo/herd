@@ -1,11 +1,44 @@
-// Load navbar HTML
-fetch('navbar.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('nav-container').innerHTML = data;
-    initializeNavbar();
-  })
-  .catch(error => console.error('Error loading navbar:', error));
+// Load navbar HTML when DOM is ready
+function loadNavbar() {
+  const container = document.getElementById("nav-container");
+  if (!container) return;
+
+  fetch("navbar.html")
+    .then((response) => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.text();
+    })
+    .then((data) => {
+      container.innerHTML = data;
+      initializeNavbar();
+    })
+    .catch(() => {
+      // Fallback when fetch fails (e.g. opening file:// directly): inject navbar inline
+      container.innerHTML = `<nav class="top-nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="content/Herd H purple.svg" alt="HERD" class="logo-img"></a>
+    </div>
+    <button type="button" class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <div class="nav-overlay" aria-hidden="true"></div>
+    <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUWXf6VWonCT4Zvnoe80TiGM3T9jy9-9vQpV4T13Nl9E9NAg/viewform" target="_blank">Newsletter</a>
+        <a href="events.html" class="nav-ticket-icon">
+            <span class="nav-ticket-label">Tickets</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /><path d="M13 5v2" /><path d="M13 17v2" /><path d="M13 11v2" /></svg>
+        </a>
+    </div>
+</nav>`;
+      initializeNavbar();
+    });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", loadNavbar);
+} else {
+  loadNavbar();
+}
 
 function initializeNavbar() {
   // Set active nav link based on current page
@@ -18,36 +51,62 @@ function initializeNavbar() {
   });
 
   // Navigation scroll effect
-  window.addEventListener('scroll', function () {
-    const nav = document.querySelector('.top-nav');
+  window.addEventListener("scroll", function () {
+    const nav = document.querySelector(".top-nav");
     if (nav && window.scrollY > 100) {
-      nav.classList.add('scrolled');
+      nav.classList.add("scrolled");
     } else if (nav) {
-      nav.classList.remove('scrolled');
+      nav.classList.remove("scrolled");
     }
   });
 
-  // Hamburger menu functionality
-  const hamburger = document.querySelector(".hamburger");
-  const navContainer = document.querySelector("#nav-container");
+  // Hamburger menu (mobile popup nav)
+  const hamburger = document.querySelector(".nav-hamburger");
+  const navPanel = document.querySelector(".nav-links");
+  const navOverlay = document.querySelector(".nav-overlay");
 
-  if (hamburger && navContainer) {
+  if (hamburger && navPanel) {
+    function openNav() {
+      hamburger.classList.add("active");
+      hamburger.setAttribute("aria-label", "Close menu");
+      navPanel.classList.add("active");
+      if (navOverlay) navOverlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+    function closeNav() {
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-label", "Open menu");
+      navPanel.classList.remove("active");
+      if (navOverlay) navOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
     hamburger.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      hamburger.classList.toggle("active");
-      navContainer.classList.toggle("active");
+      if (navPanel.classList.contains("active")) closeNav();
+      else openNav();
     });
+
+    navPanel.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeNav();
+      });
+    });
+
+    if (navOverlay) {
+      navOverlay.addEventListener("click", closeNav);
+    }
 
     document.addEventListener("click", function (e) {
-      if (!hamburger.contains(e.target) && !navContainer.contains(e.target)) {
-        hamburger.classList.remove("active");
-        navContainer.classList.remove("active");
+      if (
+        navPanel.classList.contains("active") &&
+        !hamburger.contains(e.target) &&
+        !navPanel.contains(e.target) &&
+        !(navOverlay && navOverlay.contains(e.target))
+      ) {
+        closeNav();
       }
-    });
-
-    navContainer.addEventListener("click", function (e) {
-      e.stopPropagation();
     });
   }
 }
