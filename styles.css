@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap");
+
 @font-face {
   font-family: "atwriter";
   src: url("./fonts/atwriter.ttf") format("truetype");
@@ -49,7 +51,12 @@ html {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  font-family: "atwriter", serif;
+  font-family:
+    "IBM Plex Sans",
+    "Noto Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   color: var(--brand-color);
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -63,6 +70,32 @@ h4,
 h5,
 h6 {
   font-family: "atwriter", serif;
+}
+
+/* Body text everywhere uses a simple sans (same feel as IBM Plex Sans JP / Noto Sans JP) */
+p,
+.section-text,
+.intro-text p,
+.about-section-text p,
+.story-intro p,
+.story-block p,
+.matriarchs-text p,
+.founders-intro-text p,
+.event-card-details-small p,
+.event-body,
+.podcast-description,
+.podcast-listen-text,
+.contact-intro-text,
+.experience-text-new,
+.experience-card-description,
+.section-1-text,
+.section-1-text p {
+  font-family:
+    "IBM Plex Sans",
+    "Noto Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 body::before {
@@ -90,8 +123,8 @@ body::before {
   display: flex;
   width: fit-content;
   will-change: transform;
-  animation: loopSlider 50s linear infinite;
-  gap: var(--space-2xl);
+  animation: loopSlider 90s linear infinite;
+  gap: 90px;
 }
 
 @keyframes loopSlider {
@@ -108,7 +141,7 @@ body::before {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--space-2xl);
+  gap: 90px;
   flex-shrink: 0;
   align-items: flex-start;
 }
@@ -133,8 +166,8 @@ body::before {
 
 .loopSlider .pht {
   display: block;
-  width: 298px;
-  height: 280px;
+  width: 240px;
+  height: 340px;
   overflow: hidden;
   border-radius: 6px;
   flex-shrink: 0;
@@ -1493,11 +1526,19 @@ body::before {
 
 .about-section-image {
   width: 100%;
-  height: 250px;
+  height: 225px;
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid #000;
   box-shadow: 0 4px 15px rgba(52, 32, 77, 0.1);
+}
+
+.about-section-image--tall {
+  height: 338px;
+}
+
+.about-section-image--taller {
+  height: 405px;
 }
 
 .about-section-text {
@@ -1906,7 +1947,7 @@ body::before {
   }
 
   .loopSlider ul {
-    gap: 40px;
+    gap: 60px;
   }
 
   .loopSlider li {
@@ -1919,8 +1960,8 @@ body::before {
   }
 
   .loopSlider .pht {
-    width: 240px;
-    height: 224px;
+    width: 200px;
+    height: 270px;
   }
 
   .loopSlider .pht.testimonial-card {
@@ -2159,7 +2200,7 @@ body::before {
   }
 
   .loopSlider ul {
-    gap: 30px;
+    gap: 45px;
   }
 
   .loopSlider li {
@@ -2172,8 +2213,8 @@ body::before {
   }
 
   .loopSlider .pht {
-    width: 200px;
-    height: 186px;
+    width: 170px;
+    height: 220px;
   }
 
   .loopSlider .pht.testimonial-card {
@@ -2448,68 +2489,14 @@ body::before {
 }
 
 .events-page-section {
-  padding: 0 80px 120px;
+  padding: 180px 80px 120px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .events-page-content {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Sidebar */
-.events-sidebar {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 16px;
-  padding: 40px 30px;
-  height: fit-content;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(52, 32, 77, 0.1);
-  box-shadow: 0 4px 20px rgba(52, 32, 77, 0.08);
-}
-
-.sidebar-title {
-  font-family: "atwriter", serif;
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--brand-color);
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-}
-
-.category-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.category-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-  border-bottom: 1px dotted rgba(52, 32, 77, 0.2);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.category-item:last-child {
-  border-bottom: none;
-}
-
-.category-item:hover {
-  color: var(--secondary-1);
-}
-
-.category-item span:first-child {
-  font-size: 16px;
-  color: var(--brand-color);
-  font-weight: 400;
 }
 
 .category-arrow {
@@ -2530,6 +2517,29 @@ body::before {
   width: 100%;
 }
 
+.events-section-row {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.events-section-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.events-section-label {
+  font-family: "atwriter", serif;
+  font-size: 64px;
+  font-weight: bold;
+  color: var(--brand-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
 .events-main-title {
   font-family: "atwriter", serif;
   font-size: 64px;
@@ -2544,8 +2554,28 @@ body::before {
 .events-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-bottom: 60px;
+  gap: 28px;
+}
+
+.events-cards-grid .event-card-large {
+  max-width: 380px;
+}
+
+.events-cards-grid .event-card-title-small {
+  font-size: 24px;
+}
+
+.events-cards-grid .event-card-details-small p {
+  font-size: 14px;
+}
+
+.events-cards-grid .event-date-small,
+.events-cards-grid .event-time-small {
+  font-size: 13px;
+}
+
+.events-cards-grid .event-card-content {
+  margin-top: 14px;
 }
 
 .event-card-large {
@@ -2667,17 +2697,15 @@ body::before {
 
 /* Responsive Events Page */
 @media screen and (max-width: 1024px) {
-  .events-page-content {
+  .events-section-row {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 16px;
+    margin-bottom: 56px;
   }
 
-  .events-sidebar {
-    order: 2;
-  }
-
-  .events-main {
-    order: 1;
+  .events-section-label {
+    font-size: 48px;
+    padding-top: 0;
   }
 
   .events-cards-grid {
@@ -2699,7 +2727,7 @@ body::before {
   }
 
   .events-page-section {
-    padding: 0 20px 80px;
+    padding: 140px 20px 80px;
   }
 
   .events-cards-grid {
@@ -2716,6 +2744,10 @@ body::before {
 
   .about-section {
     padding: var(--space-2xl) 0;
+  }
+
+  .about-section-first {
+    padding-top: 140px;
   }
 
   .about-section > * {

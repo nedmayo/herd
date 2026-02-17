@@ -32,68 +32,32 @@
     <!-- Navigation -->
     <div id="nav-container"></div>
 
-    <!-- Events Page Header -->
-    <section class="page-header">
-        <div class="page-header-content">
-            <h1 class="page-title">Events</h1>
-        </div>
-    </section>
-
     <!-- Events Content -->
     <section class="events-page-section">
         <div class="events-page-content">
-            <!-- Sidebar: Event Categories -->
-            <aside class="events-sidebar">
-                <h2 class="sidebar-title">Explore by Category</h2>
-                <ul class="category-list">
-                    <li class="category-item">
-                        <a href="#upcoming-events" class="event-buy-tickets">
-                            <span>Upcoming Events</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right">
-                                <path d="M7 7h10v10" />
-                                <path d="M7 17 17 7" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="category-item">
-                        <a href="#past-events" class="event-buy-tickets">
-                            <span>Past Events</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right">
-                                <path d="M7 7h10v10" />
-                                <path d="M7 17 17 7" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-
-            <!-- Main Content: Event Cards -->
             <div class="events-main">
-                <h2 class="events-main-title" id="upcoming-events">Upcoming Events</h2>
-                <div class="events-cards-grid">
-                    <!-- Event Card 1: TBA at The Parkway -->
-                    <div class="event-card-large">
-                        <div class="event-card-image">
-                            <img src="content/theparkway.webp" alt="TBA event">
-                            <div class="event-category-label-small">Upcoming Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">TBA</h3>
+                <div class="events-section-row" id="upcoming-events">
+                    <h2 class="events-section-label">Upcoming Events</h2>
+                    <div class="events-cards-grid">
+                        <!-- Event Card 1: HERD Event: Theme TBA at The Parkway -->
+                        <div class="event-card-large">
+                            <div class="event-card-image">
+                                <img src="content/theparkway.webp" alt="HERD Event: Theme TBA">
+                                <div class="event-category-label-small">Upcoming Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">April 22, 2026</span>
-                                <span class="event-time-small">7:00pm</span>
-                            </div>
-                            <div class="event-card-details-small">
-                                <p><strong>Location:</strong> The Parkway</p>
-                                <p>Theme TBA. Tickets available mid March.</p>
-                            </div>
-                            <!-- <a href="#" class="event-buy-tickets">
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">HERD Event: Theme TBA</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">April 22, 2026</span>
+                                    <span class="event-time-small">7:00pm</span>
+                                </div>
+                                <div class="event-card-details-small">
+                                    <p><strong>Location:</strong> The Parkway</p>
+                                    <p>Theme TBA. Tickets available mid March.</p>
+                                </div>
+                                <!-- <a href="#" class="event-buy-tickets">
                                 <span>buy tickets</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -103,28 +67,28 @@
                                     <path d="M7 17 17 7" />
                                 </svg>
                             </a> -->
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Event Card 2: Women's Sports Edition at MIA -->
-                    <div class="event-card-large">
-                        <div class="event-card-image">
-                            <img src="content/mia.jpg" alt="Herd: Women's Sports Edition">
-                            <div class="event-category-label-small">Upcoming Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">Herd: Women's Sports Edition</h3>
+                        <!-- Event Card 2: Women's Sports Edition at MIA -->
+                        <div class="event-card-large">
+                            <div class="event-card-image">
+                                <img src="content/mia.jpg" alt="Herd: Women's Sports Edition">
+                                <div class="event-category-label-small">Upcoming Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">April 28, 2026</span>
-                                <span class="event-time-small">TBA</span>
-                            </div>
-                            <div class="event-card-details-small">
-                                <p><strong>Location:</strong> Minneapolis Institute of Art (MIA)</p>
-                                <p>Theme and time TBA. Tickets available mid March.</p>
-                            </div>
-                            <!-- <a href="#" class="event-buy-tickets">
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">Herd: Women's Sports Edition</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">April 28, 2026</span>
+                                    <span class="event-time-small">TBA</span>
+                                </div>
+                                <div class="event-card-details-small">
+                                    <p><strong>Location:</strong> Minneapolis Institute of Art (MIA)</p>
+                                    <p>Theme and time TBA. Tickets available mid March.</p>
+                                </div>
+                                <!-- <a href="#" class="event-buy-tickets">
                                 <span>buy tickets</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -134,111 +98,114 @@
                                     <path d="M7 17 17 7" />
                                 </svg>
                             </a> -->
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <h2 class="events-main-title" id="past-events" style="margin-top: 100px;">Past Events</h2>
-                <div class="events-cards-grid">
-                    <!-- CRUSH -->
-                    <div class="event-card-large past-event">
-                        <div class="event-card-image">
-                            <img src="content/OShaughnessy.jpg" alt="CRUSH">
-                            <div class="event-category-label-small">Past Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">CRUSH</h3>
+                <div class="events-section-row" id="past-events">
+                    <h2 class="events-section-label">Past Events</h2>
+                    <div class="events-cards-grid">
+                        <!-- CRUSH -->
+                        <div class="event-card-large past-event">
+                            <div class="event-card-image">
+                                <img src="content/OShaughnessy.jpg" alt="CRUSH">
+                                <div class="event-category-label-small">Past Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">Feb. 11, 2026</span>
-                                <span class="event-time-small">O'Shaughnessy at St. Catherine University, St.
-                                    Paul</span>
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">CRUSH</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">Feb. 11, 2026</span>
+                                    <span class="event-time-small">O'Shaughnessy at St. Catherine University, St.
+                                        Paul</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- PRESENT -->
-                    <div class="event-card-large past-event">
-                        <div class="event-card-image">
-                            <img src="content/herd_event.jpg" alt="PRESENT">
-                            <div class="event-category-label-small">Past Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">PRESENT</h3>
+                        <!-- PRESENT -->
+                        <div class="event-card-large past-event">
+                            <div class="event-card-image">
+                                <img src="content/herd_event.jpg" alt="PRESENT">
+                                <div class="event-category-label-small">Past Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">—</span>
-                                <span class="event-time-small">—</span>
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">PRESENT</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">—</span>
+                                    <span class="event-time-small">—</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- BUSTED -->
-                    <div class="event-card-large past-event">
-                        <div class="event-card-image">
-                            <img src="content/aug1.jpeg" alt="BUSTED">
-                            <div class="event-category-label-small">Past Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">BUSTED</h3>
+                        <!-- BUSTED -->
+                        <div class="event-card-large past-event">
+                            <div class="event-card-image">
+                                <img src="content/aug1.jpeg" alt="BUSTED">
+                                <div class="event-category-label-small">Past Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">—</span>
-                                <span class="event-time-small">—</span>
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">BUSTED</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">—</span>
+                                    <span class="event-time-small">—</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- BOSS -->
-                    <div class="event-card-large past-event">
-                        <div class="event-card-image">
-                            <img src="content/oct_photo.jpeg" alt="BOSS">
-                            <div class="event-category-label-small">Past Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">BOSS</h3>
+                        <!-- BOSS -->
+                        <div class="event-card-large past-event">
+                            <div class="event-card-image">
+                                <img src="content/oct_photo.jpeg" alt="BOSS">
+                                <div class="event-category-label-small">Past Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">—</span>
-                                <span class="event-time-small">—</span>
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">BOSS</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">—</span>
+                                    <span class="event-time-small">—</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- HAIRY -->
-                    <div class="event-card-large past-event">
-                        <div class="event-card-image">
-                            <img src="content/aug2.jpeg" alt="HAIRY">
-                            <div class="event-category-label-small">Past Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">HAIRY</h3>
+                        <!-- HAIRY -->
+                        <div class="event-card-large past-event">
+                            <div class="event-card-image">
+                                <img src="content/aug2.jpeg" alt="HAIRY">
+                                <div class="event-category-label-small">Past Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">—</span>
-                                <span class="event-time-small">—</span>
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">HAIRY</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">—</span>
+                                    <span class="event-time-small">—</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- CRASH -->
-                    <div class="event-card-large past-event">
-                        <div class="event-card-image">
-                            <img src="content/aug3.jpeg" alt="CRASH">
-                            <div class="event-category-label-small">Past Event</div>
-                        </div>
-                        <div class="event-card-content">
-                            <div class="event-title-row">
-                                <h3 class="event-card-title-small">CRASH</h3>
+                        <!-- CRASH -->
+                        <div class="event-card-large past-event">
+                            <div class="event-card-image">
+                                <img src="content/aug3.jpeg" alt="CRASH">
+                                <div class="event-category-label-small">Past Event</div>
                             </div>
-                            <div class="event-card-meta-small">
-                                <span class="event-date-small">—</span>
-                                <span class="event-time-small">—</span>
+                            <div class="event-card-content">
+                                <div class="event-title-row">
+                                    <h3 class="event-card-title-small">CRASH</h3>
+                                </div>
+                                <div class="event-card-meta-small">
+                                    <span class="event-date-small">—</span>
+                                    <span class="event-time-small">—</span>
+                                </div>
                             </div>
                         </div>
                     </div>
