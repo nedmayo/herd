@@ -169,7 +169,7 @@ body::before {
   width: 240px;
   height: 340px;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 24px;
   flex-shrink: 0;
   box-shadow: 0 4px 20px rgba(52, 32, 77, 0.1);
   border: 1px solid #000;
@@ -376,39 +376,37 @@ body::before {
 
 .nav-hamburger {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 8px 4px;
   z-index: 1001;
+  font-family: inherit;
 }
 
-.nav-hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--brand-color);
-  transition: all 0.3s ease;
+.nav-hamburger .nav-menu-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--brand-color);
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
-.nav-hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
-}
-
-.nav-hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+.nav-hamburger:hover .nav-menu-label {
+  color: var(--secondary-1);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: var(--space-md);
+}
+
+.nav-links-header {
+  display: none;
 }
 
 .nav-links a {
@@ -674,7 +672,7 @@ body::before {
 
 .js-sticky-area__itemBody.section-white {
   background: white;
-  border-radius: 19px;
+  border-radius: 24px;
   margin: var(--space-xl) var(--space-lg);
   padding: 80px 80px 120px;
 }
@@ -717,15 +715,21 @@ body::before {
 .section-1-video {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 10px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid #000;
 }
 
-.section-1-video iframe {
+.section-1-video iframe,
+.section-1-video img {
   width: 100%;
   height: 100%;
+  display: block;
   border: none;
+}
+
+.section-1-video img {
+  object-fit: cover;
 }
 
 .section-1-text {
@@ -1011,7 +1015,7 @@ body::before {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: visible;
-  border-radius: 19px;
+  border-radius: 24px;
   position: relative;
 }
 
@@ -1022,7 +1026,7 @@ body::before {
   object-position: center;
   display: block;
   border: 1px solid #000;
-  border-radius: 19px;
+  border-radius: 24px;
 }
 
 .experience-title-card {
@@ -1171,7 +1175,7 @@ body::before {
   aspect-ratio: 1;
   overflow: visible;
   background: var(--brand-color);
-  border-radius: 19px;
+  border-radius: 24px;
   position: relative;
 }
 
@@ -1182,7 +1186,7 @@ body::before {
   object-position: center;
   display: block;
   border: 1px solid #000;
-  border-radius: 19px;
+  border-radius: 24px;
 }
 
 .event-card-content-small {
@@ -1313,7 +1317,7 @@ body::before {
 
 .event-card {
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 19px;
+  border-radius: 24px;
   padding: 40px;
   box-shadow: 0 8px 30px rgba(52, 32, 77, 0.08);
   border: 1px solid #000;
@@ -1434,7 +1438,7 @@ body::before {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 24px;
   border: 1px solid rgba(52, 32, 77, 0.1);
   box-shadow: 0 4px 15px rgba(52, 32, 77, 0.1);
 }
@@ -1528,7 +1532,7 @@ body::before {
   width: 100%;
   height: 225px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 24px;
   border: 1px solid #000;
   box-shadow: 0 4px 15px rgba(52, 32, 77, 0.1);
 }
@@ -1603,7 +1607,7 @@ body::before {
   width: 300px;
   height: 300px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 24px;
   border: 3px solid var(--brand-color);
   box-shadow: 0 4px 15px rgba(52, 32, 77, 0.2);
   flex-shrink: 0;
@@ -1623,7 +1627,7 @@ body::before {
 /* Newsletter Signup Card */
 .newsletter-section-card {
   background: transparent;
-  border-radius: 19px;
+  border-radius: 24px;
   margin: var(--space-4xl) var(--space-lg);
   padding: var(--space-4xl) var(--space-3xl);
   max-width: 600px;
@@ -1638,7 +1642,7 @@ body::before {
 }
 
 .newsletter-card-content iframe {
-  border-radius: 6px;
+  border-radius: 24px;
   max-width: 100%;
   height: auto;
   border: none;
@@ -1813,15 +1817,19 @@ body::before {
     z-index: 1002;
   }
 
+  .nav-hamburger .nav-menu-label {
+    font-size: 17px;
+  }
+
   .nav-overlay {
     display: none;
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(52, 32, 77, 0.3);
-    z-index: 999;
+    z-index: 998;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -1835,16 +1843,16 @@ body::before {
 
   .nav-links {
     position: fixed;
-    top: 56px;
+    top: 80px;
     left: 0;
     right: 0;
     width: 100%;
-    max-height: calc(100vh - 56px);
+    max-height: calc(100vh - 80px);
     background: var(--brand-color);
     color: white;
     flex-direction: column;
     align-items: stretch;
-    padding: 0;
+    padding: 12px var(--space-lg) 16px;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
     z-index: 999;
@@ -1868,35 +1876,31 @@ body::before {
     text-transform: lowercase;
     letter-spacing: 0.5px;
     width: 100%;
-    padding: 16px var(--space-md);
-    border-top: 1px solid var(--secondary-1);
+    padding: 10px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 12px;
     text-decoration: none;
     transition: opacity 0.3s ease;
     box-sizing: border-box;
-  }
-
-  .nav-links a:first-child {
-    border-top: none;
   }
 
   .nav-links a::after {
     content: "";
     width: 24px;
     height: 24px;
+    margin-left: auto;
+    flex-shrink: 0;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E")
       no-repeat center;
-    flex-shrink: 0;
   }
 
   .nav-links .nav-ticket-icon {
     width: 100%;
     height: auto;
     border-radius: 0;
-    padding: 16px var(--space-md);
-    justify-content: space-between;
+    padding: 10px 0;
+    gap: 12px;
     background: transparent;
     border: none;
   }
@@ -2255,7 +2259,7 @@ body::before {
 .contact-image {
   width: 300px;
   height: 300px;
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid #000;
   box-shadow: 0 4px 20px rgba(52, 32, 77, 0.15);
@@ -2339,7 +2343,7 @@ body::before {
 .podcast-image {
   width: 300px;
   height: 300px;
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid #000;
   box-shadow: 0 4px 20px rgba(52, 32, 77, 0.15);
@@ -2595,7 +2599,7 @@ body::before {
   aspect-ratio: 1;
   overflow: visible;
   background: var(--brand-color);
-  border-radius: 19px;
+  border-radius: 24px;
   position: relative;
 }
 
@@ -2606,7 +2610,7 @@ body::before {
   object-position: center;
   display: block;
   border: 1px solid #000;
-  border-radius: 19px;
+  border-radius: 24px;
 }
 
 .event-image-placeholder {
@@ -2750,9 +2754,18 @@ body::before {
     padding-top: 140px;
   }
 
-  .about-section > * {
+  .about-section > *:not(.founders-sliders-container) {
+    max-width: 100%;
     padding-left: var(--space-sm);
     padding-right: var(--space-sm);
+    box-sizing: border-box;
+  }
+
+  .about-section > .founders-sliders-container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .about-section-title {
@@ -2799,7 +2812,7 @@ body::before {
 
 .contact-card {
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 19px;
+  border-radius: 24px;
   padding: var(--space-xl);
   box-shadow: 0 8px 30px rgba(52, 32, 77, 0.08);
   border: 1px solid #000;

@@ -18,7 +18,7 @@ function loadNavbar() {
     <div class="nav-logo">
         <a href="index.html"><img src="content/Herd H purple.svg" alt="HERD" class="logo-img"></a>
     </div>
-    <button type="button" class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button type="button" class="nav-hamburger" aria-label="Open menu"><span class="nav-menu-label">Menu</span></button>
     <div class="nav-overlay" aria-hidden="true"></div>
     <div class="nav-links">
         <a href="about.html">About</a>
@@ -69,6 +69,8 @@ function initializeNavbar() {
     function openNav() {
       hamburger.classList.add("active");
       hamburger.setAttribute("aria-label", "Close menu");
+      const label = hamburger.querySelector(".nav-menu-label");
+      if (label) label.textContent = "Close";
       navPanel.classList.add("active");
       if (navOverlay) navOverlay.classList.add("active");
       document.body.style.overflow = "hidden";
@@ -76,6 +78,8 @@ function initializeNavbar() {
     function closeNav() {
       hamburger.classList.remove("active");
       hamburger.setAttribute("aria-label", "Open menu");
+      const label = hamburger.querySelector(".nav-menu-label");
+      if (label) label.textContent = "Menu";
       navPanel.classList.remove("active");
       if (navOverlay) navOverlay.classList.remove("active");
       document.body.style.overflow = "";
