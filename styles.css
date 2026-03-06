@@ -2418,13 +2418,16 @@ body::before {
   }
 
   .experience-cards-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--gap);
-    padding: var(--space-md) 0 0;
+    padding: 0 0 var(--gap);
   }
 
   .experience-card-new {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 0;
     margin: 0;
@@ -2432,12 +2435,12 @@ body::before {
 
   .events-section-layout {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--gap);
     align-items: stretch;
   }
 
   .events-section-title {
-    margin-bottom: var(--space-md);
+    margin-bottom: 0;
   }
 
   .events-preview {
@@ -2447,12 +2450,15 @@ body::before {
   }
 
   .experience-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
     padding: 0 var(--gap);
   }
 
   .experience-section-title {
     font-size: 36px;
-    margin-bottom: var(--space-lg);
+    margin-bottom: 0;
   }
 
   .events-main-title {
@@ -2463,6 +2469,7 @@ body::before {
     width: 100%;
     aspect-ratio: 1 / 1;
     height: auto;
+    margin-bottom: 14px;
   }
 
   .experience-title-card {
@@ -2475,7 +2482,7 @@ body::before {
   }
 
   .experience-card-body {
-    padding-top: var(--space-sm);
+    padding-top: 0;
   }
 
   .experience-text-new {
