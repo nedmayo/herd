@@ -627,7 +627,7 @@ body::before {
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
-  padding: 0 var(--gap) var(--gap);
+  padding: var(--gap) var(--gap) var(--gap);
   position: relative;
   z-index: 3;
   max-width: var(--content-max-width);
