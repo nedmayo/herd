@@ -2226,6 +2226,14 @@ body::before {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+  body,
+  html {
+    background-attachment: scroll;
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+  }
+
   .top-nav {
     padding: var(--gap) var(--gap);
     flex-wrap: nowrap;
