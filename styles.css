@@ -1503,6 +1503,19 @@ body::before {
   border-radius: 24px;
 }
 
+.event-card-image-small.event-card-image-poster,
+.event-card-image.event-card-image-poster {
+  aspect-ratio: auto;
+  background: transparent;
+}
+
+.event-card-image-small.event-card-image-poster img,
+.event-card-image.event-card-image-poster img {
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
 .event-card-content-small {
   padding: 0;
   display: flex;
