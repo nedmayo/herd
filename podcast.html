@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast | HERD</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon/Logo metadata -->
+    <meta property="og:image" content="https://youareherd.org/content/herd_circle.png">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg">
+
+    <!-- Open Graph metadata for social sharing -->
+    <meta property="og:title" content="Podcast | HERD">
+    <meta property="og:description" content="HERD Podcast - Stories from our women-centered storytelling platform">
+    <meta property="og:image" content="content/Herd Horns.svg">
+    <meta property="og:url" content="https://youareherd.org/podcast.html">
+
+    <!-- Additional metadata -->
+    <meta name="description" content="HERD Podcast - Stories from our women-centered storytelling platform">
+    <meta name="theme-color" content="#34204d">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="content/Herd H purple.svg">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div id="nav-container"></div>
+
+    <!-- Podcast Page Header -->
+    <section class="page-header">
+        <div class="page-header-content podcast-grid">
+            <div class="podcast-image">
+                <img src="content/microphone.svg" alt="HERD Podcast">
+            </div>
+            <div class="podcast-content-column">
+                <div class="podcast-header-row">
+                    <h1 class="page-title">Podcast</h1>
+                    <div class="podcast-platforms">
+                        <a href="https://herdstorytelling.substack.com/?utm_campaign=profile_chips" target="_blank"
+                            class="podcast-platform-button">
+                            <span>Substack</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="podcast-platform-button">
+                            <span>Apple Podcasts</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="podcast-platform-button">
+                            <span>Spotify</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="podcast-platform-button">
+                            <span>YouTube</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="podcast-intro">
+                    <p class="podcast-description">HERD Podcast features powerful stories from our community of
+                        storytellers. We share authentic voices, bold narratives, and the well-earned life stories of
+                        women
+                        who inspire us. Each episode brings you closer to the heart of what it means to be heard.</p>
+                    <p class="podcast-listen-text">Listen here or follow HERD Podcast on Apple Podcasts, Spotify,
+                        YouTube,
+                        or wherever you get your podcasts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="navbar.js"></script>
+    <script>
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+
+</html>
