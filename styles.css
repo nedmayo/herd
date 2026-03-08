@@ -133,14 +133,14 @@ body::before {
 .loopSlider.section-with-top-border .loopslider_wrap {
   margin-left: calc(-1 * var(--gap));
   margin-right: calc(-1 * var(--gap));
-  width: calc(100% + 2 * var(--gap));
+  /* Keep wrap width as fit-content so -50% = one full list width for seamless loop */
 }
 
 .loopslider_wrap {
   display: flex;
   width: fit-content;
   will-change: transform;
-  animation: loopSlider 26s linear infinite;
+  animation: loopSlider 40s linear infinite;
   gap: 0;
 }
 
@@ -2479,7 +2479,7 @@ body::before {
 
   .experience-section-title,
   .events-main-title {
-    font-size: 36px;
+    font-size: 42px;
   }
 
   .experience-section-title {
@@ -2490,7 +2490,7 @@ body::before {
     width: 100%;
     aspect-ratio: 1 / 1;
     height: auto;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
   }
 
   .experience-title-card {
@@ -3007,7 +3007,6 @@ body::before {
   line-height: 1.1;
 }
 
-
 .events-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -3176,7 +3175,7 @@ body::before {
 
 @media screen and (max-width: 768px) {
   .events-main-title {
-    font-size: 36px;
+    font-size: 42px;
   }
 
   .page-header {
