@@ -140,7 +140,7 @@ body::before {
   display: flex;
   width: fit-content;
   will-change: transform;
-  animation: loopSlider 40s linear infinite;
+  animation: loopSlider 65s linear infinite;
   gap: 0;
 }
 
@@ -1571,6 +1571,38 @@ body::before {
 
 .event-arrow-link:hover svg {
   color: white;
+}
+
+.event-card-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.event-card-title-link:hover {
+  opacity: 0.85;
+}
+
+.event-card-image-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.event-card-image-link:hover {
+  opacity: 0.92;
+}
+
+.event-card-poster-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.event-card-poster-link:hover {
+  opacity: 0.92;
 }
 
 .event-card-title-small {
@@ -3718,5 +3750,169 @@ body::before {
 
   .connect-card {
     padding: 1.5rem;
+  }
+}
+
+/* Herd: PRESSURE / OUTSIDE event pages — same top offset as .about-section-first, .page-header */
+.pressure-page-hero {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 180px var(--space-xl) 0;
+}
+
+.pressure-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+.pressure-hero-poster {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(52, 32, 77, 0.2);
+}
+
+.pressure-hero-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pressure-kicker {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brand-color);
+  margin: 0 0 var(--space-sm);
+}
+
+.pressure-title {
+  font-family: "atwriter", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: bold;
+  color: var(--brand-color);
+  line-height: 1.1;
+  margin: 0 0 var(--space-sm);
+}
+
+.pressure-subtitle {
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.pressure-meta,
+.pressure-location {
+  margin: 0 0 var(--space-sm);
+  color: var(--brand-color);
+  font-size: 18px;
+}
+
+.pressure-intro {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--brand-color);
+  margin: 0 0 var(--space-xl);
+}
+
+.pressure-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.pressure-tickets {
+  margin: 0;
+}
+
+.pressure-back-events {
+  color: var(--brand-color);
+  font-size: 18px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.pressure-back-events:hover {
+  color: var(--secondary-1);
+}
+
+.pressure-partners {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-xl) var(--space-4xl);
+}
+
+.pressure-partners-inner {
+  padding: 0;
+}
+
+.pressure-partners-heading {
+  font-family: "atwriter", serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: var(--brand-color);
+  margin: 0 0 var(--space-xl);
+  line-height: 1.2;
+}
+
+.pressure-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.pressure-gallery-item {
+  margin: 0;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(52, 32, 77, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.pressure-gallery-item img {
+  max-width: 100%;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.pressure-gallery-item-photo {
+  min-height: 160px;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pressure-gallery-item-photo img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+  .pressure-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .pressure-page-hero {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .pressure-partners {
+    padding: var(--space-xl) var(--space-md) var(--space-3xl);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pressure-page-hero {
+    padding-top: 140px;
   }
 }

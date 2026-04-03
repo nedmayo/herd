@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herd: PRESSURE — Women's Sports Edition | HERD</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <meta property="og:image" content="https://youareherd.org/content/pressure_square.png">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg">
+
+    <meta property="og:title" content="Herd: PRESSURE — Women's Sports Edition | HERD">
+    <meta property="og:description"
+        content="PRESSURE celebrates women's sports through storytelling at Minneapolis Institute of Art.">
+    <meta property="og:image" content="content/pressure_square.png">
+    <meta property="og:url" content="https://youareherd.org/pressure.html">
+
+    <meta name="description"
+        content="Herd: PRESSURE Women's Sports Edition at MIA — partner organizations and tickets.">
+    <meta name="theme-color" content="#34204d">
+
+    <link rel="icon" type="image/svg+xml" href="content/Herd H purple.svg">
+    <link rel="apple-touch-icon" href="content/Herd H purple.svg">
+</head>
+
+<body>
+    <div id="nav-container"></div>
+
+    <section class="pressure-page-hero">
+        <div class="pressure-hero-inner">
+            <div class="pressure-hero-poster">
+                <img src="content/pressure_square.png" alt="Herd: PRESSURE Women's Sports Edition">
+            </div>
+            <div class="pressure-hero-copy">
+                <p class="pressure-kicker">Upcoming event</p>
+                <h1 class="pressure-title">Herd: PRESSURE<br><span class="pressure-subtitle">Women's Sports Edition</span>
+                </h1>
+                <p class="pressure-meta"><span>April 28, 2026</span> · <span>7:00pm</span></p>
+                <p class="pressure-location"><strong>Location:</strong> Minneapolis Institute of Art (MIA)</p>
+                <p class="pressure-intro">Pressure brings out the best. From packed arenas to quiet training moments,
+                    PRESSURE celebrates the experiences that shape women athletes — the expectations, the challenges,
+                    and the confidence that comes from meeting them head-on. This is a celebration of women's sports, told
+                    through real stories of grit, growth, and greatness.</p>
+                <div class="pressure-actions">
+                    <a href="https://www.eventbrite.com/e/1984987019610/?aff=oddtdtcreator&keep_tld=true"
+                        class="event-buy-tickets pressure-tickets" target="_blank" rel="noopener">
+                        <span>buy tickets</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg>
+                    </a>
+                    <a href="events.html" class="pressure-back-events">All events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pressure-partners" aria-labelledby="pressure-partners-heading">
+        <div class="pressure-partners-inner">
+            <h2 id="pressure-partners-heading" class="pressure-partners-heading">Presented with support from our
+                partners</h2>
+            <div class="pressure-gallery">
+                <figure class="pressure-gallery-item">
+                    <img src="sports/ABarOfTheirOwn-Primary-Tagline.png" alt="A Bar of Their Own">
+                </figure>
+                <figure class="pressure-gallery-item">
+                    <img src="sports/Girls Flag Logo FINALS-01.png" alt="Girls Flag Football">
+                </figure>
+                <figure class="pressure-gallery-item">
+                    <img src="sports/MM_LogoNew_600x200-01.jpg" alt="Mill City Running">
+                </figure>
+                <figure class="pressure-gallery-item">
+                    <img src="sports/MNUFC Logo.jpg" alt="Minnesota United FC">
+                </figure>
+                <figure class="pressure-gallery-item">
+                    <img src="sports/NorsemanFullColor.jpg" alt="Norseman Distillery">
+                </figure>
+                <figure class="pressure-gallery-item">
+                    <img src="sports/UrbanGrowler_full-stacked-logo.jpg" alt="Urban Growler Brewing">
+                </figure>
+                <figure class="pressure-gallery-item">
+                    <img src="sports/Voliere Spirits.png" alt="Voliere Spirits">
+                </figure>
+                <figure class="pressure-gallery-item">
+                    <img src="sports/beehive_primary_logo_CMYK.jpg" alt="Beehive">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="navbar.js"></script>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+
+</html>
