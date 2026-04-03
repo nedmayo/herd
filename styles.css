@@ -1573,14 +1573,17 @@ body::before {
   color: white;
 }
 
-.event-card-title-link {
-  color: inherit;
+a.event-card-title-link,
+a.event-card-title-link:visited {
+  color: var(--brand-color);
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
-.event-card-title-link:hover {
+a.event-card-title-link:hover {
   opacity: 0.85;
+  color: var(--brand-color);
+  text-decoration: none;
 }
 
 .event-card-image-link {
