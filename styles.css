@@ -3886,31 +3886,41 @@ a.event-card-title-link:hover {
 }
 
 .pressure-gallery-grid .pressure-gallery-item:nth-child(6) {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
 }
 
 .pressure-gallery-grid .pressure-gallery-item:nth-child(7) {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 2;
 }
 
 .pressure-gallery-grid .pressure-gallery-item:nth-child(8) {
-  grid-column: 4;
+  grid-column: 3;
   grid-row: 2;
 }
 
 .pressure-gallery-grid .pressure-gallery-item:nth-child(9) {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.pressure-gallery-grid .pressure-gallery-item:nth-child(10) {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+.pressure-gallery-grid .pressure-gallery-item:nth-child(11) {
   grid-column: 2;
   grid-row: 3;
 }
 
-.pressure-gallery-grid .pressure-gallery-item:nth-child(10) {
+.pressure-gallery-grid .pressure-gallery-item:nth-child(12) {
   grid-column: 3;
   grid-row: 3;
 }
 
-.pressure-gallery-grid .pressure-gallery-item:nth-child(11) {
+.pressure-gallery-grid .pressure-gallery-item:nth-child(13) {
   grid-column: 4;
   grid-row: 3;
 }
