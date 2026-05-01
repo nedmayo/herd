@@ -387,6 +387,8 @@ body::before {
 .logo-img {
   height: 40px;
   width: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -2152,6 +2154,7 @@ a.event-card-title-link:hover {
   width: 100%;
   max-width: 400px;
   height: auto;
+  object-fit: contain;
   filter: brightness(0) invert(1);
 }
 
@@ -3136,6 +3139,7 @@ a.event-card-title-link:hover {
   width: 83%;
   max-width: 286px;
   height: auto;
+  object-fit: contain;
   display: block;
   border: none;
   border-radius: 0;

@@ -3,7 +3,7 @@ function loadNavbar() {
   const container = document.getElementById("nav-container");
   if (!container) return;
 
-  fetch("navbar.html")
+  fetch("navbar.html?v=20260501")
     .then((response) => {
       if (!response.ok) throw new Error("Network response was not ok");
       return response.text();
