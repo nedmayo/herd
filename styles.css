@@ -3169,14 +3169,18 @@ a.event-card-title-link:hover {
   gap: var(--space-md) var(--space-xl);
 }
 
-.fundraiser-bottom-cta-tagline {
-  font-family: "atwriter", serif;
-  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-  font-weight: 700;
-  color: var(--brand-color);
+/* Scoped + div (not p) so deploy/cache never leaves this as body copy */
+.fundraiser-bottom-cta-inner .fundraiser-bottom-cta-tagline {
+  display: block;
+  font-family: "atwriter", serif !important;
+  font-size: 1.75rem;
+  font-size: clamp(1.375rem, 2.2vw, 1.875rem);
+  font-weight: 700 !important;
+  color: var(--brand-color) !important;
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Podcast launch: tighter title → intro → grid */
