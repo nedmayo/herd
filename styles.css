@@ -3163,7 +3163,20 @@ a.event-card-title-link:hover {
 
 .fundraiser-bottom-cta-inner {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  gap: var(--space-md) var(--space-xl);
+}
+
+.fundraiser-bottom-cta-tagline {
+  font-family: "atwriter", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: var(--brand-color);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 /* Podcast launch: tighter title → intro → grid */
