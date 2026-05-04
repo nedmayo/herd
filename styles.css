@@ -632,7 +632,11 @@ body::before {
   padding: var(--gap) var(--gap) var(--gap);
   position: relative;
   z-index: 3;
+  width: 100%;
   max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .hero-content {
@@ -812,6 +816,111 @@ body::before {
 
 .hero-newsletter-link:hover .hero-newsletter-arrow svg {
   stroke: white;
+}
+
+/* Home: podcast launch fund — half-width (non-mobile), right-aligned with hero / content */
+.home-podcast-launch-wrap {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: var(--space-xl);
+  box-sizing: border-box;
+}
+
+.home-podcast-launch-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  width: 50%;
+  min-width: 50%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+  background: var(--brand-color);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home-podcast-launch-link:hover {
+  background: #3d285c;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 28px rgba(52, 32, 77, 0.35);
+}
+
+.home-podcast-launch-text {
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 300;
+  flex: 1 1 auto;
+  min-width: 0;
+  color: inherit;
+}
+
+.home-podcast-launch-text strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+.home-podcast-launch-text em {
+  color: rgba(255, 255, 255, 0.92);
+  font-style: italic;
+}
+
+.home-podcast-launch-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.home-podcast-launch-arrow svg {
+  stroke: #fff;
+  transition: stroke 0.2s ease;
+}
+
+.home-podcast-launch-link:hover .home-podcast-launch-arrow {
+  background: #fff;
+  border-color: #fff;
+}
+
+.home-podcast-launch-link:hover .home-podcast-launch-arrow svg {
+  stroke: var(--brand-color);
+}
+
+@media screen and (max-width: 640px) {
+  .home-podcast-launch-wrap {
+    justify-content: stretch;
+  }
+
+  .home-podcast-launch-link {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .home-podcast-launch-arrow {
+    align-self: flex-end;
+  }
+
+  .home-podcast-launch-text {
+    font-size: 17px;
+  }
 }
 
 /* Sections */
@@ -2854,6 +2963,11 @@ a.event-card-title-link:hover {
   object-fit: cover;
 }
 
+.podcast-image--circle-logo img {
+  object-fit: cover;
+  padding: 0;
+}
+
 .podcast-content-column {
   display: flex;
   flex-direction: column;
@@ -2952,6 +3066,241 @@ a.event-card-title-link:hover {
   color: var(--brand-color);
   font-weight: 300;
   margin: 0;
+}
+
+/* Podcast launch / Square fundraiser */
+.fundraiser-goal-line {
+  font-size: 19px;
+  line-height: 1.8;
+  color: var(--brand-color);
+  font-weight: 300;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.fundraiser-goal-line strong {
+  font-weight: 600;
+}
+
+.fundraiser-inline-link {
+  color: var(--brand-color);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.fundraiser-inline-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.fundraiser-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.fundraiser-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #000;
+  border-radius: 28px;
+  color: var(--brand-color);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.fundraiser-cta-button:hover {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+  color: white;
+}
+
+.fundraiser-cta-button:hover svg {
+  color: white;
+}
+
+/* Podcast launch hero: tight title → button → copy */
+.fundraiser-launch-hero.page-header {
+  padding-bottom: 44px;
+}
+
+.fundraiser-launch-hero .podcast-content-column {
+  gap: 0.65rem;
+}
+
+.fundraiser-launch-hero .podcast-header-row {
+  gap: 0.4rem;
+}
+
+.fundraiser-launch-hero .podcast-intro {
+  margin-top: 0.15rem;
+}
+
+.fundraiser-launch-hero .podcast-description {
+  margin-bottom: 0.55rem;
+}
+
+.fundraiser-launch-hero .fundraiser-goal-line {
+  margin-bottom: 0.45rem;
+}
+
+.fundraiser-launch-hero .podcast-listen-text {
+  margin-bottom: 0;
+}
+
+.fundraiser-bottom-cta {
+  padding: var(--space-lg) var(--gap) var(--space-3xl);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.fundraiser-bottom-cta-inner {
+  display: flex;
+  justify-content: center;
+}
+
+/* Podcast launch: tighter title → intro → grid */
+.fundraiser-perks-about .about-section-title-container {
+  margin-bottom: 0.35rem;
+}
+
+.fundraiser-perks-about .about-section-content {
+  gap: 0.5rem;
+}
+
+.fundraiser-perks-about .about-section-text {
+  margin-bottom: 0;
+}
+
+.fundraiser-perks-about .about-section-text p {
+  margin: 0;
+}
+
+.fundraiser-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+  align-items: stretch;
+  margin-top: var(--space-md);
+}
+
+.fundraiser-tier-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-lg);
+  border: 1px solid #000;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 20px rgba(52, 32, 77, 0.08);
+}
+
+.fundraiser-tier-card--premium {
+  background: rgba(225, 214, 240, 0.95);
+}
+
+.fundraiser-tier-card--friend {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.fundraiser-tier-label {
+  font-family: "atwriter", serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--brand-color);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-xs) 0;
+  line-height: 1.15;
+}
+
+.fundraiser-tier-amount {
+  font-family: "atwriter", serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--brand-color);
+  margin: 0 0 var(--space-md) 0;
+  line-height: 1;
+}
+
+.fundraiser-tier-perks-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-color);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.fundraiser-tier-preamble {
+  font-size: 16px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--brand-color);
+  margin: 0 0 0.45rem 0;
+  opacity: 0.95;
+}
+
+.fundraiser-tier-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--brand-color);
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 300;
+}
+
+.fundraiser-tier-list li {
+  margin-bottom: 0.28rem;
+}
+
+.fundraiser-tier-list li:last-child {
+  margin-bottom: 0;
+}
+
+.fundraiser-closing {
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  margin-top: var(--space-md) !important;
+}
+
+.fundraiser-closing.fundraiser-closing--friend {
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  padding-top: var(--space-md);
+  font-size: 20px !important;
+}
+
+.fundraiser-disclaimer {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--brand-color);
+  opacity: 0.85;
+  font-weight: 300;
+  margin: var(--space-2xl) 0 0 0;
+  max-width: 52rem;
+}
+
+@media screen and (max-width: 960px) {
+  .fundraiser-tier-grid {
+    grid-template-columns: 1fr;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fundraiser-tier-card--friend {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }
 
 .contact-card-inline {

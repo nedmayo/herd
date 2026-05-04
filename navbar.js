@@ -22,6 +22,7 @@ function loadNavbar() {
     <div class="nav-overlay" aria-hidden="true"></div>
     <div class="nav-links">
         <a href="about.html">About</a>
+        <a href="podcast-launch.html">Podcast launch</a>
         <a href="contact.html">Contact</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUWXf6VWonCT4Zvnoe80TiGM3T9jy9-9vQpV4T13Nl9E9NAg/viewform" target="_blank">Newsletter</a>
         <a href="events.html" class="nav-ticket-icon">
