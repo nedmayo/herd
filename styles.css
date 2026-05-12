@@ -2778,6 +2778,7 @@ a.event-card-title-link:hover {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-left: 0;
+    width: 100%;
     max-width: 100%;
   }
 
@@ -3603,6 +3604,7 @@ a.event-card-title-link:hover {
   .events-cards-grid {
     grid-template-columns: 1fr;
     justify-self: stretch;
+    width: 100%;
     max-width: none;
   }
 }
