@@ -818,8 +818,9 @@ body::before {
   stroke: white;
 }
 
-/* Home: evergreen donate CTA (brand purple bar, links to Square) */
-.home-donate-wrap {
+/* Home: evergreen donate CTA (brand purple bar, links to Square).
+   Scoped under .hero-section so this block keeps layout/typography even if global `a` or section styles change. */
+.hero-section .home-donate-wrap {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -827,7 +828,7 @@ body::before {
   box-sizing: border-box;
 }
 
-.home-donate-link {
+.hero-section .home-donate-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -842,33 +843,40 @@ body::before {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.95);
   background: var(--brand-color);
+  font-family:
+    "IBM Plex Sans",
+    "Noto Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-.home-donate-link:hover {
+.hero-section .home-donate-link:hover {
   background: #3d285c;
   border-color: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 28px rgba(52, 32, 77, 0.35);
 }
 
-.home-donate-text {
+.hero-section .home-donate-text {
   font-size: 18px;
   line-height: 1.55;
   font-weight: 300;
   flex: 1 1 auto;
   min-width: 0;
   color: inherit;
+  font-family: inherit;
 }
 
-.home-donate-text strong {
+.hero-section .home-donate-text strong {
   font-weight: 700;
   color: #fff;
 }
 
-.home-donate-arrow {
+.hero-section .home-donate-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -882,26 +890,26 @@ body::before {
     border-color 0.2s ease;
 }
 
-.home-donate-arrow svg {
+.hero-section .home-donate-arrow svg {
   stroke: #fff;
   transition: stroke 0.2s ease;
 }
 
-.home-donate-link:hover .home-donate-arrow {
+.hero-section .home-donate-link:hover .home-donate-arrow {
   background: #fff;
   border-color: #fff;
 }
 
-.home-donate-link:hover .home-donate-arrow svg {
+.hero-section .home-donate-link:hover .home-donate-arrow svg {
   stroke: var(--brand-color);
 }
 
 @media screen and (max-width: 640px) {
-  .home-donate-wrap {
+  .hero-section .home-donate-wrap {
     justify-content: stretch;
   }
 
-  .home-donate-link {
+  .hero-section .home-donate-link {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -909,11 +917,11 @@ body::before {
     max-width: none;
   }
 
-  .home-donate-arrow {
+  .hero-section .home-donate-arrow {
     align-self: flex-end;
   }
 
-  .home-donate-text {
+  .hero-section .home-donate-text {
     font-size: 17px;
   }
 }
