@@ -818,8 +818,8 @@ body::before {
   stroke: white;
 }
 
-/* Home: podcast launch fund — half-width (non-mobile), right-aligned with hero / content */
-.home-podcast-launch-wrap {
+/* Home: evergreen donate CTA (brand purple bar, links to Square) */
+.home-donate-wrap {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -827,7 +827,7 @@ body::before {
   box-sizing: border-box;
 }
 
-.home-podcast-launch-link {
+.home-donate-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -848,13 +848,13 @@ body::before {
     box-shadow 0.2s ease;
 }
 
-.home-podcast-launch-link:hover {
+.home-donate-link:hover {
   background: #3d285c;
   border-color: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 28px rgba(52, 32, 77, 0.35);
 }
 
-.home-podcast-launch-text {
+.home-donate-text {
   font-size: 18px;
   line-height: 1.55;
   font-weight: 300;
@@ -863,17 +863,12 @@ body::before {
   color: inherit;
 }
 
-.home-podcast-launch-text strong {
+.home-donate-text strong {
   font-weight: 700;
   color: #fff;
 }
 
-.home-podcast-launch-text em {
-  color: rgba(255, 255, 255, 0.92);
-  font-style: italic;
-}
-
-.home-podcast-launch-arrow {
+.home-donate-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -887,26 +882,26 @@ body::before {
     border-color 0.2s ease;
 }
 
-.home-podcast-launch-arrow svg {
+.home-donate-arrow svg {
   stroke: #fff;
   transition: stroke 0.2s ease;
 }
 
-.home-podcast-launch-link:hover .home-podcast-launch-arrow {
+.home-donate-link:hover .home-donate-arrow {
   background: #fff;
   border-color: #fff;
 }
 
-.home-podcast-launch-link:hover .home-podcast-launch-arrow svg {
+.home-donate-link:hover .home-donate-arrow svg {
   stroke: var(--brand-color);
 }
 
 @media screen and (max-width: 640px) {
-  .home-podcast-launch-wrap {
+  .home-donate-wrap {
     justify-content: stretch;
   }
 
-  .home-podcast-launch-link {
+  .home-donate-link {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -914,11 +909,11 @@ body::before {
     max-width: none;
   }
 
-  .home-podcast-launch-arrow {
+  .home-donate-arrow {
     align-self: flex-end;
   }
 
-  .home-podcast-launch-text {
+  .home-donate-text {
     font-size: 17px;
   }
 }

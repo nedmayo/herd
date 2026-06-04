@@ -22,7 +22,6 @@ function loadNavbar() {
     <div class="nav-overlay" aria-hidden="true"></div>
     <div class="nav-links">
         <a href="about.html">About</a>
-        <a href="podcast-launch.html">Podcast launch</a>
         <a href="https://herdstorytelling.substack.com/podcast" target="_blank" rel="noopener">Podcast</a>
         <a href="contact.html">Contact</a>
         <a href="https://substack.com/@herdstorytelling" target="_blank" rel="noopener">Newsletter</a>
