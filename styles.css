@@ -489,6 +489,32 @@ body::before {
   stroke: var(--brand-color);
 }
 
+.nav-donate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  margin: 0 calc(var(--space-md) * -0.35);
+  border: 2px solid var(--brand-color);
+  background: transparent;
+  border-radius: 999px;
+  color: var(--brand-color);
+  font-size: 19px;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.nav-links a.nav-donate-btn:hover {
+  background: var(--brand-color);
+  color: #fff;
+  border-color: var(--brand-color);
+}
+
 /* Hero image grid (between nav and welcome) – same content width as other sections */
 .hero-image-grid {
   width: 100%;
@@ -816,114 +842,6 @@ body::before {
 
 .hero-newsletter-link:hover .hero-newsletter-arrow svg {
   stroke: white;
-}
-
-/* Home: evergreen donate CTA (brand purple bar, links to Square).
-   Scoped under .hero-section so this block keeps layout/typography even if global `a` or section styles change. */
-.hero-section .home-donate-wrap {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-top: var(--space-xl);
-  box-sizing: border-box;
-}
-
-.hero-section .home-donate-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  padding: var(--space-md) var(--space-lg);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 20px;
-  width: 50%;
-  min-width: 50%;
-  max-width: 100%;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.95);
-  background: var(--brand-color);
-  font-family:
-    "IBM Plex Sans",
-    "Noto Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.hero-section .home-donate-link:hover {
-  background: #3d285c;
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 28px rgba(52, 32, 77, 0.35);
-}
-
-.hero-section .home-donate-text {
-  font-size: 18px;
-  line-height: 1.55;
-  font-weight: 300;
-  flex: 1 1 auto;
-  min-width: 0;
-  color: inherit;
-  font-family: inherit;
-}
-
-.hero-section .home-donate-text strong {
-  font-weight: 700;
-  color: #fff;
-}
-
-.hero-section .home-donate-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  flex-shrink: 0;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-  border-radius: 50%;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.hero-section .home-donate-arrow svg {
-  stroke: #fff;
-  transition: stroke 0.2s ease;
-}
-
-.hero-section .home-donate-link:hover .home-donate-arrow {
-  background: #fff;
-  border-color: #fff;
-}
-
-.hero-section .home-donate-link:hover .home-donate-arrow svg {
-  stroke: var(--brand-color);
-}
-
-@media screen and (max-width: 640px) {
-  .hero-section .home-donate-wrap {
-    justify-content: stretch;
-  }
-
-  .hero-section .home-donate-link {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    min-width: 0;
-    max-width: none;
-  }
-
-  .hero-section .home-donate-arrow {
-    align-self: flex-end;
-  }
-
-  .hero-section .home-donate-text {
-    font-size: 17px;
-  }
 }
 
 /* Sections */
@@ -2517,6 +2435,23 @@ a.event-card-title-link:hover {
     flex-shrink: 0;
   }
 
+  .nav-links .nav-donate-btn {
+    width: 100%;
+    border-radius: 0;
+    padding: 10px 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    justify-content: flex-start;
+  }
+
+  .nav-links .nav-donate-btn:hover {
+    background: transparent;
+    color: white;
+    opacity: 0.85;
+  }
+
   .hero-section {
     padding: var(--gap) var(--gap) var(--space-2xl);
   }
@@ -3014,6 +2949,49 @@ a.event-card-title-link:hover {
   color: var(--brand-color);
   font-weight: 300;
   margin: 0;
+}
+
+.podcast-page-hero .podcast-content-column {
+  gap: var(--space-xl);
+}
+
+.podcast-page-hero .page-title {
+  margin: 0;
+}
+
+.podcast-page-hero .podcast-description {
+  margin-bottom: 0;
+}
+
+.podcast-substack-cta {
+  margin: 0;
+}
+
+.podcast-page-founders {
+  padding-bottom: var(--space-3xl);
+}
+
+.podcast-founders-tiers {
+  margin-top: 60px;
+}
+
+.podcast-page-founders .podcast-donation-tier + .podcast-donation-tier {
+  margin-top: var(--space-3xl);
+}
+
+.podcast-page-founders .podcast-donation-tier .founders-names-wrapper {
+  margin-top: var(--space-md);
+}
+
+.podcast-donation-tier-title {
+  font-family: "atwriter", serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: bold;
+  color: var(--brand-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
 }
 
 .podcast-platform-button {
