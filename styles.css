@@ -1265,6 +1265,12 @@ body::before {
   max-width: none;
 }
 
+/* Keep sticky Experience section side insets like other sections */
+.js-sticky-area__itemBody.experience-section {
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+}
+
 .experience-cards-container {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -2101,10 +2107,10 @@ a.event-card-title-link:hover {
   overflow: hidden;
 }
 
-/* Section top border – 1px line at content width, used instead of standalone dividers */
+/* Section top border – 2px line at content width, used instead of standalone dividers */
 .section-top-border {
   display: block;
-  height: 1px;
+  height: 2px;
   background: var(--brand-color);
   max-width: var(--content-max-width);
   margin: 0 auto;
