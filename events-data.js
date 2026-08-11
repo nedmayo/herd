@@ -11,7 +11,9 @@
             imageMode: "logo",
             imageSrc: LOGO_IMAGE,
             imageAlt: "HERD logo",
-            detailsHtml: "<p>Tickets on sale soon</p>"
+            detailsBeforeLiveHtml: "<p>Tickets on sale soon</p>",
+            detailsLiveAt: "2026-08-20T12:00:00-05:00",
+            detailsAfterLiveHtml: '<p><a href="https://www.stkate.edu/oshaughnessy/events/herd-a-women-centered-story-telling-event" class="event-read-more-inline" target="_blank" rel="noopener">Get tickets</a></p>'
         },
         {
             id: "theme-tba-oct-2026",
@@ -236,8 +238,27 @@
     }
 
     function renderDetails(event) {
-        if (!event.detailsHtml) return "";
-        return `<div class="event-card-details-small event-card-details-compact">${event.detailsHtml}</div>`;
+        const detailsHtml = getDetailsHtml(event);
+        if (!detailsHtml) return "";
+        return `<div class="event-card-details-small event-card-details-compact">${detailsHtml}</div>`;
+    }
+
+    function getDetailsHtml(event) {
+        if (!event.detailsLiveAt) {
+            return event.detailsHtml || "";
+        }
+
+        const now = new Date();
+        const goLiveDate = new Date(event.detailsLiveAt);
+        if (Number.isNaN(goLiveDate.getTime())) {
+            return event.detailsHtml || event.detailsBeforeLiveHtml || "";
+        }
+
+        if (now >= goLiveDate) {
+            return event.detailsAfterLiveHtml || event.detailsHtml || "";
+        }
+
+        return event.detailsBeforeLiveHtml || event.detailsHtml || "";
     }
 
     function renderEventsPageCard(event, isPastEvent) {
