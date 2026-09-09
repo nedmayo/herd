@@ -17,26 +17,29 @@
         '<p><a href="https://www.stkate.edu/oshaughnessy/events/herd-a-women-centered-story-telling-event" class="event-read-more-inline" target="_blank" rel="noopener">Get tickets</a></p>',
     },
     {
-      id: "theme-tba-oct-2026",
+      id: "fitting-room-2026",
       date: "2026-10-29",
       dateText: "October 29, 2026",
-      title: "HERD: Theme TBA",
+      title: "HERD: FITTING ROOM",
       location: "CHS Field, Saint Paul - 7pm",
-      imageMode: "logo",
-      imageSrc: LOGO_IMAGE,
-      imageAlt: "HERD logo",
+      imageMode: "poster",
+      imageSrc: "content/fitting_room_square.jpg",
+      imageAlt: "HERD: FITTING ROOM",
       detailsHtml:
-        "<p>In partnership with Habitat for Humanity of Minnesota.</p>",
+        "<p>Tickets on sale Sept 24</p><p>A women-centered storytelling workshop to try out your story! Bring your idea to the Fitting Room and try it out with the HERD.</p>",
     },
     {
       id: "sports-edition-2026",
       date: "2026-11-13",
       dateText: "November 13, 2026",
       title: "HERD: Women's Sports Edition",
-      location: "Huntington Bank Stadium - 7pm",
-      imageMode: "logo",
-      imageSrc: LOGO_IMAGE,
-      imageAlt: "HERD logo",
+      titleHtml: 'HERD: Women\'s Sports Edition <br> Theme "Play"',
+      location: "Huntington Bank Stadium, Club Cambria - 7pm",
+      imageMode: "poster",
+      imageSrc: "content/womens_sports_edition_play.jpg",
+      imageAlt: "HERD: Women's Sports Edition, Theme Play",
+      detailsHtml:
+        "<p>Tickets on sale October 8</p><p>A special edition HERD in partnership with the fantastic Tucker Institute for Research on Girls and Women in Sport.</p>",
     },
     {
       id: "theme-tba-dec-2026",
@@ -311,7 +314,7 @@
                 </div>
                 <div class="event-card-content-small">
                     <div class="event-title-row">
-                        <h3 class="event-card-title-small">${event.title}</h3>
+                        <h3 class="event-card-title-small">${event.titleHtml || event.title}</h3>
                     </div>
                     <div class="event-card-meta-small">
                         <span class="event-date-small">${event.dateText}</span>
