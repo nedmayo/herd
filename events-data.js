@@ -39,7 +39,7 @@
       imageSrc: "content/womens_sports_edition_play.jpg",
       imageAlt: "HERD: Women's Sports Edition, Theme Play",
       detailsHtml:
-        "<p>Tickets on sale October 8</p><p>A special edition HERD in partnership with the fantastic Tucker Institute for Research on Girls and Women in Sport.</p>",
+        "<p>Tickets on sale October 8</p><p>A special edition HERD in partnership with the fantastic Tucker Center for Research on Girls and Women in Sport.</p>",
     },
     {
       id: "theme-tba-dec-2026",
