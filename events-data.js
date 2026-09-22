@@ -25,8 +25,11 @@
       imageMode: "poster",
       imageSrc: "content/fitting_room_square.jpg",
       imageAlt: "HERD: FITTING ROOM",
-      detailsHtml:
+      detailsBeforeLiveHtml:
         "<p>Tickets on sale Sept 24</p><p>A women-centered storytelling workshop to try out your story! Bring your idea to the Fitting Room and try it out with the HERD.</p>",
+      detailsLiveAt: "2026-09-24T08:00:00-05:00",
+      detailsAfterLiveHtml:
+        '<p><a href="https://events.humanitix.com/herd-the-fitting-room" class="event-read-more-inline" target="_blank" rel="noopener">Get tickets</a></p><p>A women-centered storytelling workshop to try out your story! Bring your idea to the Fitting Room and try it out with the HERD.</p>',
     },
     {
       id: "sports-edition-2026",
@@ -38,8 +41,11 @@
       imageMode: "poster",
       imageSrc: "content/womens_sports_edition_play.jpg",
       imageAlt: "HERD: Women's Sports Edition, Theme Play",
-      detailsHtml:
-        "<p>Tickets on sale October 8</p><p>A special edition HERD in partnership with the fantastic Tucker Center for Research on Girls and Women in Sport.</p>",
+      detailsBeforeLiveHtml:
+        "<p>Tickets on sale October 1</p><p>A special edition HERD in partnership with the fantastic Tucker Center for Research on Girls and Women in Sport.</p>",
+      detailsLiveAt: "2026-10-01T08:00:00-05:00",
+      detailsAfterLiveHtml:
+        '<p><a href="https://events.humanitix.com/herd-wse-play" class="event-read-more-inline" target="_blank" rel="noopener">Get tickets</a></p><p>A special edition HERD in partnership with the fantastic Tucker Center for Research on Girls and Women in Sport.</p>',
     },
     {
       id: "theme-tba-dec-2026",
