@@ -27,7 +27,8 @@
       imageAlt: "HERD: FITTING ROOM",
       detailsBeforeLiveHtml:
         "<p>Tickets on sale Sept 24</p><p>A women-centered storytelling workshop to try out your story! Bring your idea to the Fitting Room and try it out with the HERD.</p>",
-      detailsLiveAt: "2026-09-24T08:00:00-05:00",
+      detailsLiveAt: "2026-09-24T12:00:00-05:00",
+
       detailsAfterLiveHtml:
         '<p><a href="https://events.humanitix.com/herd-the-fitting-room" class="event-read-more-inline" target="_blank" rel="noopener">Get tickets</a></p><p>A women-centered storytelling workshop to try out your story! Bring your idea to the Fitting Room and try it out with the HERD.</p>',
     },
