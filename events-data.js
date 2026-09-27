@@ -23,7 +23,7 @@
       title: "HERD: FITTING ROOM",
       location: "CHS Field, Saint Paul - 7pm",
       imageMode: "poster",
-      imageSrc: "content/fitting_room_square.jpg",
+      imageSrc: "content/fitting_room_square.jpg?v=20260927",
       imageAlt: "HERD: FITTING ROOM",
       detailsBeforeLiveHtml:
         "<p>Tickets on sale Sept 24</p><p>A women-centered storytelling workshop to try out your story! Bring your idea to the Fitting Room and try it out with the HERD.</p>",
