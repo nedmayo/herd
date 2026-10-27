@@ -54,9 +54,10 @@
       dateText: "December 2, 2026",
       title: "HERD: Theme TBA",
       location: "O'Shaughnessy at St. Catherine University, St. Paul",
-      imageMode: "logo",
-      imageSrc: LOGO_IMAGE,
-      imageAlt: "HERD logo",
+      imageMode: "poster",
+      imageSrc: "content/HERD Holiday Web Logo.jpg",
+      imageAlt: "HERD holiday",
+      detailsHtml: "<p>Tickets on sale November 3rd</p>",
     },
     {
       id: "theme-tba-feb-2027",
