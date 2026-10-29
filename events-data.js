@@ -52,12 +52,15 @@
       id: "theme-tba-dec-2026",
       date: "2026-12-02",
       dateText: "December 2, 2026",
-      title: "HERD: Theme TBA",
+      title: "HERD: Assembly Required",
       location: "O'Shaughnessy at St. Catherine University, St. Paul",
       imageMode: "poster",
       imageSrc: "content/HERD Holiday Web Logo.jpg",
-      imageAlt: "HERD holiday",
-      detailsHtml: "<p>Tickets on sale November 3rd</p>",
+      imageAlt: "HERD: Assembly Required",
+      detailsBeforeLiveHtml: "<p>Tickets on sale November 3rd</p>",
+      detailsLiveAt: "2026-11-03T12:00:00-06:00",
+      detailsAfterLiveHtml:
+        '<p><a href="https://www.stkate.edu/oshaughnessy/events/herd-a-women-centered-storytelling-event" class="event-read-more-inline" target="_blank" rel="noopener">Get tickets</a></p>',
     },
     {
       id: "theme-tba-feb-2027",
